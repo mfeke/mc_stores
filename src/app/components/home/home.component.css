@@ -3,7 +3,7 @@
 }
 
 .bg {
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(246, 246, 246);
 }
 
 .card-pro {
@@ -19,5 +19,5 @@
     width: 150px;
     position: relative;
     top: 3px;
-    left: 20px;
+    left: 5px;
 }
