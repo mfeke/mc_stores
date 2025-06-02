@@ -16,8 +16,8 @@ section {
     padding-bottom: 1rem;
 
     .card {
-        width: 130px;
-        height: 130px;
+        width: 160px;
+        height: 160px;
         overflow: hidden;
         border: none;
 
@@ -37,7 +37,7 @@ section {
 
 
     .img-catgory {
-        width: 160px;
+        width: 210px;
         position: relative;
         top: -4px;
         left: 5px;
@@ -45,8 +45,12 @@ section {
     }
 }
 h6{
-    width: 90%;
+    width: 80%;
 }
 ::-webkit-scrollbar {
     width: 0px;
+}
+.link{
+    text-decoration: underline;
+    font-size: 14px;
 }
