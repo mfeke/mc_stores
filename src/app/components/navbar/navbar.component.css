@@ -1,9 +1,24 @@
-.roboto-slab{
-  font-family: "Roboto Slab", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+.roboto-slab {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-.br{
-    border-radius: 25px;
+.br {
+    border-radius: 25px 0px 0px 25px !important;
+    border-right: none !important;
+    padding: 13px !important;
+}
+
+.border-none {
+    border-left: none !important;
+    border-right: none !important;
+
+
+}
+
+.br-filter {
+    border-radius: 0px 25px 25px 0px !important;
+    border-left: none !important;
+
 }
