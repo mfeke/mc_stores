@@ -45,7 +45,9 @@ section {
 
     }
 }
-
+h6{
+    width: 90%;
+}
 ::-webkit-scrollbar {
     width: 0px;
 }
