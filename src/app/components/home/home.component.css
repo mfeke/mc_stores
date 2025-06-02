@@ -1,69 +1,22 @@
-.span{
-    font-size: 14px;
+.bg-mix {
+    mix-blend-mode: inherit;
 }
-.link{
-    text-decoration: underline;
+
+.bg {
+    background-color: rgb(219, 219, 219);
 }
-.bg{
-    height: 550px !important;
-    background: rgba(0, 0, 0, 0.07);
+
+.card-pro {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+
 }
-.roboto-slab {
-    font-family: "Roboto ", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-size: 18px;
-    font-style: normal;
-}
-h5{
-    font-size: 19px;
-}
-/* .bg-s{
-    background-color: gainsboro;
-} */
-.bold{
-    font-weight: bold;
-}
-.border-none{
-    border: none;
-}
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr ;
-    grid-gap:1rem;
-     
-}
-.text{
+
+
+
+.img-catgory {
+    width: 130px;
     position: relative;
-    top: -210px;
-    
-    z-index: 1;
-    
-}
-input::placeholder{
-    font-size: 14px;
-}
-.grid-1{
-    display:grid;
-    grid-template-columns:1fr 1fr ;
-     
-}
-
-
-.img{
-    height: 250px;
-    mix-blend-mode: multiply;
-}
-.bg-s{
-    background: rgba(0, 0, 0, 0.04);
-}
-.image{
-    height: 200px;
-    mix-blend-mode: multiply;
-}
-.img-logo{
-    width: 40px;
-}
-.url{
-    height: 200px;
+    top: 5px;
 }
