@@ -17,8 +17,8 @@ section {
     padding-right: var(--page-margin);
 
     .card {
-        width: 140px;
-        height: 140px;
+        width: 130px;
+        height: 130px;
         overflow: hidden;
         border: none;
 
@@ -38,7 +38,7 @@ section {
 
 
     .img-catgory {
-        width: 180px;
+        width: 160px;
         position: relative;
         top: -4px;
         left: 5px;
