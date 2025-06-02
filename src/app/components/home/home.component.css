@@ -16,7 +16,8 @@
 
 
 .img-catgory {
-    width: 130px;
+    width: 150px;
     position: relative;
-    top: 5px;
+    top: 3px;
+    left: 5px;
 }
