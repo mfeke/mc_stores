@@ -12,13 +12,13 @@
 
 .border-none {
     border-left: none !important;
-    border-right: none !important;
+    /* border-right: none !important; */
 
 
 }
 
 .br-filter {
     border-radius: 0px 25px 25px 0px !important;
-    border-left: none !important;
+    /* border-left: none !important; */
 
 }
