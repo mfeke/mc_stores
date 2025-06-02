@@ -1,0 +1,18 @@
+h6 {
+    font-size: 18px;
+}
+
+.bg-s {
+    background-color: rgb(239, 239, 239);
+
+}
+
+img {
+    mix-blend-mode: multiply;
+}
+.bold{
+    font-weight: bold;
+}
+.span{
+    font-size: 15px;
+}
