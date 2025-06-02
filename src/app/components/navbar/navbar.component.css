@@ -15,7 +15,9 @@
 
 
 }
-
+.bg{
+    background-color: blueviolet;
+}
 .br-filter {
     border-radius: 0px 25px 25px 0px !important;
     /* border-left: none !important; */

@@ -1,23 +1,51 @@
-.bg-mix {
-    mix-blend-mode: inherit;
+section {
+    display: grid;
+    grid-template-columns: var(--page-margin) [center-start] 1fr [center-end] var(--page-margin);
+
+    &>* {
+        grid-column: center;
+    }
 }
 
-.bg {
-    background-color: rgb(246, 246, 246);
+.cards-wrapper {
+    grid-column: center-start / -1;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1rem;
+    overflow: auto;
+    padding-bottom: 1rem;
+    padding-right: var(--page-margin);
+
+    .card {
+        width: 130px;
+        height: 130px;
+        overflow: hidden;
+        border: none;
+
+    }
+
+
+    .bg-mix {
+        mix-blend-mode: inherit;
+    }
+
+    .bg {
+        background-color: rgb(246, 246, 246);
+    }
+
+
+
+
+
+    .img-catgory {
+        width: 150px;
+        position: relative;
+        top: -4px;
+        left: 5px;
+
+    }
 }
 
-.card-pro {
-    width: 130px;
-    height: 130px;
-    overflow: hidden;
-
-}
-
-
-
-.img-catgory {
-    width: 150px;
-    position: relative;
-    top: 0px;
-    left: 5px;
+::-webkit-scrollbar {
+    width: 0px;
 }
