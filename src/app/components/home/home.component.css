@@ -6,7 +6,17 @@ section {
         grid-column: center;
     }
 }
-
+.br{
+    border-radius: 15px;
+}
+.span{
+    font-size: 14px;
+}
+.tomato{
+    width: 170px;
+    position: relative;
+    left: -40px;
+}
 .cards-wrapper {
     grid-column: center-start / -1;
     display: grid;
@@ -53,4 +63,8 @@ h6{
 .link{
     text-decoration: underline;
     font-size: 14px;
+}
+
+.grad {
+  background-image: linear-gradient(to right,red,  rgb(111, 5, 5) );
 }
