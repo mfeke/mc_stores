@@ -30,7 +30,7 @@ section {
 
 .card-se {
     overflow: hidden;
-    height: 140px;
+    height: 130px;
 }
 
 .tomato {
@@ -77,8 +77,8 @@ section {
     padding-bottom: 1rem;
 
     .card {
-        width: 160px;
-        height: 160px;
+        width: 140px;
+        height: 140px;
         overflow: hidden;
         border: none;
 
@@ -98,10 +98,10 @@ section {
 
 
     .img-catgory {
-        width: 210px;
+        width: 150px;
         position: relative;
-        top: -4px;
-        left: 5px;
+        top: 5px;
+        left: -0px;
 
     }
 }
