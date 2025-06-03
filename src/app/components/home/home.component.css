@@ -106,6 +106,15 @@ section {
     }
 }
 
+span.carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+}
+span.carousel-control-prev-icon{
+    width: 30px;
+    height: 30px;
+}
+
 h6 {
     width: 80%;
 }
