@@ -17,10 +17,11 @@ section {
 
 .img-con {
     width: 0px;
+    height: 0px;
 }
 
 .img-per {
-    height: 150px;
+    height: 130px;
     position: absolute;
     right: 12px;
     top: 318px;
@@ -28,6 +29,7 @@ section {
 .bold{
     font-weight: bold;
 }
+
 .card-se{
     overflow: hidden;
 }
