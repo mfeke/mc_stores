@@ -15,16 +15,13 @@ section {
     font-size: 14px;
 }
 
-.img-con {
-    width: 0px;
-    height: 0px;
-}
+
 
 .img-per {
-    height: 139px;
-    position: absolute;
-    right: 12px;
-    top: 318px;
+    height: 150px;
+    position: relative;
+    right: 17px;
+    top: -50px;
 }
 .bold{
     font-weight: bold;
@@ -32,6 +29,7 @@ section {
 
 .card-se{
     overflow: hidden;
+    height: 140px;
 }
 .tomato {
     width: 170px;
