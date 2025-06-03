@@ -12,10 +12,13 @@ section {
 .span{
     font-size: 14px;
 }
+.img-con{
+    width: 0px;
+}
 .tomato{
     width: 170px;
-    position: relative;
-    left: -40px;
+    position: absolute;
+right: 4px;
 }
 .cards-wrapper {
     grid-column: center-start / -1;
