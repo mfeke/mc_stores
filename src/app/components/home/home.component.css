@@ -6,20 +6,37 @@ section {
         grid-column: center;
     }
 }
-.br{
+
+.br {
     border-radius: 15px;
 }
-.span{
+
+.span {
     font-size: 14px;
 }
-.img-con{
+
+.img-con {
     width: 0px;
 }
-.tomato{
+
+.img-per {
+    height: 150px;
+    position: absolute;
+    right: 12px;
+    top: 318px;
+}
+.bold{
+    font-weight: bold;
+}
+.card-se{
+    overflow: hidden;
+}
+.tomato {
     width: 170px;
     position: absolute;
-right: 4px;
+    right: 10px;
 }
+
 .cards-wrapper {
     grid-column: center-start / -1;
     display: grid;
@@ -57,17 +74,20 @@ right: 4px;
 
     }
 }
-h6{
+
+h6 {
     width: 80%;
 }
+
 ::-webkit-scrollbar {
     width: 0px;
 }
-.link{
+
+.link {
     text-decoration: underline;
     font-size: 14px;
 }
 
 .grad {
-  background-image: linear-gradient(to right,red,  rgb(111, 5, 5) );
+    background-image: linear-gradient(to right, red, rgb(111, 5, 5));
 }
