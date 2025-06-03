@@ -8,15 +8,31 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   url = "https://i.postimg.cc/TPs5DMhf/Home-col.jpg"
   title = "Categories"
-  main = { name: "New in sport waves", image: "https://i.postimg.cc/mDbwwjHK/New-wave-racket-club.jpg", list: ["women's", "men's"] }
-  products = [{ name: "POLO SHIRT", image: "https://i.postimg.cc/GtPTKkTn/shirt.jpg" },
-  { name: "FLOWER GIRL'S", image: "https://i.postimg.cc/ZRDcHwMf/dress.jpg" },
-  { name: "sunglasses", image: "https://i.postimg.cc/QNJhXsBH/395428262-738578591637520-6011826443595266178-n.jpg" },
-  { name: "dresses", image: "https://i.postimg.cc/s2zMQ4r3/H-M-offers-fashion-and-quality-at-the-best-price-1.jpg" },
+  currentIndex = 1;
+
+  list = [{
+    title: "Simba NikNaks Cheese Flavoured Maize Snack 135g",
+    img: "https://i.postimg.cc/fWdmv6k2/NIK-NAK-removebg-preview.png",
+    price: 15.99
+  },
+  {
+    title: "Coca-Cola Plastic 2L",
+    img: "https://i.postimg.cc/Yq1vjsxJ/coca-cola-removebg-preview.png",
+    price: 26.99
+  },
+
+  {
+    title: "Blue Ribbon White Toaster Bread 700g",
+    img: "https://i.postimg.cc/cJSWyGT9/bread-removebg-preview.png",
+    price: 18.99
+  }
   ]
-  gifts = ["https://i.postimg.cc/TwMxdgKg/Spring-lookbook-2023-H-M-2.jpg", "https://i.postimg.cc/QMJ47DFV/H-M-Innovation-Colour-Story-1.jpg",
-    "https://i.postimg.cc/2SV20t08/289692778-2042713422564954-2810029918394298908-n.jpg"
-    , "https://i.postimg.cc/cJf6ZsF9/299385009-2083351508501145-2012346897503920688-n.jpg"
-  ]
- 
+  sub(): void {
+
+    this.currentIndex--
+  }
+  add(): void {
+
+    this.currentIndex++
+  }
 }

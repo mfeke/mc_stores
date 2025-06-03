@@ -138,41 +138,31 @@
         <span class="link text-secondary">SEE ALL</span>
     </div>
     <div class="row">
-        <div id="carouselExample" class="carousel slide">
+        <div id="carouselExample" class="carousel slide mb-2">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div *ngFor="let product of list; let i = index"
+                    class="carousel-item"
+                    [class.active]="i === 0">
                     <div class="col-12 mb-3">
                         <div class="bg-s p-3 ">
                             <img
-                                src="https://i.postimg.cc/fWdmv6k2/NIK-NAK-removebg-preview.png"
+                                [src]="product.img"
                                 alt class="w-100 bg-transparent bg-mix">
 
                         </div>
-                        <p class="block-ellipsis bold my-2 mx-0">Simba NikNaks
-                            Cheese
-                            Flavoured Maize Snack 135g</p>
+                        <p
+                            class="block-ellipsis bold my-2 mx-0">{{product.title}}</p>
                         <div class="d-flex">
-                            <span class="text-black me-3 span-2">R 15.99</span>
-                        </div>
-                    </div> </div>
-                <div class="carousel-item">
-                    <div class="col-12 mb-2">
-                        <div class="bg-s p-3">
-                            <img
-                                src="https://i.postimg.cc/cJSWyGT9/bread-removebg-preview.png"
-                                alt class="w-100 bg-mix">
-                        </div>
-                        <p class="block-ellipsis bold my-2 mx-0">Blue Ribbon
-                            White Toaster
-                            Bread 700g</p>
-                        <div class="d-flex">
-                            <span class="text-black me-3 span-2">R 18.99</span>
+                            <span class="text-black me-3 span-2">R
+                                {{product.price}}</span>
                         </div>
                     </div>
                 </div>
-
+ 
             </div>
-            <button class="carousel-control-prev  me-1" type="button"
+            <button
+                class="carousel-control-prev  me-1" (click)="sub()" *ngIf=" currentIndex  > 1"
+                type="button"
                 data-bs-target="#carouselExample" data-bs-slide="prev">
                 <div class="bg-dark d-flex align-items-center p-1 mb-2">
                     <span class="carousel-control-prev-icon"
@@ -180,8 +170,11 @@
                     <span class="visually-hidden">Previous</span>
                 </div>
             </button>
-            <button class="carousel-control-next   me-1" type="button"
-                data-bs-target="#carouselExample" data-bs-slide="next">
+            <button class="carousel-control-next   me-1"
+            *ngIf="list.length  !== currentIndex"
+             type="button"
+                data-bs-target="#carouselExample" data-bs-slide="next"
+                (click)="add()">
                 <div class="bg-dark d-flex align-items-center p-1 ">
                     <span class="carousel-control-next-icon  bg-dark "
                         aria-hidden="true"></span>

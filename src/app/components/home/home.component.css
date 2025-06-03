@@ -111,8 +111,12 @@ span.carousel-control-next-icon {
     height: 30px;
 }
 span.carousel-control-prev-icon{
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
+}
+.carousel{
+    height: 430px;
+    overflow: hidden;
 }
 
 h6 {
