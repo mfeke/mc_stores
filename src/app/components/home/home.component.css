@@ -23,20 +23,51 @@ section {
     right: 17px;
     top: -50px;
 }
-.bold{
+
+.bold {
     font-weight: bold;
 }
 
-.card-se{
+.card-se {
     overflow: hidden;
     height: 140px;
 }
+
 .tomato {
     width: 170px;
     position: absolute;
     right: 10px;
 }
 
+
+.bg-mix {
+    mix-blend-mode: inherit;
+}
+
+.bg-s {
+    background-color: rgb(246, 246, 246);
+}
+.h-10{
+    height: 50px;
+}
+.span-2{
+    font-size: 15px;
+}
+.line{
+    text-decoration: line-through;
+}
+.block-ellipsis {
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  height: 43px;
+  margin: 0 auto;
+  font-size: 15px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .cards-wrapper {
     grid-column: center-start / -1;
     display: grid;
