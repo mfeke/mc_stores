@@ -22,34 +22,46 @@
     text-decoration: underline;
     font-size: 14px;
 }
-.line{
+
+.line {
     text-decoration: line-through;
 }
+
 .bg {
     background-color: rgba(0, 0, 0, 0.5);
 
 
 }
 
-/* .category{
-    width: 120px;
-} */
+.grid {
+
+    display: grid;
+    grid-template-columns: auto  auto;
+    gap: 10px;
+    height: 200px;
+}
+
 
 .br {
     border-radius: 15px;
 }
-.over{
+
+.over {
     overflow: scroll;
 }
-.bg-s{
-    background-color: rgb(241, 241, 241) ;
+
+.bg-s {
+    background-color: rgb(241, 241, 241);
 }
+
 .over::-webkit-scrollbar {
     width: 0px;
 }
-.category{
-    width: 150px ;
+
+.category {
+    width: 150px;
 }
+
 /* 
 
 
