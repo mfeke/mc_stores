@@ -22,7 +22,9 @@
     text-decoration: underline;
     font-size: 14px;
 }
-
+.line{
+    text-decoration: line-through;
+}
 .bg {
     background-color: rgba(0, 0, 0, 0.5);
 
@@ -140,9 +142,7 @@ section {
 .span-2{
     font-size: 15px;
 }
-.line{
-    text-decoration: line-through;
-}
+
 .block-ellipsis {
   display: block;
   display: -webkit-box;
