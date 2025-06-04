@@ -8,6 +8,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class NavbarComponent {
   show: boolean = false
+  name = "Makasana"
   listNav: any[] = []
   constructor(private apiService: ApiService) { }
   ngOnInit() {

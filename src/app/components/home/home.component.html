@@ -1,9 +1,18 @@
 <app-navbar></app-navbar>
-<div class="container w-100 mt-3">
-    <div class="d-flex justify-content-between">
-        <h5 class="text mb-2">EVERYDAY SHOPPING</h5>
-        <span class="link text-secondary">SEE ALL</span>
+
+<div class="bg-img mb-3">
+    <div class="bg h-100 d-flex align-items-end w-100 p-3 text-white">
+        <div class="col-7">
+            <h3 class="text-white mb-2">{{title|uppercase }}</h3>
+            <button type="button"
+                class="btn border border border-white text-white py-1 span">
+                SHOP NOW
+            </button>
+        </div>
+
     </div>
+</div>
+<div class="container">
     <section>
         <div class="cards-wrapper">
 
@@ -53,6 +62,12 @@
             </div>
         </div>
     </section>
+</div>
+
+<!-- 
+<div class="container w-100 mt-3">
+  
+
 
     <div class="bg-dark bg-gradient container mb-3  p-4 card-se ">
         <div class="d-flex">
@@ -133,12 +148,12 @@
 
     </div>
 
-    <div class="d-flex justify-content-between">
-        <h5 class="text mb-3">TRENDING </h5>
-        <span class="link text-secondary">SEE ALL</span>
+    <div class="d-flex justify-content-between align-items-end mb-2">
+        <h5 class="text mb-0">TRENDING </h5>
+        <span class="link text-secondary mb-0">SEE ALL</span>
     </div>
     <div class="row">
-        <div id="carouselExample" class="carousel slide mb-2">
+        <div id="carouselExample" class="carousel slide mb-3">
             <div class="carousel-inner">
                 <div *ngFor="let product of list; let i = index"
                     class="carousel-item"
@@ -158,10 +173,11 @@
                         </div>
                     </div>
                 </div>
- 
+
             </div>
             <button
-                class="carousel-control-prev  me-1" (click)="sub()" *ngIf=" currentIndex  > 1"
+                class="carousel-control-prev  me-1" (click)="sub()"
+                *ngIf=" currentIndex  > 1"
                 type="button"
                 data-bs-target="#carouselExample" data-bs-slide="prev">
                 <div class="bg-dark d-flex align-items-center p-1 mb-2">
@@ -171,8 +187,8 @@
                 </div>
             </button>
             <button class="carousel-control-next   me-1"
-            *ngIf="list.length  !== currentIndex"
-             type="button"
+                *ngIf="list.length  !== currentIndex"
+                type="button"
                 data-bs-target="#carouselExample" data-bs-slide="next"
                 (click)="add()">
                 <div class="bg-dark d-flex align-items-center p-1 ">
@@ -183,6 +199,41 @@
 
             </button>
         </div>
+    </div>
+    <div class="d-flex justify-content-between align-items-end mb-2">
+        <h5 class="text mb-0 ">GREATEST OFFER</h5>
+        <span class="link text-secondary mb-0">SEE ALL</span>
+    </div>
+    <div class="row ">
+        <div class="col-12 mb-3">
+            <div class="bg-s p-3 ">
+                <img
+                    src="https://i.postimg.cc/B6mbDmQ4/HETER-PRODUCTS-removebg-preview.png"
+                    alt class="w-100 bg-mix">
+
+            </div>
+            <p class="block-ellipsis bold my-2 mx-0">CADAC 3 PANEL 4100W GAS
+                HEATER WITH A PIEZO IGINITION</p>
+            <div class="d-flex">
+                <span class="text-black me-3 span-2">R 1,299.00</span>
+                <span class="  me-3 span-2 text-danger line">R 299.99</span>
+
+            </div>
+        </div>
+        <div class="col-12 mb-2">
+            <div class="bg-s p-3">
+                <img
+                    src="https://i.postimg.cc/BtW8smmB/stock-removebg-preview.png"
+                    alt class="w-100 bg-mix">
+            </div>
+            <p class="block-ellipsis bold my-2 mx-0">GOLDEIT WHITE FAN HEATER
+                Heater GFH-2000A</p>
+            <div class="d-flex">
+                <span class="text-black me-3 span-2">R 269.99</span>
+                <span class="  me-3 span-2 text-danger line">R 299.99</span>
+
+            </div>
+        </div>
 
     </div>
-</div>
+</div> -->

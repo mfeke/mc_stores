@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   url = "https://i.postimg.cc/TPs5DMhf/Home-col.jpg"
-  title = "Categories"
+  title = "The Daily Grind Redefined"
   currentIndex = 1;
 
   list = [{
