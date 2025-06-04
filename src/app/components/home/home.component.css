@@ -39,7 +39,9 @@
 .over{
     overflow: scroll;
 }
-
+.bg-s{
+    background-color: rgb(241, 241, 241) ;
+}
 .over::-webkit-scrollbar {
     width: 0px;
 }
