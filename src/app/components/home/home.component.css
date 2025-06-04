@@ -62,7 +62,25 @@
     width: 150px;
 }
 .special{
-    height: 150px;
+    height: 250px;
+}
+.bg-w{
+    background-image: url("https://i.postimg.cc/KvmqmhY1/471201384-18477082852049339-8860937186606329478-n.jpg");
+    height: 280px;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    margin: 0;
+
+}
+.bg-sec{
+        background-color: rgba(0, 0, 0, 0.1);
+
 }
 /* 
 
