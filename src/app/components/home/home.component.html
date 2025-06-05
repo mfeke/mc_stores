@@ -84,7 +84,7 @@
     </div>
 
 </div>
-<div class="container mb-5  conatiner-sp  ">
+<div class="container mb-3  conatiner-sp  ">
     <div class="h-100 t text-white">
         <div class="grid h-100 ">
 
@@ -147,6 +147,73 @@
     </div>
 
 </div>
+<div class="container mb-3">
+    <div class="d-flex justify-content-between align-items-end mb-2">
+        <h5 class="text mb-0">TRENDING </h5>
+        <span class="link text-secondary mb-0">SEE ALL</span>
+    </div>
+    <div class="row">
+        <div id="carouselExample" class="carousel slide mb-3">
+            <div class="carousel-inner">
+                <div *ngFor="let product of list; let i = index"
+                    class="carousel-item"
+                    [class.active]="i === 0">
+                    <div class="col-12 mb-3">
+                        <div class="bg-s text-white p-3 ">
+                            <img
+                                [src]="product.img"
+                                alt class="w-100 bg-transparent bg-mix">
+
+                        </div>
+                        <p
+                            class="block-ellipsis bold my-2 mx-0 bold">{{product.title}}</p>
+                        <div class="d-flex">
+                            <span class="text-black me-3 span-2">R
+                                {{product.price}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button
+                class="carousel-control-prev  me-1" (click)="sub()"
+                *ngIf=" currentIndex  > 1"
+                type="button"
+                data-bs-target="#carouselExample" data-bs-slide="prev">
+                <div class="bg-dark d-flex align-items-center p-1 mb-2">
+                    <span class="carousel-control-prev-icon"
+                        aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </div>
+            </button>
+            <button class="carousel-control-next   me-1"
+                *ngIf="list.length  !== currentIndex"
+                type="button"
+                data-bs-target="#carouselExample" data-bs-slide="next"
+                (click)="add()">
+                <div class="bg-dark d-flex align-items-center p-1 ">
+                    <span class="carousel-control-next-icon  bg-dark "
+                        aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </div>
+
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- 
 <div class="container w-100 mt-3">
@@ -245,58 +312,7 @@
 
     </div>
 
-    <div class="d-flex justify-content-between align-items-end mb-2">
-        <h5 class="text mb-0">TRENDING </h5>
-        <span class="link text-secondary mb-0">SEE ALL</span>
-    </div>
-    <div class="row">
-        <div id="carouselExample" class="carousel slide mb-3">
-            <div class="carousel-inner">
-                <div *ngFor="let product of list; let i = index"
-                    class="carousel-item"
-                    [class.active]="i === 0">
-                    <div class="col-12 mb-3">
-                        <div class="bg-secondary text-white p-3 ">
-                            <img
-                                [src]="product.img"
-                                alt class="w-100 bg-transparent bg-mix">
-
-                        </div>
-                        <p
-                            class="block-ellipsis bold my-2 mx-0">{{product.title}}</p>
-                        <div class="d-flex">
-                            <span class="text-black me-3 span-2">R
-                                {{product.price}}</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <button
-                class="carousel-control-prev  me-1" (click)="sub()"
-                *ngIf=" currentIndex  > 1"
-                type="button"
-                data-bs-target="#carouselExample" data-bs-slide="prev">
-                <div class="bg-dark d-flex align-items-center p-1 mb-2">
-                    <span class="carousel-control-prev-icon"
-                        aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </div>
-            </button>
-            <button class="carousel-control-next   me-1"
-                *ngIf="list.length  !== currentIndex"
-                type="button"
-                data-bs-target="#carouselExample" data-bs-slide="next"
-                (click)="add()">
-                <div class="bg-dark d-flex align-items-center p-1 ">
-                    <span class="carousel-control-next-icon  bg-dark "
-                        aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </div>
-
-            </button>
-        </div>
-    </div>
+    
     <div class="d-flex justify-content-between align-items-end mb-2">
         <h5 class="text mb-0 ">GREATEST OFFER</h5>
         <span class="link text-secondary mb-0">SEE ALL</span>

@@ -36,7 +36,7 @@
 .grid {
 
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     height: 200px;
 }
@@ -93,6 +93,9 @@
     position: relative;
 
 } */
+ .bold{
+    font-weight: bold;
+ }
 .tech {
     background-image: linear-gradient(to bottom, gray, black);
 } 
@@ -114,7 +117,6 @@
     width: 95px;
     position: relative;
     top: -40px;
-    left: 5px;
 }
 .w-80{
     width: 80%;
@@ -123,6 +125,15 @@
     background-color: rgba(0, 0, 0, 0.1);
 
 }
+
+.carousel{
+    height: 435px;
+    overflow: hidden;
+}
+
+
+
+
 
 /* 
 
