@@ -49,9 +49,11 @@
 .over {
     overflow: scroll;
 }
-.hidden{
+
+.hidden {
     overflow: hidden;
 }
+
 .bg-s {
     background-color: rgb(241, 241, 241);
 }
@@ -82,57 +84,79 @@
     margin: 0;
 
 }
-.h-30{
+
+.h-30 {
     height: 33%;
 }
-.conatiner-sp{
+
+.conatiner-sp {
     height: 300px;
 }
+
 /* .w-80{
     width: 120%;
     position: relative;
 
 } */
- .bold{
+.bold {
     font-weight: bold;
- }
+}
+
 .tech {
     background-image: linear-gradient(to bottom, gray, black);
-} 
-.tech-img{
+}
+
+.tech-img {
     position: relative;
-    top:9px;
+    top: 9px;
     left: 25px;
-    width: 60px  !important;
+    width: 60px !important;
 }
-.h-70{
+
+.h-70 {
     height: 170px !important;
-    
-}
-.tech-2{
-        background-image: linear-gradient(to top, gray, black);
 
 }
-.chair{
+
+.tech-2 {
+    background-image: linear-gradient(to top, gray, black);
+
+}
+
+.chair {
     width: 95px;
     position: relative;
     top: -40px;
 }
-.w-80{
+
+.w-80 {
     width: 80%;
 }
+
 .bg-sec {
     background-color: rgba(0, 0, 0, 0.1);
 
 }
 
-.carousel{
+.carousel {
     height: 435px;
     overflow: hidden;
 }
 
+.img-per {
+    height: 150px;
+    position: relative;
+    right: 17px;
+    top: -50px;
+}
 
-
+.bg-d{
+    background-color: #020843;
+}
+.card-se {
+    overflow: hidden;
+    height: 130px;
+}
 
 
 /* 
@@ -191,12 +215,6 @@ section {
     }
 }
 
-.img-per {
-    height: 150px;
-    position: relative;
-    right: 17px;
-    top: -50px;
-}
 
 .bold {
     font-weight: bold;
