@@ -36,7 +36,7 @@
 .grid {
 
     display: grid;
-    grid-template-columns: auto  auto;
+    grid-template-columns: auto auto;
     gap: 10px;
     height: 200px;
 }
@@ -61,10 +61,12 @@
 .category {
     width: 150px;
 }
-.special{
+
+.special {
     height: 250px;
 }
-.bg-w{
+
+.bg-w {
     background-image: url("https://i.postimg.cc/KvmqmhY1/471201384-18477082852049339-8860937186606329478-n.jpg");
     height: 280px;
     background-repeat: no-repeat;
@@ -78,10 +80,23 @@
     margin: 0;
 
 }
-.bg-sec{
-        background-color: rgba(0, 0, 0, 0.1);
+.h-30{
+    height: 40%;
+}
+.w-80{
+    width: 120%;
+    position: relative;
 
 }
+.tech {
+    background-image: linear-gradient(to bottom, gray, black);
+} 
+
+.bg-sec {
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+
 /* 
 
 
