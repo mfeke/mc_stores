@@ -91,6 +91,11 @@
 .tech {
     background-image: linear-gradient(to bottom, gray, black);
 } 
+.tech-img{
+    position: relative;
+    top: 10px;
+    left: 4px;
+}
 
 .bg-sec {
     background-color: rgba(0, 0, 0, 0.1);
