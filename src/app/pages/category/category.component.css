@@ -1,0 +1,26 @@
+.button-container::-webkit-scrollbar {
+    width: 0px;
+}
+
+.over {
+    overflow: scroll;
+}
+.br {
+    border-radius: 25px;
+}
+.bg-s{
+  background-color: gainsboro;
+}
+.button-container {
+  display: flex;
+  flex-wrap: nowrap;         /* Prevent wrapping */
+  overflow-x: auto;          /* Scroll if buttons overflow */
+  width: 100%;
+  gap: 0.5rem;                 /* Optional: spacing between buttons */
+}
+
+.button {
+  white-space: nowrap;       /* Prevent text from wrapping */
+  flex: 0 0 auto;            /* Button takes only as much space as it needs */
+  text-align: center;
+}

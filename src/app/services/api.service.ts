@@ -15,5 +15,8 @@ export class ApiService {
   getAllCategories(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/categories/list?lang=en&country=au`, { headers })
   }
+  getSubCatgory(name:any): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/categories/list?lang=en&country=au`, { headers })
+  }
 
 }
