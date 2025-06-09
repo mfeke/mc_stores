@@ -15,14 +15,45 @@
 
 
 }
-.bg{
+
+.bg {
     background-color: blueviolet;
 }
+
 .br-filter {
     border-radius: 0px 25px 25px 0px !important;
     /* border-left: none !important; */
 
 }
-.logo{
+
+.logo {
     width: 100px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    overflow-x: scroll;
+    /* Scroll if buttons overflow */
+    width: 100%;
+    gap: 0.5rem;
+    /* Optional: spacing between buttons */
+}
+
+.text {
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    flex: 0 0 auto;
+    /* Button takes only as much space as it needs */
+    text-align: center;
+}
+
+.button-container::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }
