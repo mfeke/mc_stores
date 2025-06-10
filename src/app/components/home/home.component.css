@@ -90,7 +90,8 @@
 }
 
 .conatiner-sp {
-    height: 300px;
+    height: 280px;
+    overflow: hidden;
 }
 
 /* .w-80{
@@ -243,9 +244,24 @@ section {
     font-size: 15px;
 }
 
+.bg-b {
+    background-color: rgb(0, 0, 0, 0.10);
+}
+
 .grad {
     background-image: linear-gradient(to right, red, rgb(111, 5, 5));
     overflow: hidden;
+}
+
+.bg-img {
+    background-image: url('https://i.postimg.cc/tgqBTd16/download-15.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 540px;
+}
+.bold{
+    font-weight: bold;
 }
 
 .card-scroll-container {
