@@ -221,9 +221,9 @@ section {
 }
 
 .tomato {
-    width: 170px;
+    width: 220px;
     position: relative;
-    right: 10px;
+    right: 40px;
 }
 
 
@@ -245,6 +245,7 @@ section {
 
 .grad {
     background-image: linear-gradient(to right, red, rgb(111, 5, 5));
+    overflow: hidden;
 }
 
 .card-scroll-container {
