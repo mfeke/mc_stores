@@ -150,13 +150,15 @@
     top: -50px;
 }
 
-.bg-d{
+.bg-d {
     background-color: #020843;
 }
+
 .card-se {
     overflow: hidden;
     height: 130px;
 }
+
 section {
     display: grid;
     grid-template-columns: var(--page-margin) [center-start] 1fr [center-end] var(--page-margin);
@@ -232,15 +234,35 @@ section {
 .bg-s {
     background-color: rgb(246, 246, 246);
 }
-.h-10{
+
+.h-10 {
     height: 50px;
 }
-.span-2{
+
+.span-2 {
     font-size: 15px;
 }
+
 .grad {
     background-image: linear-gradient(to right, red, rgb(111, 5, 5));
-} 
+}
+
+.card-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.card-scroll-container::-webkit-scrollbar {
+    width: 0px;
+}
+
+.img {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    height: 220px;
+}
 
 /* 
 
