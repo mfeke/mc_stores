@@ -222,7 +222,7 @@ section {
 
 .tomato {
     width: 170px;
-    position: absolute;
+    position: relative;
     right: 10px;
 }
 
@@ -261,7 +261,7 @@ section {
 .img {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    height: 220px;
+    height: 210px;
 }
 
 /* 
