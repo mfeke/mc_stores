@@ -60,3 +60,19 @@
 .bg-s{
     background-color: gainsboro;
 }
+
+.offcanvas{
+    background-color: rgb(0, 0,0, 0.5);
+}
+.h-90{
+    height: 90%;
+    position: relative;
+    top: 90px;
+}
+.bg-white{
+    background-color: white;
+}
+.close{
+    width: 30px;
+    height: 30px;
+}
