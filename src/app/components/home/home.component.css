@@ -139,7 +139,7 @@
 }
 
 .carousel {
-    height: 435px;
+    height: 415px;
     overflow: hidden;
 }
 
@@ -157,13 +157,6 @@
     overflow: hidden;
     height: 130px;
 }
-
-
-/* 
-
-
-
-
 section {
     display: grid;
     grid-template-columns: var(--page-margin) [center-start] 1fr [center-end] var(--page-margin);
@@ -245,6 +238,16 @@ section {
 .span-2{
     font-size: 15px;
 }
+.grad {
+    background-image: linear-gradient(to right, red, rgb(111, 5, 5));
+} 
+
+/* 
+
+
+
+
+
 
 .block-ellipsis {
   display: block;
@@ -281,6 +284,4 @@ h6 {
 
 
 
-.grad {
-    background-image: linear-gradient(to right, red, rgb(111, 5, 5));
-} */
+*/
