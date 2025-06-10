@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CartComponent } from './components/cart/cart.component';
 import { CategoryComponent } from './pages/category/category.component';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { CategoryComponent } from './pages/category/category.component';
     HomeComponent,
     SignupComponent,
     NavbarComponent,
-    CartComponent,
     CategoryComponent
   ],
   imports: [
