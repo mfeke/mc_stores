@@ -203,10 +203,10 @@
 
             </div>
             <hr class="mb-0">
-            <div class="offcanvas-body scoll px-0 mx-0 pt-2 pb-1">
+            <div class="offcanvas-body  px-0 mx-0 pt-2 pb-1">
                 <div class="contain-main" *ngIf="detail">
                     <div class="d-flex">
-                        <div class="width">
+                        <div class="width scoll">
                             <div class="contain"
                                 *ngFor="let category of listNav ; let i = index ">
                                 <div class="bg-white p-2" *ngIf="i === 0 ">
@@ -231,6 +231,25 @@
                                         class="text-dark text-s text-center mb-0">{{category.name
                                         }}</p>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div
+                                    class="d-flex my-2 justify-content-between">
+                                    <p
+                                        class="text-dark text-s text-center mb-0">SHOP
+                                        ALL</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16" fill="currentColor"
+                                        class="bi bi-chevron-right"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                                    </svg>
+                                </div>
+                                <hr>
                             </div>
                         </div>
                     </div>
