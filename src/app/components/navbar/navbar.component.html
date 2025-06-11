@@ -106,7 +106,7 @@
         </div>
 
         <div class="bg-white w-100 h-100">
-            <div class="container ">
+            <div class="container pt-3">
                 <h4
                     class="text-start mb-0 roboto-slab ">{{name|uppercase}}</h4>
 
@@ -203,17 +203,17 @@
 
             </div>
             <hr class="mb-0">
-            <div class="offcanvas-body scoll px-0 mx-0 pt-3">
+            <div class="offcanvas-body scoll px-0 mx-0 pt-2">
                 <div class="contain-main" *ngIf="detail">
                     <div class="d-flex">
-                        <div class="col-4">
+                        <div class="width">
                             <div class="contain"
                                 *ngFor="let category of listNav ; let i = index ">
                                 <div class="bg-white p-2" *ngIf="i === 0 ">
                                     <div
                                         class="conatiner-imag  d-flex justify-content-center">
                                         <img [src]="category.image" alt
-                                            class=" icon">
+                                            class="mb-2 icon">
 
                                     </div>
                                     <p
@@ -224,7 +224,7 @@
                                     <div
                                         class="conatiner-imag  d-flex justify-content-center">
                                         <img [src]="category.image" alt
-                                            class=" icon">
+                                            class="mb-2 icon">
 
                                     </div>
                                     <p
