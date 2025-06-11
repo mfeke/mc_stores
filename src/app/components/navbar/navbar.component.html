@@ -206,29 +206,31 @@
             <div class="offcanvas-body scoll px-0 mx-0 pt-3">
                 <div class="contain-main" *ngIf="detail">
                     <div class="d-flex">
-                        <div class="contain"
-                            *ngFor="let category of listNav ; let i = index ">
-                            <div class="bg-white p-2" *ngIf="i === 0 ">
-                                <div
-                                    class="conatiner-imag  d-flex justify-content-center">
-                                    <img [src]="category.image" alt
-                                        class=" icon">
+                        <div class="col-4">
+                            <div class="contain"
+                                *ngFor="let category of listNav ; let i = index ">
+                                <div class="bg-white p-2" *ngIf="i === 0 ">
+                                    <div
+                                        class="conatiner-imag  d-flex justify-content-center">
+                                        <img [src]="category.image" alt
+                                            class=" icon">
 
+                                    </div>
+                                    <p
+                                        class="text-dark text-s text-center mb-0">{{category.name
+                                        }}</p>
                                 </div>
-                                <p
-                                    class="text-dark text-s text-center mb-0">{{category.name
-                                    }}</p>
-                            </div>
-                            <div class="bg-s p-2" *ngIf="i !== 0 ">
-                                <div
-                                    class="conatiner-imag  d-flex justify-content-center">
-                                    <img [src]="category.image" alt
-                                        class=" icon">
+                                <div class="bg-s p-2" *ngIf="i !== 0 ">
+                                    <div
+                                        class="conatiner-imag  d-flex justify-content-center">
+                                        <img [src]="category.image" alt
+                                            class=" icon">
 
+                                    </div>
+                                    <p
+                                        class="text-dark text-center mb-0">{{category.name
+                                        }}</p>
                                 </div>
-                                <p
-                                    class="text-dark text-center mb-0">{{category.name
-                                    }}</p>
                             </div>
                         </div>
                     </div>
