@@ -107,8 +107,7 @@
 
         <div class="bg-white w-100 h-100">
             <div class="container pt-3">
-                <h4
-                    class="text-start mb-0 roboto-slab ">{{name|uppercase}}</h4>
+                <h4   class="text-start mb-0 roboto-slab ">{{name|uppercase}}</h4>
 
                 <div class="contain-main" *ngIf="!detail ">
                     <hr>
@@ -125,8 +124,8 @@
                             </svg>
                             <span class="text-black span">Departments</span>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" fill="currentColor"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19"
+                            height="19" fill="currentColor"
                             class="bi bi-chevron-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
@@ -143,8 +142,8 @@
                             </svg>
                             <span class="text-black span">Services</span>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                            height="16" fill="currentColor"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19"
+                            height="19" fill="currentColor"
                             class="bi bi-chevron-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
@@ -203,24 +202,14 @@
 
             </div>
             <hr class="mb-0">
-            <div class="offcanvas-body  px-0 mx-0 pt-2 pb-1">
+            <div class="offcanvas-body  px-0 mx-0 pt-0 pb-1">
                 <div class="contain-main" *ngIf="detail">
                     <div class="d-flex">
                         <div class="width scoll">
                             <div class="contain"
-                                *ngFor="let category of listNav ; let i = index ">
-                                <div class="bg-white p-2" *ngIf="i === 0 ">
-                                    <div
-                                        class="conatiner-imag  d-flex justify-content-center">
-                                        <img [src]="category.image" alt
-                                            class="mb-2 icon">
-
-                                    </div>
-                                    <p
-                                        class="text-dark text-s text-center mb-0">{{category.name
-                                        }}</p>
-                                </div>
-                                <div class="bg-s p-2" *ngIf="i !== 0 ">
+                                *ngFor="let category of listNav ; let i = index " (click)="subcate(category)">
+                                <div class="p-2"
+                                    [ngClass]="{'bg-white bor-l': category.name === objNav.name, 'bg-s': category.name !== objNav.name}">
                                     <div
                                         class="conatiner-imag  d-flex justify-content-center">
                                         <img [src]="category.image" alt
@@ -236,13 +225,13 @@
                         <div class="col">
                             <div class="container">
                                 <div
-                                    class="d-flex my-2 justify-content-between">
+                                    class="d-flex my-3 justify-content-between">
                                     <p
                                         class="text-dark text-s text-center mb-0">SHOP
                                         ALL</p>
                                     <svg xmlns="http://www.w3.org/2000/svg"
-                                        width="16"
-                                        height="16" fill="currentColor"
+                                        width="19"
+                                        height="19" fill="currentColor"
                                         class="bi bi-chevron-right"
                                         viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"

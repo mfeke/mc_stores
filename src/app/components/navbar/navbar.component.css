@@ -8,6 +8,9 @@
     border-radius: 25px 0px 0px 25px !important;
     border-right: none !important;
 }
+.bor-l{
+    border-left: 3px solid black;
+}
 
 .border-none {
     border-left: none !important;
@@ -63,6 +66,7 @@
 }
 .width{
     width: 130px;
+    
 }
 .bg-s {
     background-color: rgb(246, 246, 246);
@@ -75,7 +79,8 @@
 }
 
 .icon {
-    width: 60px;
+    /* width: 60px; */
+    height: 70px;
 }
 
 .h-90 {
@@ -96,4 +101,9 @@
 .scoll{
     height: 460px;
     overflow: scroll;
+
+}
+.scoll::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }

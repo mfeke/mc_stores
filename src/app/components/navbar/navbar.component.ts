@@ -10,24 +10,31 @@ import { CategoryService } from '../../services/category.service';
 export class NavbarComponent implements OnInit {
   name = "Makasana"
   listNav: any[] = []
+  objNav: any
   detail = ""
   constructor(private apiService: ApiService, private categoryService: CategoryService) { }
   ngOnInit() {
 
     this.categoryService.getAllCategories().subscribe({
       next: data => {
-        console.log(data)
+        this.listNav = data
+        if (!this.objNav) {
+          this.objNav = data[0]
 
-        this.listNav  = data
+        }
+        console.log(this.objNav)
       }
     })
 
   }
 
   more(category: any) {
-    console.log(category)
     this.detail = category
   }
+  subcate(sub: any) {
 
+    this.objNav = sub
+
+  }
 
 }
