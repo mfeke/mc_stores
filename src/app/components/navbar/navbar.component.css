@@ -54,14 +54,16 @@
 }
 
 .text-s {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .button-container::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
-
+.width{
+    width: 120px;
+}
 .bg-s {
     background-color: rgb(246, 246, 246);
 }
