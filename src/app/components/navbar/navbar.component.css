@@ -58,13 +58,16 @@
     height: 0px;
 }
 .bg-s{
-    background-color: gainsboro;
+    background-color: rgb(246, 246, 246);
 }
 
 .offcanvas{
     background-color: rgb(0, 0,0, 0.3);
     backdrop-filter: blur(3px);
     /* z-index: 1; */
+}
+.icon{
+    width: 60px;
 }
 .h-90{
     height: 80%;
