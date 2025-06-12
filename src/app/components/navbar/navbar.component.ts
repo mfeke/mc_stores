@@ -19,7 +19,6 @@ export class NavbarComponent implements OnInit {
 
     this.categoryService.getAllCategories().subscribe({
       next: data => {
-        console.log(data.categories)
         this.subCategory = data.categories
       }
     })
@@ -30,7 +29,6 @@ export class NavbarComponent implements OnInit {
           this.objNav = data[0]
 
         }
-        console.log(this.objNav)
       }
     })
 
@@ -40,13 +38,7 @@ export class NavbarComponent implements OnInit {
     this.detail = category
   }
   subcate(sub: any) {
-
     this.objNav = sub
+  }
 
-  }
-  getParentCategory(child: any) {
-    console.log(this.objNav)
-    // if (!child.parent_id?.length) return null;
-    // return this.subCategory.find(cat => cat.parent_id.includes(this.objNav._id));
-  }
 }

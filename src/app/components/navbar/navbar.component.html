@@ -13,7 +13,7 @@
                         d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                 </svg>
                 <!-- <img src="https://i.postimg.cc/vmLxtcRz/114140-usave-website-logo-2022-239x61.png" alt="" class="logo"> -->
-                <h3 class="text mb-0 roboto-slab ">{{name|uppercase}}</h3>
+                <h3 class="text mb-0 roboto-slab " routerLink="/home">{{name|uppercase}}</h3>
             </div>
 
             <div class="d-flex align-items-center">
@@ -226,7 +226,7 @@
                         <div class="col">
                             <div class="container">
                                 <div
-                                    class="d-flex my-2 pt-2 justify-content-between">
+                                    class="d-flex my-2 pt-2 justify-content-between"    data-bs-dismiss="offcanvas" routerLink="/c/{{objNav.categoryValue}}">
                                     <p
                                         class="text-dark text-s text-center mb-0">SHOP
                                         ALL</p>
@@ -243,7 +243,7 @@
                                 <div class="contain"
                                     *ngFor="let category of subCategory">
                                     <div class="contain"
-                                        *ngFor="let parent of category.parent_id">
+                                        *ngFor="let parent of category.parent_id"    data-bs-dismiss="offcanvas" routerLink="/c/{{category.categoryValue}}">
                                         <div class="con" *ngIf="objNav._id === parent">
                                             <div
                                                 class="d-flex align-items-center justify-content-between ">
