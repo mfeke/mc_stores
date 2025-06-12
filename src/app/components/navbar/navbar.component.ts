@@ -45,7 +45,8 @@ export class NavbarComponent implements OnInit {
 
   }
   getParentCategory(child: any) {
-    if (!child.parent_id?.length) return null;
-    return this.subCategory.find(cat => child.parent_id.includes(cat._id));
+    console.log(this.objNav)
+    // if (!child.parent_id?.length) return null;
+    // return this.subCategory.find(cat => cat.parent_id.includes(this.objNav._id));
   }
 }
