@@ -11,7 +11,9 @@
 .bor-l{
     border-left: 3px solid black;
 }
-
+.sub-image{
+    height: 40px;
+}
 .border-none {
     border-left: none !important;
     /* border-right: none !important; */

@@ -10,12 +10,20 @@ import { CategoryService } from '../../services/category.service';
 export class NavbarComponent implements OnInit {
   name = "Makasana"
   listNav: any[] = []
+  subCategory: any[] = []
   objNav: any
   detail = ""
   constructor(private apiService: ApiService, private categoryService: CategoryService) { }
   ngOnInit() {
 
+
     this.categoryService.getAllCategories().subscribe({
+      next: data => {
+        console.log(data.categories)
+        this.subCategory = data.categories
+      }
+    })
+    this.categoryService.getMainCategories().subscribe({
       next: data => {
         this.listNav = data
         if (!this.objNav) {
@@ -36,5 +44,8 @@ export class NavbarComponent implements OnInit {
     this.objNav = sub
 
   }
-
+  getParentCategory(child: any) {
+    if (!child.parent_id?.length) return null;
+    return this.subCategory.find(cat => child.parent_id.includes(cat._id));
+  }
 }
