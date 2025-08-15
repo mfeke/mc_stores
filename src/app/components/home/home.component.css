@@ -24,9 +24,24 @@
   width: 35px;
   height: 35px;
 }
-.bo{
-    border-radius: 0px 0px 20px 20px;
+.bo {
+  border-radius: 0px 0px 20px 20px;
 }
-input::placeholder{
-    color: gainsboro;
+input::placeholder {
+  color: gainsboro;
+}
+.bg-s {
+  background-color: rgb(238, 238, 238);
+}
+.border-none {
+  border: none !important;
+}
+.bold {
+  font-weight: bold;
+}
+.img{
+  height: 180px;
+  position: absolute;
+  right: -10px;
+  top: -14px;
 }
