@@ -1,0 +1,26 @@
+.bold {
+  font-weight: bolder;
+  font-size: 21px;
+}
+.profile {
+  width: 45px;
+  height: 45px;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+}
+.text {
+  font-size: 45px;
+}
+.bor {
+  border-radius: 20px;
+}
+.icon-w {
+  width: 160px;
+  height: 80px;
+}
+.bor-b {
+  border-radius: 0px 0px 20px 20px;
+}
