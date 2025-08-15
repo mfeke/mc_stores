@@ -1,431 +1,66 @@
+<div class="container bg-black text-white py-3 pb-4 bo">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex align-items-center ">
+            <div
+                class="icon d-flex justify-content-center align-items-center rounded-circle bg-dark p-2">
 
-<div class="bg-img w-100 mb-3">
-    <div class="bg-b h-100">
-        <app-navbar></app-navbar>
-        <div class="d-flex mt-5 pt-5 h-50 justify-content-center align-items-center">
-            <h1 class="bold">THIS IS MAKASANA</h1>
-
-        </div>
-
-    </div>
-    
-</div>
-<div class="container">
-    <div class="d-flex justify-content-between align-items-end mb-2">
-        <h5 class="text mb-0">TRENDING </h5>
-        <span class="link text-secondary mb-0">SEE ALL</span>
-    </div>
-    <div class="row">
-        <div id="carouselExample" class="carousel slide mb-3">
-            <div class="carousel-inner">
-                <div *ngFor="let product of list; let i = index"
-                    class="carousel-item"
-                    [class.active]="i === 0">
-                    <div class="col-12 mb-3">
-                        <div class="bg-s text-white p-3 ">
-                            <img
-                                [src]="product.img"
-                                alt class="w-100 bg-transparent bg-mix">
-
-                        </div>
-                        <p
-                            class="block-ellipsis bold my-2 mx-0 bold text-truncate">{{product.title}}</p>
-                        <div class="d-flex">
-                            <span class="text-black me-3 span-2">R
-                                {{product.price}}</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <button
-                class="carousel-control-prev  me-1" (click)="sub()"
-                *ngIf=" currentIndex  > 1"
-                type="button"
-                data-bs-target="#carouselExample" data-bs-slide="prev">
-                <div class="bg-dark d-flex align-items-center p-1 mb-2">
-                    <span class="carousel-control-prev-icon"
-                        aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </div>
-            </button>
-            <button class="carousel-control-next   me-1"
-                *ngIf="list.length  !== currentIndex"
-                type="button"
-                data-bs-target="#carouselExample" data-bs-slide="next"
-                (click)="add()">
-                <div class="bg-dark d-flex align-items-center p-1 ">
-                    <span class="carousel-control-next-icon  bg-dark "
-                        aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </div>
-
-            </button>
-        </div>
-    </div>
-    <div class="d-flex justify-content-between align-items-end mb-2">
-        <h5 class="text mb-0 ">GREATEST OFFER</h5>
-        <span class="link text-secondary mb-0">SEE ALL</span>
-    </div>
-    <div class="row ">
-        <div class="col-12 mb-3">
-            <div class="bg-s text-white p-3 ">
-                <img
-                    src="https://i.postimg.cc/B6mbDmQ4/HETER-PRODUCTS-removebg-preview.png"
-                    alt class="w-100 bg-mix">
-
-            </div>
-            <p class="block-ellipsis bold my-2 mx-0">CADAC 3 PANEL 4100W GAS
-                HEATER WITH A PIEZO IGINITION</p>
-            <div class="d-flex">
-                <span class="text-black me-3 span-2">R 1,299.00</span>
-                <span class="  me-3 span-2 text-danger line">R 299.99</span>
-
-            </div>
-        </div>
-        <div class="col-12 mb-2">
-            <div class="bg-s text-white p-3">
-                <img
-                    src="https://i.postimg.cc/BtW8smmB/stock-removebg-preview.png"
-                    alt class="w-100 bg-mix">
-            </div>
-            <p class="block-ellipsis bold my-2 mx-0">Stork Country 40% Fat
-                Spread 1kg</p>
-            <div class="d-flex">
-                <span class="text-black me-3 span-2">R 47.99</span>
-                <span class="  me-3 span-2 text-danger line">R 59.99</span>
-
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="card-scroll-container">
-    <div class="grad w-100 img p container align-items-center py-3">
-        <div class="d-flex pt-3">
-            <div class="col-8">
-                <span class="text-white span"> Hurry Up! Get 20% Off</span>
-                <h2 class="text-white">Fresh food everyday fro focofresh</h2>
-                <button type="button" class="btn bg-white br py-1 mt-2">
-                    <span class="span px-3 ">SHOP NOW</span>
-
-                </button>
-            </div>
-            <div class="col">
-                <div class="img-con">
-                    <img src="https://i.postimg.cc/ZqS4sqPs/Tomato.png" alt
-                        class="tomato mt-3">
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <img
-        src="https://i.postimg.cc/J4Hkxtgv/17495406459887718371010959929352.jpg"
-        alt class="w-100 img ">
-    <img src="https://i.postimg.cc/9XSG6z4P/download-13.jpg"
-        alt class="w-100 img  ">
-
-</div>
-
-<div class="container   conatiner-sp my-2  ">
-    <div class="h-100 t text-white">
-        <div class="grid h-100 ">
-
-            <div class="w-100 ">
-                <div class="col h-30  ">
-                    <div class="tech p-2 h-100 rounded ">
-                        <div class="col h-50">
-                            <h6 class="text-white">STAY CONNECTED. STAY
-                                AHEAD</h6>
-
-                        </div>
-                        <div class="d-flex h-50 align-items-end pb-2 ">
-                            <div class="col">
-                                <span class="link">SHOP NOW</span>
-
-                            </div>
-                            <div class="col-6 d-flex align-items-end ">
-                                <img
-                                    src="https://i.postimg.cc/g05kDVg3/Kanto-YU2-MB-PC-Gaming-Desktop-Speakers-3-Composite-Drivers-3-4-Silk-Dome-Tweeter-Class-D-Amp.png"
-                                    class="w-100 tech-img">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="h-70 bg-light w-100  mt-2">
-                    <div class="bg-sec  p-2 pb-0 rounded h-100">
-                        <div class="w-100 h-50">
-                            <h6 class="w-80">UP TO 20% OFF FURNITURE & MORE</h6>
-                        </div>
-                        <div class="h-70 d-flex align-items-end pb-5">
-                            <div class="col-6  mb-5">
-                                <span class="link">SHOP NOW</span>
-
-                            </div>
-                            <div class="col">
-                                <img
-                                    src="https://i.postimg.cc/qqxTMHVw/download-12-removebg-preview.png"
-                                    alt class="chair pb-0">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="h-100">
-                <div class="bg-w rounded ">
-                    <div
-                        class="bg-sec rounded h-100 p-3 d-flex align-items-end">
-                        <div class="contain">
-                            <h4 class="text-white w-50">WINTER STYLE</h4>
-                            <span class="link">SHOP NOW</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- 
-
-<div class="bg-img mb-3">
-    <div class="bg h-100 d-flex align-items-end w-100 p-3 py-2 text-white">
-        <div class="col-7">
-            <h3 class="text-white mb-2">{{title|uppercase }}</h3>
-            <span class="link">SHOP NOW</span>
-        </div>
-
-    </div>
-</div>
-<div class="over ">
-    <div class="d-flex container over mb-3 ">
-        <div
-            class="br p-3 py-1 catgory bg-dark text-white me-2  d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="22"
-                height="22"
-                viewBox="0 0 24 24"><path fill="currentColor"
-                    d="M3 7c0-.55.45-1 1-1h16c.55 0 1-.45 1-1s-.45-1-1-1H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h3c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1-.45-1-1zm9 5h-2c-.55 0-1 .45-1 1v.78c-.61.55-1 1.33-1 2.22s.39 1.67 1 2.22V19c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-.78c.61-.55 1-1.34 1-2.22s-.39-1.67-1-2.22V13c0-.55-.45-1-1-1m-1 5.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5s1.5.67 1.5 1.5s-.67 1.5-1.5 1.5M22 8h-6c-.5 0-1 .5-1 1v10c0 .5.5 1 1 1h6c.5 0 1-.5 1-1V9c0-.5-.5-1-1-1m-1 10h-4v-8h4z" />
-            </svg>
-            <span>Eletronics</span>
-        </div>
-        <div
-            class="br p-3 py-1 catgory bg-dark text-white me-2  d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="me-1" width="22"
-                height="22"
-                viewBox="0 0 24 24"><path fill="currentColor"
-                    d="M16 21q-2.077 0-3.538-1.461T11 16t1.462-3.538T16 11t3.539 1.462T21 16t-1.461 3.539T16 21m0-1q1.65 0 2.825-1.175T20 16t-1.175-2.825T16 12t-2.825 1.175T12 16t1.175 2.825T16 20M4.615 19q-.69 0-1.153-.462T3 17.384v-6.868q0-.2.076-.458t.151-.458l2.23-4.985h-.803q-.329 0-.51-.181t-.183-.511v-.23q0-.33.182-.511T4.653 3h5.693q.329 0 .51.182t.183.51v.231q0 .329-.182.51t-.51.182h-.805l2.497 5.647q-.206.115-.41.274t-.406.356L8.469 4.616H6.531L4 10.342v7.042q0 .27.173.443t.443.173h4.673q.067.275.173.528q.107.253.234.472zM16 9.616q-.646-.174-1.073-.697T14.5 7.692q0-.703.427-1.227q.427-.523 1.073-.696zq.173-.647.696-1.074t1.227-.427t1.227.427t.696 1.074z" />
-            </svg>
-            <span>Groceries</span>
-        </div>
-        <div
-            class="br p-3 py-1  bg-dark text-white">
-            <div class="d-flex  category">
-                <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="22"
-                    height="22"
-                    viewBox="0 0 24 24"><path fill="currentColor"
-                        d="M5 22L1 11l5-3V2h4v6l5 3l-4 11zm12 0q-.425 0-.712-.288T16 21t.288-.712T17 20h3v-2h-3q-.425 0-.712-.288T16 17t.288-.712T17 16h3v-2h-3q-.425 0-.712-.288T16 13t.288-.712T17 12h3v-2h-3q-.425 0-.712-.288T16 9t.288-.712T17 8h3V6h-3q-.425 0-.712-.288T16 5t.288-.712T17 4h4q.825 0 1.413.588T23 6v14q0 .825-.587 1.413T21 22zM6.4 20h3.2l2.95-8.15L9.45 10h-2.9l-3.1 1.85zM8 15" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                    fill="currentColor"
+                    class="bi bi-geo-alt"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                    <path
+                        d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                 </svg>
-                <span>Beauty & Health</span>
             </div>
-
+            <div class="container">
+                <span class="span mb-1">Location</span>
+                <p class="bolder mb-0 span text-white">Manenberg, Cape Town</p>
+            </div>
         </div>
+        <div
+            class="icon d-flex justify-content-center align-items-center rounded-circle bg-dark p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                fill="currentColor"
+                class="bi bi-basket"
+                viewBox="0 0 16 16">
+                <path
+                    d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5" />
+            </svg>
+        </div>
+
     </div>
 
-    <div class="container mb-1">
-        <div class="d-flex justify-content-between">
-            <h5 class="text mb-2">WINTER DEALS</h5>
-            <span class="link text-secondary">SEE ALL</span>
-        </div>
-        <div class="row ">
-            <div class="col-12 mb-3">
-                <div class="bg-s text-white p-3 ">
-                    <img
-                        src="https://i.postimg.cc/B6mbDmQ4/HETER-PRODUCTS-removebg-preview.png"
-                        alt class="w-100 bg-mix">
-
-                </div>
-                <p class="block-ellipsis bold my-2 mx-0">CADAC 3 PANEL 4100W GAS
-                    HEATER WITH A PIEZO IGINITION</p>
-                <div class="d-flex">
-                    <span class="text-black me-3 span-2">R 1,299.00</span>
-                    <span class="  me-3 span-2 text-danger line">R 299.99</span>
-
-                </div>
-            </div>
-            <div class="col-12 mb-2">
-                <div class="bg-s text-white p-3">
-                    <img
-                        src="https://i.postimg.cc/76t7DHz3/header-20-removebg-preview.png"
-                        alt class="w-100 bg-mix">
-                </div>
-                <p class="block-ellipsis bold my-2 mx-0">GOLDEIT WHITE FAN
-                    HEATER
-                    Heater GFH-2000A</p>
-                <div class="d-flex">
-                    <span class="text-black me-3 span-2">R 269.99</span>
-                    <span class="  me-3 span-2 text-danger line">R 299.99</span>
-
-                </div>
-            </div>
-
-        </div>
+    <div class="container py-4">
+        <h1 class="mozilla-headline ">What are you going <br> to eat today?</h1>
     </div>
+    <div class="bg-dark d-flex text-white border bor">
+        <div class="d-flex justify-content-center align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
+                fill="currentColor" class="bi mx-2 ms-3  bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            </svg>
+        </div>
 
-</div>
-<div class="container   conatiner-sp  ">
-    <div class="h-100 t text-white">
-        <div class="grid h-100 ">
-
-            <div class="w-100 ">
-                <div class="col h-30  ">
-                    <div class="tech p-2 h-100 rounded ">
-                        <div class="col h-50">
-                            <h6 class="text-white">STAY CONNECTED. STAY
-                                AHEAD</h6>
-
-                        </div>
-                        <div class="d-flex h-50 align-items-end pb-2 ">
-                            <div class="col">
-                                <span class="link">SHOP NOW</span>
-
-                            </div>
-                            <div class="col-6 d-flex align-items-end ">
-                                <img
-                                    src="https://i.postimg.cc/g05kDVg3/Kanto-YU2-MB-PC-Gaming-Desktop-Speakers-3-Composite-Drivers-3-4-Silk-Dome-Tweeter-Class-D-Amp.png"
-                                    class="w-100 tech-img">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="h-70 bg-light w-100  mt-2">
-                    <div class="bg-sec  p-2 pb-0 rounded h-100">
-                        <div class="w-100 h-50">
-                            <h6 class="w-80">UP TO 20% OFF FURNITURE & MORE</h6>
-                        </div>
-                        <div class="h-70 d-flex align-items-end pb-5">
-                            <div class="col-6  mb-5">
-                                <span class="link">SHOP NOW</span>
-
-                            </div>
-                            <div class="col">
-                                <img
-                                    src="https://i.postimg.cc/qqxTMHVw/download-12-removebg-preview.png"
-                                    alt class="chair pb-0">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="h-100">
-                <div class="bg-w rounded ">
-                    <div
-                        class="bg-sec rounded h-100 p-3 d-flex align-items-end">
-                        <div class="contain">
-                            <h4 class="text-white w-50">WINTER STYLE</h4>
-                            <span class="link">SHOP NOW</span>
-                        </div>
-
-                    </div>
-                </div>
+        <input type="text" class="bg-dark text-white bor-none form-control">
+        <div
+            class="bg-white d-flex justify-content-center ps align-items-center bor d-flex justify-content-center">
+            <span
+                class="text-black mx-2 ps-3">Filter</span>
+            <div
+                class="i-icon bg-info d-flex rounded-circle justify-content-center align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                    fill="currentColor" class="bi  bg-info  bi-filter"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                </svg>
             </div>
 
         </div>
-
     </div>
 
 </div>
-<div class="container mb-3">
-    <div class="bg-d bg-gradient container mb-3  p-4 card-se ">
-        <div class="d-flex">
-            <div class="col-8">
-                <h5 class="text-white">BUY ANY 2 <br> SAVE 10%</h5>
-
-                <span class="text-white span bold">SHOP FAST FOOD MEAL</span>
-            </div>
-            <div class="col">
-                <div class="img-con">
-                    <img
-                        src="https://i.postimg.cc/gjJMH1Mk/Essen-Recipes-removebg-preview.png"
-                        alt
-                        class="img-per mt-3">
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    
-    
-    
-<div class="container w-100 mt-3">
-    <section>
-        <div class="cards-wrapper">
-
-            <div class="card p-2 bg rounded">
-                <h6> Barkery</h6>
-                <img
-                    src="https://i.postimg.cc/NMDvsthD/Bakery-removebg-preview.png"
-                    alt
-                    class="img-catgory bg-mix">
-            </div>
-            <div class="card p-2 bg rounded ">
-                <h6> Butchery & Meat</h6>
-
-                <img
-                    src="https://i.postimg.cc/W1cYmD0h/Butchery-Meat-removebg-preview.png"
-                    alt
-                    class="img-catgory bg-mix">
-            </div>
-            <div class="card p-2 bg rounded ">
-                <div class="card-pro"></div>
-                <h6>FRUIT & VEG</h6>
-                <img src="https://i.postimg.cc/X7f0d6tc/fuit-and-veg.png" alt
-                    class="img-catgory bg-mix">
-            </div>
-            <div class="card p-2 bg rounded ">
-                <h6> Chocolates & Snacks</h6>
-
-                <img
-                    src="https://i.postimg.cc/brJ5PPCk/download-10-removebg-preview.pngg"
-                    alt
-                    class="img-catgory bg-mix">
-            </div>
-            <div class="card p-2 bg rounded ">
-                <h6> Beverages</h6>
-
-                <img
-                    src="https://i.postimg.cc/HxR734y5/drinks.png"
-                    alt
-                    class="img-catgory bg-mix">
-            </div>
-            <div class="card p-2 bg rounded">
-                <h6>Dairy & Eggs</h6>
-                <img
-                    src="https://i.postimg.cc/rs2GFvLn/Premium-Photo-Dairy-and-protein-products-concept-removebg-preview.png"
-                    alt
-                    class="img-catgory bg-mix">
-            </div>
-        </div>
-    </section> 
-
-
-
-
-
-
-    
-    
-    </div>
-</div> -->
