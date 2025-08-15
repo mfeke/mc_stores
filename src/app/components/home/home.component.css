@@ -39,12 +39,19 @@ input::placeholder {
 .bold {
   font-weight: bold;
 }
-.img{
+.img {
   height: 190px;
   position: absolute;
   right: -12px;
   top: -14px;
 }
-.over{
+.over {
   overflow: hidden;
+}
+.food {
+  width: 35px;
+}
+.bolder {
+  font-weight: 400;
+  font-size: 14px;
 }
