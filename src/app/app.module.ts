@@ -4,24 +4,11 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { SignupComponent } from './components/signup/signup.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { CategoryComponent } from './pages/category/category.component';
-import { CartComponent } from './pages/cart/cart.component';
-import { LoginComponent } from './pages/login/login.component';
-import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    SignupComponent,
-    NavbarComponent,
-    CategoryComponent,
-    CartComponent,
-    LoginComponent,
-    ProfileComponent
+    
   ],
   imports: [
     BrowserModule,
