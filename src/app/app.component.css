@@ -7,6 +7,17 @@
     overflow: hidden;
 }
 
+.bg-url{
+    background-image: url('https://i.postimg.cc/k4CyPpdQ/1786716684465-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+}
+.bg-w{
+    background: linear-gradient( to right ,rgb(128, 128, 128, 0.9), rgb(255, 255, 255 , 0.3));
+
+}
 .roboto-slab {
     font-family: "Arimo", sans-serif;
     font-optical-sizing: auto;
@@ -58,9 +69,11 @@
     height: 360px;
 
 }
-.line{
+
+.line {
     text-decoration: line-through;
 }
-.name{
+
+.name {
     font-weight: 300;
 }
