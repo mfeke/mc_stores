@@ -58,3 +58,9 @@
     height: 360px;
 
 }
+.line{
+    text-decoration: line-through;
+}
+.name{
+    font-weight: 300;
+}
