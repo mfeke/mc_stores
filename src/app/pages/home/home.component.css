@@ -1,0 +1,87 @@
+.bg-url {
+    background-image: url('https://i.postimg.cc/k4CyPpdQ/1786716684465-2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 250px;
+}
+
+.bg-w {
+    background: linear-gradient(to right, rgb(128, 128, 128, 0.9), rgb(255, 255, 255, 0.3));
+
+}
+
+.roboto-slab {
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.text-head {
+    font-size: 35px;
+}
+
+.arrow {
+    width: 45px;
+    height: 45px;
+}
+
+.text-font {
+    font-size: 13px;
+}
+
+.ro-b {
+    width: 110% ! important;
+    transform: rotate(8deg);
+    position: absolute;
+    left: -5px;
+
+}
+
+.up {
+    width: 110%;
+    transform: rotate(7deg);
+    position: relative;
+    left: -5px;
+}
+
+.up-1 {
+    transform: rotate(25deg);
+    position: relative;
+    left: 50px
+}
+
+.down-1 {
+    position: relative;
+    transform: rotate(-28deg);
+    left: 35px;
+    top: -30px;
+    width: 110%;
+
+}
+
+.down {
+    width: 110%;
+    transform: rotate(-7deg);
+    position: relative;
+    left: -5px;
+}
+
+.h-0 {
+    height: 110px !important;
+}
+
+.over {
+    overflow: hidden !important;
+    height: 360px;
+
+}
+
+.line {
+    text-decoration: line-through;
+}
+
+.name {
+    font-weight: 300;
+}
