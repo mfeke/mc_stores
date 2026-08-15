@@ -52,7 +52,19 @@
     position: relative;
     left: -5px;
 }
+.up-1{
+    transform: rotate(25deg);
+    position: relative;
+    left:50px
+}
+.down-1{
+    position: relative;
+    transform: rotate(-28deg);
+    left:35px;
+    top:-30px;
+    width:110% ;
 
+}
 .down {
     width: 110%;
     transform: rotate(-7deg);
