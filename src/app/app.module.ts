@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ViewPdComponent } from './pages/view-pd/view-pd.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { DetailsPdComponent } from './pages/details-pd/details-pd.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DetailsPdComponent } from './pages/details-pd/details-pd.component';
     ViewPdComponent,
     FilterComponent,
     DetailsPdComponent,
+    CartComponent,
     
   ],
   imports: [
