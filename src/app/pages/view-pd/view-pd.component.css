@@ -7,6 +7,9 @@
 .bold{
     font-weight:bold;
 }
+.w-90{
+    width: 90% !important;
+}
 .span{
     font-size:14px;
 }

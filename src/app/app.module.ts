@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ViewPdComponent } from './pages/view-pd/view-pd.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { DetailsPdComponent } from './pages/details-pd/details-pd.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { ViewPdComponent } from './pages/view-pd/view-pd.component';
     NavbarComponent,
     HomeComponent,
     ViewPdComponent,
+    FilterComponent,
+    DetailsPdComponent,
     
   ],
   imports: [

@@ -1,21 +1,35 @@
 <app-navbar></app-navbar>
 <div class="d-flex border-bottom">
     <div class="col-6 border-end py-3">
-        <p class="text-center mb-0">SORT</p>
+        <a class="btn w-100 p-0" data-bs-toggle="offcanvas" href="#offcanvasExampleq" role="button"
+            aria-controls="offcanvasExample">
+            <p class="text-center mb-0">SORT</p>
+        </a>
     </div>
     <div class="col-6 py-3">
-        <p class="text-center mb-0">FILTER</p>
+        <a class="btn w-100 p-0" data-bs-toggle="offcanvas" href="#offcanvasExampleq" role="button"
+            aria-controls="offcanvasExample">
+            <p class="text-center mb-0">FILTER</p>
+        </a>
     </div>
 </div>
 <div class="container">
+    <div class="d-flex justify-content-between align-items-center pt-3">
+        <h6 class="text mb-0  bold">DIRTY FROG. X JUMP CITY</h6>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi text-secondary bi-grid-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z" />
+        </svg>
+    </div>
     <div class="comtsin py-3">
         <div class="row">
-            <div class="col-6">
+            <div class="col">
                 <div class="bg-dark p-1">
                     <img src="https://i.postimg.cc/Z55xWj7n/1786881238907.jpg" alt="" class="w-100">
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col">
                 <div class="py-2">
                     <p class="bol title">$ACRY HOUR$ REFLECTIVE SHORT</p>
                     <div class="d-flex">
@@ -28,6 +42,29 @@
                 </div>
             </div>
         </div>
-        
+
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end w-90" tabindex="-1" id="offcanvasExampleq" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header align-items-center">
+        <h6 class="text  mb-0 bold">MEN JACKETS</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists,
+            etc.
+        </div>
+        <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
     </div>
 </div>
