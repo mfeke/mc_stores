@@ -1,0 +1,28 @@
+.w {
+    width: 90%;
+}
+
+.text {
+
+
+    font-family: 'Syne Mono', monospace;
+
+    line-height: 1.6;
+    color: #111111;
+}
+
+.bold{
+    font-weight: bold;
+}
+.logo{
+    width:150px;
+}
+.contain{
+    height:100px;
+}
+.span{
+    font-size:12px;
+} 
+.line{
+    text-decoration: underline;
+}

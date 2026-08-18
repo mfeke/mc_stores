@@ -1,0 +1,28 @@
+.text-detail,
+.text {
+
+
+    font-family: 'Syne Mono', monospace;
+    color: #111111;
+}
+.bold{
+    font-weight: bold;
+}
+.span{
+    font-size: 12px;
+}
+.himg{
+    height: 160px;
+}
+.line{
+    text-decoration: underline;
+}
+.total{
+    font-size: 15px;
+}
+.br{
+    border-radius: 0px !important;
+}
+.h-0{
+    height:0px !important;
+}
