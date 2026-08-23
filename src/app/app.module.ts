@@ -13,6 +13,7 @@ import { DetailsPdComponent } from './pages/details-pd/details-pd.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { VerifyComponent } from './pages/verify/verify.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { VerifyComponent } from './pages/verify/verify.component';
     CartComponent,
     LoginComponent,
     VerifyComponent,
+    LoadingComponent,
     
   ],
   imports: [

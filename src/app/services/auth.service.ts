@@ -13,11 +13,11 @@ const httpOptions = {
 export class AuthService {
 
 
-   jwtb_url = "https://streetfeverapi.vercel.app/"
+   private jwtb_url = "https://streetfeverapi.vercel.app/"
 
   constructor(private http: HttpClient) { }
   login(body: any): Observable<any> {
-    return this.http.post(`${this.jwtb_url}api/auth/signin` ,body,
+    return this.http.post(`${this.jwtb_url}api/auth/signup` ,body,
    httpOptions);
   }
 

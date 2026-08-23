@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { TokenService } from '../../services/token.service';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +10,14 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   email?:string
 
-  message:any
+  
   err: boolean= false
 
-  ngOnInit(){
+  constructor(
+    private authServices: AuthService,
+    private tokenService: TokenService
 
-  }
+  ){}
   submit(){
     let vail = isValidEmail(this.email)
     if(!this.email || vail === false ){
@@ -22,7 +26,12 @@ export class LoginComponent {
 
       return 
     }
-    this.message = isValidEmail(this.email)
+    this.authServices.login({email:this.email}).subscribe({
+      next:(data) =>{
+        
+
+      }
+    })
   }
   changEmail(){
    if (this.email){
