@@ -21,6 +21,7 @@ export class LoginComponent {
 
   ){}
   submit(){
+    
     let vail = isValidEmail(this.email)
     if(!this.email || vail === false ){
 
@@ -28,10 +29,11 @@ export class LoginComponent {
 
       return 
     }
+    this.loading = true
     this.authServices.login({email:this.email}).subscribe({
       next:(data) =>{
         this.tokenService.saveToken(data.accessToken)
-        this.router.navigate([`/vc/${data.id}`])
+        this.router.navigate([`/vc/${data.accessToken}`])
       }
     })
   }

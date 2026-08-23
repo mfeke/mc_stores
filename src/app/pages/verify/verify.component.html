@@ -2,14 +2,43 @@
 
 
     <div class="h-40 container bg-light br py-3 d-flex w-100 align-items-end flex-column">
-        <div class="py-2 w-100">
+        <div class="d-flex align-items-center py-2 w-100">
+        
+            <img src="https://i.postimg.cc/KYLGNLfT/1000084994-removebg-preview.png" alt="logo" class="logo">
 
-
-            <h5 class="text mb-0">VERIFY ACCOUNT</h5>
+            
+            <h6 class="text mb-0">VERIFY ACCOUNT</h6>
         </div>
         <div class="mt-auto w-100">
             <h2 class="text mb-3 bold">Exclusive Deals. Seamless Checkout.</h2>
             <p class="text span text-secondary">Fast delivery, secure payments, and personalized recommendations—all in one place.</p>
         </div>
     </div>
+    <div class="input-container">
+          <!-- Use template reference variables (#input1, #input2, etc.) -->
+            <input 
+                type="text" 
+                    maxLength="1" 
+                        [(ngModel)]="val1" 
+                            (ngModelChange)="onInputChange($event, null, input2)" 
+                                (keydown)="onKeyDown($event, null, input1)"
+                                    #input1 />
+
+                                      <input 
+                                          type="text" 
+                                              maxLength="1" 
+                                                  [(ngModel)]="val2" 
+                                                      (ngModelChange)="onInputChange($event, input1, input3)" 
+                                                          (keydown)="onKeyDown($event, input1, input2)"
+                                                              #input2 />
+
+                                                                <input 
+                                                                    type="text" 
+                                                                        maxLength="1" 
+                                                                            [(ngModel)]="val3" 
+                                                                                (ngModelChange)="onInputChange($event, input2, null)" 
+                                                                                    (keydown)="onKeyDown($event, input2, input3)"
+                                                                                        #input3 />
+                                                                                        </div>
+                                                                                        
 </div>
