@@ -3,16 +3,19 @@
     <img src="https://i.postimg.cc/SxkPGWv0/1000084994-removebg-preview.png" alt="" class="logo">
 </div>
     <h3 class="text text-center bold">Join the Fashion Collective</h3>
+    {{message}}
 </div>
 <div class="fixed-botto">
 
     <div class="container pb-3">
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" [(ngModel)]="email"  placeholder="name@example.com">
-            <label for="floatingInput">Email address </label>
+            <input type="email" [(ngModel)]="email" class="form-control" [class.is-invalid.text-danger]="err !== false" 
+            id="floatingInput" (ngModelChange)="changEmail()" placeholder="name@example.com">
+            <label [class.text-danger]="err !== false" for="floatingInput">Email address </label>
         </div>
 
-        <button type="button" class="btn text-white btn-dark py-3 text w-100">
+        <button type="button" class="btn text-white btn-dark py-3 text w-100"
+         (click)="submit()">
             CONTINUE WITH EMAIL
         </button>
         <div class="d-flex  align-items-center my-3">
@@ -46,4 +49,4 @@
 </div>
 <div class="fixed-bottom text-center">
     <p class="span text">By joining our site means your agree with <span class="line">Teams of use</span> and <span class="line">Privacy policy</span></p>
-</div>
+</div> 
