@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { TokenService } from '../../services/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,14 @@ import { TokenService } from '../../services/token.service';
 })
 export class LoginComponent {
   email?:string
-
+  loading: boolean= false
   
   err: boolean= false
 
   constructor(
     private authServices: AuthService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private router:Router
 
   ){}
   submit(){
@@ -28,8 +30,8 @@ export class LoginComponent {
     }
     this.authServices.login({email:this.email}).subscribe({
       next:(data) =>{
-        
-
+        this.tokenService.saveToken(data.accessToken)
+        this.router.navigate([`/vc/${data.id}`])
       }
     })
   }

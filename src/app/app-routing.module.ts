@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'view', component:ViewPdComponent},
   {path:"pd", component:DetailsPdComponent},
   { path:"basket", component:CartComponent},
-  {path:"verify", component: VerifyComponent}
+  {path:"vc/:id", component: VerifyComponent}
 ];
 
 @NgModule({
