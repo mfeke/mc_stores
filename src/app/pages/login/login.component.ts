@@ -33,7 +33,7 @@ export class LoginComponent {
     this.authServices.login({email:this.email}).subscribe({
       next:(data) =>{
         this.tokenService.saveToken(data.accessToken)
-        this.router.navigate([`/vc/${data.accessToken}`])
+        this.router.navigate([`/vc/${data.id}`])
       }
     })
   }
