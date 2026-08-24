@@ -1,6 +1,6 @@
 <div class="fixed-top vh-100">
-    
-    <div class="h-40 container  br py-3 d-flex w-100 align-items-end flex-column">
+
+    <div class="h-40 container  br py- d-flex w-100 align-items-end flex-column">
         <div class="d-flex align-items-center py-2 w-100">
 
             <img src="https://i.postimg.cc/KYLGNLfT/1000084994-removebg-preview.png" alt="logo" class="logo">
@@ -8,26 +8,28 @@
 
             <h6 class="text mb-0">VERIFY ACCOUNT</h6>
         </div>
+
         <div class="mt-auto w-100">
             <h2 class="text mb-3 bold">Exclusive Deals. Seamless Checkout.</h2>
             <p class="text span text-secondary">"Jump with the Boys" is an upcoming streetwear and casual apparel brand
                 designed for trendy, high-energy everyday style.</p>
+
         </div>
     </div>
     <div class="container d-flex" *ngIf="email">
+        <p class="bg-light p-1 px-2 mb-3 span text-secondary rounded">{{email}}</p>
+    </div>
+    <div class="container placeholder-wave mb-3" *ngIf="!email">
+        <div class=" placeholder bg-s span px-2 rounded w-50">mm</div>
+    </div>
 
-        <p class="bg-light p-1 px-2 span text-secondary rounded">{{email}}</p>
-    </div>
-    <div class="d-flex container placeholder-wave " *ngIf="!email">
-        <p class=" placeholder bg-s p-1 px-2 w-50  span rounded"> mnd </p>
-    </div>
     <div class="input-container container justify-content-between d-flex" *ngIf="email">
 
         <input type="number" class="form-control text-center bg-light" [attr.disabled]="val1" maxLength="1"
             [(ngModel)]="val1" (ngModelChange)="onInputChange($event, null, input2)"
             (keydown)="onKeyDown($event, null, input1)" #input1 />
 
-        <input type="number" class="form-control text-center bg-light" maxLength="1" [attr.disabled]="val2"
+        <input type="number" class="form-control text-center bg-light" maxLength="1" [attr.disabled.]="val2"
             [(ngModel)]="val2" (ngModelChange)="onInputChange($event, input1, input3)"
             (keydown)="onKeyDown($event, input1, input2)" #input2 />
 
@@ -38,24 +40,26 @@
         <input type="number" maxlength="1" class="text-center form-control bg-light" [(ngModel)]="val4"
             (ngModelChange)="onInputChange($event,input3,null)" (keydown)="onKeyDown($event, input3, input4)" #input4>
     </div>
-
-    <div class="d-flex justify-content-between container ju" *ngIf="!email">
-
-
+    <div class="d-flex container justify-content-between" *ngIf="!email">
         <div class="placeholder-wave">
-            <div class="bg-s input placeholder rounded"></div>
+            <div class="placeholder input bg-s"></div>
         </div>
         <div class="placeholder-wave">
-            <div class="bg-s input placeholder rounded"></div>
+            <div class="placeholder input bg-s"></div>
         </div>
         <div class="placeholder-wave">
-            <div class="bg-s input placeholder rounded"></div>
+            <div class="placeholder input bg-s"></div>
         </div>
-
         <div class="placeholder-wave">
-            <div class="bg-s input placeholder rounded"></div>
+            <div class="placeholder input bg-s"></div>
         </div>
     </div>
+    <div class="d-flex pt-3 container justify-content-between">
+        <p class="span bg-light  px-2 rounded p-1">0:40</p>
+        <p class="span text-secondary">Didn't get a code. <span class="text-black bold">Click to resend</span></p>
+
+    </div>
+
 
 
     {{num}}

@@ -41,7 +41,7 @@ export class VerifyComponent {
     this.authService.isVerifyCode(value).subscribe({
       next: (data) => {
 
-        this.num = data.code
+        
 
       },
       error: (err) => {
@@ -62,7 +62,7 @@ export class VerifyComponent {
     }
     if (!nextEl) {
       this.loading = true
-      this.email = ""
+      
       let code = Number(this.list.join(''))
       this.isVerifyCode(code)
     }

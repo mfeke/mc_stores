@@ -20,7 +20,7 @@
     font-weight:bold;
 }
 .h-40{
-    height:43%;
+    height:40%;
 }
 .span{
     font-size:15px;
@@ -28,6 +28,7 @@
 input, .input{
     width:70px;
     height:70px;
+    border-radius: 15px;
 }
 .bg-s{
     background: #D3D3D3 !important;
