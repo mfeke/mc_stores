@@ -25,7 +25,11 @@
 .span{
     font-size:15px;
 }
-input{
+input, .input{
     width:70px;
     height:70px;
+}
+.bg-s{
+    background: #D3D3D3 !important;
+    color: #D3D3D3;
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TokenService } from './token.service';
+import { AnimationKeyframesSequenceMetadata } from '@angular/animations';
 
 
 const httpOptions = {
@@ -43,5 +44,16 @@ export class AuthService {
 
     return this.http.get(`${this.jwtb_url}api/auth/getUser`, httpOption)
   }
+  isVerifyCode(code:any):Observable<any> {
+    let token = this.tokenService.getToken()
 
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-access-token': `${token}`
+      })
+    }
+
+    return this.http.get(`${this.jwtb_url}api/verify/getCode/${code}`, httpOption)
+  }
 }

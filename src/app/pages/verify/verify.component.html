@@ -1,6 +1,5 @@
 <div class="fixed-top vh-100">
-
-
+    
     <div class="h-40 container  br py-3 d-flex w-100 align-items-end flex-column">
         <div class="d-flex align-items-center py-2 w-100">
 
@@ -11,17 +10,18 @@
         </div>
         <div class="mt-auto w-100">
             <h2 class="text mb-3 bold">Exclusive Deals. Seamless Checkout.</h2>
-            <p class="text span text-secondary">Fast delivery, secure payments, and personalized recommendations—all in
-                one place.</p>
-
-            <div class="d-flex">
-
-
-                <p class="bg-light p-1 px-2 span text-secondary rounded">{{email}}</p>
-            </div>
+            <p class="text span text-secondary">"Jump with the Boys" is an upcoming streetwear and casual apparel brand
+                designed for trendy, high-energy everyday style.</p>
         </div>
     </div>
-    <div class="input-container container justify-content-between d-flex">
+    <div class="container d-flex" *ngIf="email">
+
+        <p class="bg-light p-1 px-2 span text-secondary rounded">{{email}}</p>
+    </div>
+    <div class="d-flex container placeholder-wave " *ngIf="!email">
+        <p class=" placeholder bg-s p-1 px-2 w-50  span rounded"> mnd </p>
+    </div>
+    <div class="input-container container justify-content-between d-flex" *ngIf="email">
 
         <input type="number" class="form-control text-center bg-light" [attr.disabled]="val1" maxLength="1"
             [(ngModel)]="val1" (ngModelChange)="onInputChange($event, null, input2)"
@@ -39,7 +39,26 @@
             (ngModelChange)="onInputChange($event,input3,null)" (keydown)="onKeyDown($event, input3, input4)" #input4>
     </div>
 
+    <div class="d-flex justify-content-between container ju" *ngIf="!email">
 
+
+        <div class="placeholder-wave">
+            <div class="bg-s input placeholder rounded"></div>
+        </div>
+        <div class="placeholder-wave">
+            <div class="bg-s input placeholder rounded"></div>
+        </div>
+        <div class="placeholder-wave">
+            <div class="bg-s input placeholder rounded"></div>
+        </div>
+
+        <div class="placeholder-wave">
+            <div class="bg-s input placeholder rounded"></div>
+        </div>
+    </div>
+
+
+    {{num}}
 </div>
 
 <app-loading *ngIf="loading"></app-loading>
