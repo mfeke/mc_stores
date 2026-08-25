@@ -1,1 +1,42 @@
-<p>create-account works!</p>
+<div class="container pt-5">
+    <p class="text bold">CREATE ACCOUNT</p>
+    <p class="text bold">NEW MEMBER</p>
+
+
+    <p class="text"> BY CREATING AN ACCOUNT WITH OUR STORE, YOU WILL BE ABLE TO MOVE THROUGH THE CHECKOUT PROCESS
+        FASTER, STORE MULTIPLE SHIPPING ADDRESSES, VIEW AND TRACK YOUR ORDERS IN YOUR ACCOUNT AND MORE.
+        FIELDS LABELED WITH AN ASTERISK (*) ARE REQUIRED.
+    </p>
+    <div class="d-flex bold">
+        <p class="text me-3">1/2</p>
+        <p class="text">DETAILS</p>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" [(ngModel)]="user.firstName" class="form-control"
+            [class]="{'form-control': !user.firstName || user.firstName, 'is-invalid': errMess.firstName}"
+            id="floatingInputName" placeholder="john">
+        <label class="text" [class.text-danger]="errMess.firstName" for="floatingInputName">FIRST NAME*</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" [(ngModel)]="user.lastName" class="form-control"
+            [class]="{'form-control': !user.lastName || user.lastName, 'is-invalid': errMess.lastName , 'bor-danger': errMess.lastName}"
+            id="floatingInputLast" placeholder="Mask">
+        <label class="text" [class.text-danger]="errMess.lastName" for="floatingInputLast">LAST NAME*</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="email" [(ngModel)]="user.email" class="form-control"
+            [class]="{'form-control': !user.email || user.email, 'is-invalid': errMess.email}" id="floatingInput"
+            placeholder="name@example.com">
+        <label class="text" [class.text-danger]="errMess.email" for="floatingInput">EMAIL ADDRESS*</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" [(ngModel)]="user.pass"
+            [class]="{'form-control': !errMess.pass || errMess.pass, 'is-invalid': errMess.pass , 'bor-danger': errMess.pass}"
+            class="form-control" id="floatingPassword" placeholder="Password">
+        <label class="text" [class.text-danger]="errMess.pass" for="floatingPassword mx-0 text px-0">PASSWORD*</label>
+    </div>
+    <button type="button" 
+            class="btn bold text border mb-2 border-black br py-2 btn-primary w-100">SIGN UP</button>
+                <button type="button" class="btn bold text br border w-100 text-secondary py-2">CREATE ACCOUNT</button>
+
+</div>

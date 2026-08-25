@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   email!: any
-  user= {
+  user = {
     email: "",
     pass: ""
   }
   loading: boolean = false
 
-  err: boolean = false
+  errShow: boolean = false
   errEmail: boolean = false
   errPass: boolean = false
   constructor(
@@ -29,47 +29,56 @@ export class LoginComponent {
 
     let vail = isValidEmail(this.user.email)
 
-    
-    if(!this.user.email || !vail ){
+
+    if (!this.user.email || !vail) {
 
       this.errEmail = true
     }
-    
-    
+
+
     if (!this.user.pass) {
-    this.errPass = true
+      this.errPass = true
       return
 
     }
-    
+
     this.loading = true
-    //this.authServices.login({email:this.email}).subscribe({
-    // next:(data) =>{
-    //   this.tokenService.saveToken(data.accessToken)
-    //  this.router.navigate([`/vc/${data.id}`])
-    //}
-    //})
+    this.authServices.isLogin(this.user).subscribe({
+      next:data=>{
+        if(data){
+          this.tokenService.saveToken(data.accessToken)
+          this.router.navigate([`vc/${data.id}`])
+        }
+      },
+      error:(err) =>{
+       if(err.error.accessToken === null){
+        this.loading = false
+        this.errShow = true
+
+       }
+      },
+    })
   }
   isChangeOn() {
     if (this.user.email) {
       this.errEmail = false
-      
+
     }
-    if(!this.user.email){
+    if (!this.user.email) {
 
       this.errEmail = true
-      
+
     }
   }
-    isChangePass(){
+  isChangePass() {
     if (this.user.pass) {
       this.errPass = false
-      
+
     }
-    
+
 
   }
-  
+
 }
 function isValidEmail(email: any) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

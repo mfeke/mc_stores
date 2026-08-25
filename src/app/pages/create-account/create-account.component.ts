@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrl: './create-account.component.css'
 })
 export class CreateAccountComponent {
-
+ user = {
+  firstName:"",
+  lastName:"",
+  email:"",
+  pass:""
+ }
+ errMess = {
+  firstName: false,
+  lastName:false,
+  email:false,
+  pass:false
+ }
 }

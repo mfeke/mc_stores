@@ -1,17 +1,24 @@
-<div class="container">
-    <div class="container-img">
-        <!---
-        <img src="https://i.postimg.cc/t4K7DLS0/1000084994-removebg-preview.png" alt="" class="img">
-    -->
+<div class="pt-4 fixed-top">
+
+
+    <div class="toast border-danger align-items-center" [class.show]="errShow" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                <p class="span mb-0 text-danger" >The provided credentials are invalid, check for spelling mistakes in your password or  email address </p>
+            </div>
+            <button type="button" class="btn-close text-danger me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
     </div>
+
 </div>
+
 <div class="container pt-5">
     <p class="text bold">LOGIN</p>
     <p class="text bold">REGISTERED MEMBER</p>
     <p class="text">PLEASE PROVIDE THE EMAIL ADDRESS AND PASSWORD ASSOCIATED WITH THE ACCOUNT. IF YOU'RE HAVING TROUBLE,
         PLEASE USE THE PROMPT BELOW TO RESET YOUR PASSWORD. <br>
         FIELDS LABELED WITH AN ASTERISK (*) ARE REQUIRED. </p>
- 
+
     <div class="form-floating mb-3">
         <input type="email" [(ngModel)]="user.email" class="form-control"
             [class]="{'form-control': !user.email || user.email, 'is-invalid': errEmail , 'bor-danger': errEmail}"
@@ -20,8 +27,9 @@
     </div>
     <p class="span text-danger" *ngIf="errEmail">This looks wrong. Check your email address.</p>
     <div class="form-floating mb-3">
-        <input type="password" (ngModelChange)="isChangePass()" [(ngModel)]="user.pass" [class]="{'form-control': !errPass || errPass, 'is-invalid': errPass , 'bor-danger': errPass}"  class="form-control"
-            id="floatingPassword" placeholder="Password">
+        <input type="password" (ngModelChange)="isChangePass()" [(ngModel)]="user.pass"
+            [class]="{'form-control': !errPass || errPass, 'is-invalid': errPass , 'bor-danger': errPass}"
+            class="form-control" id="floatingPassword" placeholder="Password">
         <label class="text" [class.text-danger]="errPass" for="floatingPassword mx-0 text px-0">PASSWORD*</label>
     </div>
     <p class="span text-danger" *ngIf="errPass">Enter your password</p>

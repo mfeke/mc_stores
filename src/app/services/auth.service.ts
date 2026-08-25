@@ -25,8 +25,8 @@ export class AuthService {
     private tokenService: TokenService
 
   ) { }
-  login(body: any): Observable<any> {
-    return this.http.post(`${this.jwtb_url}api/auth/signup`, body,
+  isLogin(body: any): Observable<any> {
+    return this.http.post(`${this.jwtb_url}api/auth/signin`, body,
       httpOptions);
   }
 

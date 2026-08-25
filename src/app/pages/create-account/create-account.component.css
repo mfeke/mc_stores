@@ -1,0 +1,36 @@
+img {
+    width: 60px;
+    height: 60px;
+}
+
+.text {
+    font-family: 'Syne Mono', monospace !important;
+    font-size: 14px !important;
+    color: #111111;
+}
+
+.br {
+    border-radius: 0px !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 0px;
+    border: none;
+    border-bottom: #111111 1px solid;
+}
+
+.bor-danger {
+    border-bottom: red solid 1px;
+}
+
+.span {
+    font-size: 12px;
+}
+
+.line {
+    text-decoration: underline;
+}

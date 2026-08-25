@@ -6,12 +6,14 @@ import { DetailsPdComponent } from './pages/details-pd/details-pd.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { VerifyComponent } from './pages/verify/verify.component';
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 const routes: Routes = [
   
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path:'home', component: HomeComponent },
   {path:"login", component:LoginComponent}, 
+  {path:"create", component:CreateAccountComponent},
   {path:'view', component:ViewPdComponent},
   {path:"pd", component:DetailsPdComponent},
   { path:"basket", component:CartComponent},
