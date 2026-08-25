@@ -1,3 +1,25 @@
+.card-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.card {
+    position: sticky;
+    top:0px;
+    /* Distance from top of viewport when stuck */
+    width: 90%;
+    min-width: 100%;
+    min-height:70vh;
+    background-color: #ffffff;
+}
+
+/* Optional: Incremental top offsets to reveal card edges */
+
+
+
+
 .bg-url {
     background-image: url('https://i.postimg.cc/k4CyPpdQ/1786716684465-2.jpg');
     background-position: center center;
