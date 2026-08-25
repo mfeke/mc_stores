@@ -1,3 +1,21 @@
+<div class="pt-4 fixed-top container">
+
+
+    <div class="toast border-danger align-items-center" [class.show]="errShow" role="alert" aria-live="assertive"
+        aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                <p class="span mb-0 text-danger">An account with this email address already exists. Try signing in or
+                    resetting your password.</p>
+            </div>
+            <button type="button" class="btn-close text-danger me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+
+</div>
+
+
 <div class="container pt-5">
     <p class="text bold">CREATE ACCOUNT</p>
     <p class="text bold">NEW MEMBER</p>
@@ -17,26 +35,37 @@
             id="floatingInputName" placeholder="john">
         <label class="text" [class.text-danger]="errMess.firstName" for="floatingInputName">FIRST NAME*</label>
     </div>
+
+    <p class="span text-danger" *ngIf="errMess.firstName">Enter your first name </p>
     <div class="form-floating mb-3">
         <input type="text" [(ngModel)]="user.lastName" class="form-control"
             [class]="{'form-control': !user.lastName || user.lastName, 'is-invalid': errMess.lastName , 'bor-danger': errMess.lastName}"
             id="floatingInputLast" placeholder="Mask">
         <label class="text" [class.text-danger]="errMess.lastName" for="floatingInputLast">LAST NAME*</label>
     </div>
+
+    <p class="span text-danger" *ngIf="errMess.lastName">Enter your last name</p>
     <div class="form-floating mb-3">
         <input type="email" [(ngModel)]="user.email" class="form-control"
-            [class]="{'form-control': !user.email || user.email, 'is-invalid': errMess.email}" id="floatingInput"
-            placeholder="name@example.com">
+            [class]="{'form-control': !user.email || user.email, 'is-invalid':errMess.email, 'bor-danger': errMess.email}"
+            id="floatingInput" placeholder="name@example.com">
         <label class="text" [class.text-danger]="errMess.email" for="floatingInput">EMAIL ADDRESS*</label>
     </div>
+    <p class="span text-danger" *ngIf="errMess.email">This looks wrong. Check your email address.</p>
+
+
     <div class="form-floating mb-3">
         <input type="password" [(ngModel)]="user.pass"
             [class]="{'form-control': !errMess.pass || errMess.pass, 'is-invalid': errMess.pass , 'bor-danger': errMess.pass}"
             class="form-control" id="floatingPassword" placeholder="Password">
         <label class="text" [class.text-danger]="errMess.pass" for="floatingPassword mx-0 text px-0">PASSWORD*</label>
     </div>
-    <button type="button" 
-            class="btn bold text border mb-2 border-black br py-2 btn-primary w-100">SIGN UP</button>
-                <button type="button" class="btn bold text br border w-100 text-secondary py-2">CREATE ACCOUNT</button>
+
+    <p class="span text-danger" *ngIf="errMess.pass">Enter your password</p>
+    <button type="button" (click)="submit()"
+        class="btn bold text border mb-2 border-black br py-2 btn-primary w-100">SIGN UP</button>
+    <button type="button" class="btn bold text br border w-100 text-secondary py-2">CREATE ACCOUNT</button>
 
 </div>
+
+<app-loading *ngIf="loading"></app-loading>

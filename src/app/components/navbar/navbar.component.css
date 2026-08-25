@@ -1,8 +1,15 @@
 .logo {
-    width: 75px;
+    width: 55px;
 }
 
-.container-img {
-    height: 40px;
+.img-container {
+    height: 45px;
+    
     overflow: hidden;
+}
+.icon{
+    width: 45px;
+    height:45px
+    
+
 }

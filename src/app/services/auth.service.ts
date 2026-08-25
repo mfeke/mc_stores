@@ -29,6 +29,10 @@ export class AuthService {
     return this.http.post(`${this.jwtb_url}api/auth/signin`, body,
       httpOptions);
   }
+  isCreateAccount(body: any): Observable<any> {
+    return this.http.post(`${this.jwtb_url}api/auth/signup`, body,
+      httpOptions);
+  }
 
   getUser(): Observable<any> {
     let token = this.tokenService.getToken()
@@ -44,7 +48,7 @@ export class AuthService {
 
     return this.http.get(`${this.jwtb_url}api/auth/getUser`, httpOption)
   }
-  isVerifyCode(code:any):Observable<any> {
+  isVerifyCode(code: any): Observable<any> {
     let token = this.tokenService.getToken()
 
     let httpOption = {
