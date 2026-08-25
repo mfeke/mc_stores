@@ -1,12 +1,42 @@
-<!----
-    <app-navbar></app-navbar>
--->
+<app-navbar></app-navbar>
 <div class="card-stack">
-    <div class="vh-100 card bg-dark">
+    <div class="card vh-80 bg-dark bg-img" [style.background-image]="'url(' + imageUrl + ')'">
+        <div class="bg-b w-100 h-100 d-flex justify-content-center align-items-center text-white">
+            <div class="contain">
+                <p class="span text-whitetext">DIRTY FROG. X JUMP CITY</p>
+                <button type="button" class="btn w-100 btn-black text text-white under span">SHOP NOW</button>
+            </div>
 
+        </div>
     </div>
-    <div class="bg-danger card vh-100">
-
+    <div class="bg-white card card-one  bg-img">
+        <div class="container d-flex justify-content-between py-3">
+            <p class="text bold mb-0">NEW ARRIVALS</p>
+            <p class="span text text-secondary mb-0 under">View All</p>
+        </div>
+        <div class="d-flex container">
+            <div class="item w-80">
+                <div class="item-container bg-black p-1">
+                    <img src="https://i.postimg.cc/yYyMy2N6/1786943671807.jpg" alt="" class="w-100">
+                </div>
+                <h5 class="text pt-2">CLASSIC HOODIE - HEATHER GREY</h5>
+                <p class="text bold">2000 ZAR</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="bg-dark">
+                <img src="https://i.postimg.cc/c4JzfhvK/1787687297222.jpg" alt="" class="w-100 bg-black p-1">
+            </div>
+            <div class="d-flex justify-content-between py-3">
+                <p class="text bold">ACCESSORIES</p>
+                <p class="text text-secondary under">SHOP NOW</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="bg-black p-1">
+                <img src="https://i.postimg.cc/Qt1RFdY2/1787689133728.jpg" alt="" class="w-100 bg-white">
+            </div>
+        </div>
     </div>
 </div>
 

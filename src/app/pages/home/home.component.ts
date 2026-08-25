@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  imageUrl = "https://i.postimg.cc/brZm0j75/1787668656127.jpg"
 }

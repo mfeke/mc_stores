@@ -2,18 +2,60 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
+}
+
+.bg-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.bg-b {
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.under {
+    text-decoration: underline;
 }
 
 .card {
     position: sticky;
-    top:0px;
+    top: 0px;
     /* Distance from top of viewport when stuck */
     width: 90%;
     min-width: 100%;
-    min-height:70vh;
+    min-height: 80vh;
     background-color: #ffffff;
+    border-radius: 0px;
 }
+
+.vh-80 {
+    height: 80vh;
+}
+
+.text {
+    font-family: 'Syne Mono', monospace !important;
+    font-size:14px !important;
+    color: #111111;
+}
+.card-one{
+    top:100px;
+
+}
+.w-80{
+    width:80%;
+}
+.br {
+    border-radius: 0px !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 
 /* Optional: Incremental top offsets to reveal card edges */
 
