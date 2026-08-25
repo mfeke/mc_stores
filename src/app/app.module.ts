@@ -14,6 +14,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { VerifyComponent } from './pages/verify/verify.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     LoginComponent,
     VerifyComponent,
     LoadingComponent,
+    CreateAccountComponent,
     
   ],
   imports: [

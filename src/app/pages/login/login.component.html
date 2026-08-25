@@ -11,17 +11,23 @@
     <p class="text">PLEASE PROVIDE THE EMAIL ADDRESS AND PASSWORD ASSOCIATED WITH THE ACCOUNT. IF YOU'RE HAVING TROUBLE,
         PLEASE USE THE PROMPT BELOW TO RESET YOUR PASSWORD. <br>
         FIELDS LABELED WITH AN ASTERISK (*) ARE REQUIRED. </p>
-
+ 
     <div class="form-floating mb-3">
-        <input type="email" class="form-control" [class]="{'form-control': !errEmail || errEmail, 'is-invalid': errEmail , 'bor-danger': errEmail}" id="floatingInput" placeholder="name@example.com">
-        <label class="text" for="floatingInput">EMAIL ADDRESS*</label>
+        <input type="email" [(ngModel)]="user.email" class="form-control"
+            [class]="{'form-control': !user.email || user.email, 'is-invalid': errEmail , 'bor-danger': errEmail}"
+            id="floatingInput" (ngModelChange)="isChangeOn()" placeholder="name@example.com">
+        <label class="text" [class.text-danger]="errEmail" for="floatingInput">EMAIL ADDRESS*</label>
     </div>
     <p class="span text-danger" *ngIf="errEmail">This looks wrong. Check your email address.</p>
-    <div class="form-floating mb-5">
-        <input type="password" [(ngModel)]="user.email" [class.is-invalid.border-b]="user.email" class="form-control" id="floatingPassword" placeholder="Password">
+    <div class="form-floating mb-3">
+        <input type="password" (ngModelChange)="isChangePass()" [(ngModel)]="user.pass" [class]="{'form-control': !errPass || errPass, 'is-invalid': errPass , 'bor-danger': errPass}"  class="form-control"
+            id="floatingPassword" placeholder="Password">
         <label class="text" [class.text-danger]="errPass" for="floatingPassword mx-0 text px-0">PASSWORD*</label>
     </div>
-    <p class="span text-danger" *ngIf="errPass" >Enter your password</p>
-    <button type="button" (click)="submit()" class="btn bold text border mb-2 border-black br py-2 btn-primary w-100">SIGN IN</button>
+    <p class="span text-danger" *ngIf="errPass">Enter your password</p>
+    <button type="button" (click)="submit()"
+        class="btn bold text border mb-2 border-black br py-2 btn-primary w-100">SIGN IN</button>
     <button type="button" class="btn bold text br border w-100 text-secondary py-2">CREATE ACCOUNT</button>
 </div>
+
+<app-loading *ngIf="loading"></app-loading>
