@@ -42,7 +42,7 @@
     color: #111111;
 }
 .card-one{
-    top:100px;
+    max-width: 200vh;
 
 }
 .w-80{

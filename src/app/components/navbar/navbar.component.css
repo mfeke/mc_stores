@@ -13,3 +13,11 @@
     
 
 }
+.bg-menu{
+background-color: rgb(0, 0, 0 ,0.4);
+backdrop-filter: blur(40px);
+}
+.bg{
+    background:rgb(0, 0, 0 ,0.6);
+    backdrop-filter: blur(50px); 
+}

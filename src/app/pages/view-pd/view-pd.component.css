@@ -4,16 +4,26 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-.bold{
-    font-weight:bold;
+
+.bold {
+    font-weight: bold;
 }
-.w-90{
+
+.w-90 {
     width: 90% !important;
 }
-.span{
-    font-size:14px;
+
+.span {
+    font-size: 14px;
 }
-.icon{
-    height:15px;
-    width:15px;
+
+.icon {
+    height: 15px;
+    width: 15px;
+}
+
+.text {
+    font-family: 'Syne Mono', monospace !important;
+    font-size: 14px !important;
+    color: #111111;
 }

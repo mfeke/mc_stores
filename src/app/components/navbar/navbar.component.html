@@ -1,10 +1,12 @@
-<div class="d-flex justify-content-between container py-3 bg-dark text-white fixed-top">
+<div class="d-flex justify-content-between container py-3 bg  text-white fixed-top"
+    [class.bg-white.text-black]="isScrolled">
 
     <div class="img-container d-flex justify-content-center align-items-center ">
         <img src="https://i.postimg.cc/ZR2RR84L/1000085015-removebg-preview.png" alt="" class="logo">
     </div>
     <div class="d-flex">
-        <div class="icon d-flex justify-content-center align-items-center">
+        <div class="icon d-flex justify-content-center align-items-center" role="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
                 <path d="M0 0h24v24H0z" fill="none" />
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -30,7 +32,59 @@
     </div>
 </div>
 
-<div class="d-flex justify-content-between container py-3 bg-dark text-white ">
+<div class="offcanvas offcanvas-end bg-menu text-white" [class.bg-white.text-black]="isScrolled" tabindex="-1"
+    id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header justify-content-end">
+        <div class="icon d-flex justify-content-center align-items-center bg-black" role="button" data-bs-dismiss="offcanvas">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
+                viewBox="0 0 16 16">
+                <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+            </svg>
+        </div>
+        
+    </div>
+    <div class="offcanvas-body px-0">
+        <div class="container py-4">
+            <div class="container d-flex justify-content-between">
+                <p class="text-blwck bold mb-0">SHOP NOW</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </div>
+        </div>
+        <div class=" container py-4">
+            <div class="container">
+                <p class="mb-0">DIRTY FROG. X JUMP</p>
+            </div>
+        </div>
+        <div class=" container py-4">
+            <div class="container">
+                <p class="mb-0">HOODIES</p>
+            </div>
+        </div>
+        <div class="fixed-bottom   ">
+            <div class=" container py-4">
+                <div class="container">
+                    <p class=" mb-0">SOCIAL</p>
+                </div>
+            </div>
+            <div class="container py-4">
+                <div class="container" routerLink="/login" data-bs-dismiss="offcanvas">
+                    <p class="text-b mb-0">ACCOUNT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="d-flex justify-content-between container py-3 bg text-white ">
 
     <div class="img-container d-flex justify-content-center align-items-center ">
         <img src="https://i.postimg.cc/ZR2RR84L/1000085015-removebg-preview.png" alt="" class="logo">
