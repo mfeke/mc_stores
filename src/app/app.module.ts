@@ -16,6 +16,7 @@ import { VerifyComponent } from './pages/verify/verify.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,7 @@ import { CreateAccountComponent } from './pages/create-account/create-account.co
     LoginComponent,
     VerifyComponent,
     LoadingComponent,
-    CreateAccountComponent,
+    CreateAccountComponent
     
   ],
   imports: [
