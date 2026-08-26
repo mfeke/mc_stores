@@ -1,5 +1,5 @@
-<div class="d-flex justify-content-between container py-3 bg  text-white fixed-top"
-    [class.bg-white.text-black]="isScrolled">
+<div class="d-flex justify-content-between container py-3   fixed-top"
+    [ngClass]="{ 'bg-white': isScrolled, 'bg text-white': !isScrolled }">
 
     <div class="img-container d-flex justify-content-center align-items-center ">
         <img src="https://i.postimg.cc/ZR2RR84L/1000085015-removebg-preview.png" alt="" class="logo">
