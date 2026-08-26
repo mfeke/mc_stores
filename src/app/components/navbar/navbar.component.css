@@ -17,7 +17,21 @@
 background-color: rgb(0, 0, 0 ,0.4);
 backdrop-filter: blur(40px);
 }
+.bar {
+
+    height:80px !important;
+
+}
+input {
+    border:none;
+    border-bottom: 1px solid black;
+    height: 45px;
+    border-radius: 0px;
+}
 .bg{
     background:rgb(0, 0, 0 ,0.6);
     backdrop-filter: blur(50px); 
+}
+.close-s{
+    width: 60px !important;
 }
