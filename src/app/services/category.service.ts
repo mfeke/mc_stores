@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 export class CategoryService {
   apiUrl = "https://streetfeverapi.vercel.app/api/category"
   constructor(private http: HttpClient) { }
-
+isCreateCategory(body:any):Observable<any>{
+  return this.http.post(`${this.apiUrl}/createCategory`, body)
+}
   getMainCategories(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/getMainCategory`)
   }

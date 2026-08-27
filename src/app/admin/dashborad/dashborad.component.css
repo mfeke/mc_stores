@@ -1,0 +1,34 @@
+.logo {
+    width: 55px;
+}
+
+.img-container {
+    height: 45px;
+
+    overflow: hidden;
+}
+
+.icon {
+    width: 45px;
+    height: 45px
+}
+
+.add {
+    font-size: 20px;
+}
+
+.add-cate {
+    height: 130px;
+    border-radius: 10px 10px 0px 0px;
+}
+.over {
+    overflow-x: auto;
+    
+}
+.span{
+    font-size: 14px;
+}
+.main{
+    height: 40px !important;
+    
+}

@@ -1,0 +1,123 @@
+<div class="d-flex bg justify-content-between container py-3  bg-dark text-white ">
+
+
+    <div class="img-container d-flex justify-content-center align-items-center " routerLink="/home">
+        <img src="https://i.postimg.cc/ZR2RR84L/1000085015-removebg-preview.png" alt="" class="logo">
+    </div>
+    <div class="d-flex">
+
+        <div class="icon d-flex justify-content-center align-items-center" role="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 15h18M3 9h18" />
+            </svg>
+        </div>
+
+
+    </div>
+</div>
+<div class="container py-3">
+    {{message}}
+    <div class="over w-100">
+        <table class="table text-secondary text-nowrap table-striped table-hover">
+            <thead>
+                <tr>
+
+                    <th scope="col">Category</th>
+                    <th scope="col ">Category Slug</th>
+                    <th scope="col">No of Product</th>
+                    
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let category of categories">
+                <tr>
+                    <th scope="row">
+                        <div class="main d-flex align-items-center n">
+                            <div class="contain">
+                                {{category.name}}
+                            </div>
+                        </div>
+                    </th>
+                    <td>
+                        <div class="main d-flex align-items-center">
+                            <div class="contain">
+                                {{category.name|replace: ' ' : '-'| lowercase}}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center  main">
+                            <div class="contain">
+                                4
+                            </div>
+                        </div>
+                    </td>
+                    
+                    <td class="action ">
+                        <div class="d-flex main align-items-center justify-content-center action-con ">
+                            <div class="con">
+                                <div class="btn border h-100">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                        class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                        </div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="vh-100 fixed-top d-flex justify-content-center align-items-center d-" *ngIf="!categories">
+    <div class="h-50">
+        <img src="https://i.postimg.cc/brKm6STN/images-(1).jpg" alt="" class="w-100">
+        {{message}}
+    </div>
+
+</div>
+
+<div class="fixed-bottom d-flex container justify-content-end pb-3">
+    <div class="con dropdown">
+
+
+        <button type="button" class="btn icon add btn-primary" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="text">+</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
+                    aria-controls="offcanvasBottom">Create Category</a></li>
+            <li><a class="dropdown-item">Add Product</a></li>
+
+        </ul>
+    </div>
+
+</div>
+
+<div class="offcanvas add-cate offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
+    aria-labelledby="offcanvasBottomLabel">
+
+    <div class="offcanvas-body small">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" (ngModelChange)="onInputChange($event)"
+                (keydown)="onKeyDown($event)" #input [(ngModel)]="category.name"
+                [ngClass]="{'is-invalid': errCategory.name}" id="floatingInputCategory" placeholder="NEW ARRIVALS">
+            <label for="floatingInputCategory">CATEGORY NAME* </label>
+        </div>
+
+    </div>
+    <div class="d-flex container justify-content-end JUS">
+        <p class="text-primary btn me-3" data-bs-dismiss="offcanvas">CANCEL</p>
+        <p class="text-secondary btn" role="button" data-bs-dismiss="offcanvas" [class.text-black]="category.name"
+            (click)="isCreateCategory()">SEND</p>
+    </div>
+</div>
+
+<app-loading *ngIf="loading"></app-loading>
