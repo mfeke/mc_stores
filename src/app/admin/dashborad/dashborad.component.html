@@ -28,7 +28,7 @@
                     <th scope="col">Category</th>
                     <th scope="col ">Category Slug</th>
                     <th scope="col">No of Product</th>
-                    
+
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -55,17 +55,25 @@
                             </div>
                         </div>
                     </td>
-                    
+
                     <td class="action ">
                         <div class="d-flex main align-items-center justify-content-center action-con ">
-                            <div class="con">
-                                <div class="btn border h-100">
+                            <div class="con dropdown">
+                                <div class="btn border h-100" data-bs-toggle="dropdown" aria-expanded="false">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
                                         class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
                                         <path
                                             d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
                                     </svg>
                                 </div>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" data-bs-toggle="offcanvas"
+                                            data-bs-target="#offcanvasBottomSub" aria-controls="offcanvasBottom"
+                                            (click)="isSelected(category._id)"
+                                            >Sub Category</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
                             </div>
 
                         </div>
@@ -99,6 +107,27 @@
         </ul>
     </div>
 
+</div>
+
+<!-- Sub Category-->
+<div class="offcanvas add-cate offcanvas-bottom" tabindex="-1" id="offcanvasBottomSub"
+    aria-labelledby="offcanvasBottomLabel">
+
+    <div class="offcanvas-body small">
+        
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" (ngModelChange)="onInputChange($event)"
+                (keydown)="onKeyDown($event)" #input [(ngModel)]="category.name"
+                [ngClass]="{'is-invalid': errCategory.name}" id="floatingInputCategory" placeholder="NEW ARRIVALS">
+            <label for="floatingInputCategory">SUB CATEGORY NAME* </label>
+        </div>
+
+    </div>
+    <div class="d-flex container justify-content-end JUS">
+        <p class="text-primary btn me-3" data-bs-dismiss="offcanvas">CANCEL</p>
+        <p class="text-secondary btn" role="button" data-bs-dismiss="offcanvas" [class.text-black]="category.name"
+            (click)="isCreateSubCategory()">SEND</p>
+    </div>
 </div>
 
 <div class="offcanvas add-cate offcanvas-bottom" tabindex="-1" id="offcanvasBottom"

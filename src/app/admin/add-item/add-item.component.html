@@ -1,0 +1,84 @@
+<div class="container py-3 align-item-center bg-secondary w-100 d-flex justify-content-between">
+
+    <div class="d-flex align-item-center">
+        <h6 class="text bold mb-0">ADD ITEM</h6>
+    </div>
+
+    <p class="span bold mb-0">SAVE</p>
+</div>
+<div class="container">
+
+    <!----
+    <div class="image-upload-wrapper py-3">
+        
+        <label for="image-input" class="card w-100 p-3 custom-file-upload">
+
+            <span>Upload Image</span>
+        </label>
+    
+        <input id="image-input" type="file" accept="image/*" />
+    </div>
+-->
+    <div class="form-">
+
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInputTitle" placeholder="Black tees">
+            <label for="floatingInputTitle">NAME OF PRODUCT*</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingInputPrice" placeholder="3000">
+            <label for="floatingInputPrice">PRICE*</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingInputSale" placeholder="1000">
+            <label for="floatingInputSale">SALE PRICE</label>
+        </div>
+
+        <div class="description mb-3">
+            <div class="editor-container">
+                <div class="toolbar">
+                    <button type="button" (click)="format('bold')" title="Bold"><b>B</b></button>
+                    <button type="button" (click)="format('italic')" title="Italic"><i>I</i></button>
+                    <button type="button" (click)="format('underline')" title="Underline"><u>U</u></button>
+                    <button type="button" (click)="format('strikeThrough')" title="Strikethrough"><del>S</del></button>
+
+                    <div class="separator"></div>
+
+                    <button type="button" (click)="format('justifyLeft')" title="Align Left">Left</button>
+                    <button type="button" (click)="format('justifyCenter')" title="Align Center">Center</button>
+                    <button type="button" (click)="format('justifyRight')" title="Align Right">Right</button>
+
+                    <div class="separator"></div>
+
+                    <button type="button" (click)="format('insertUnorderedList')" title="Bullet List">• List</button>
+                    <button type="button" (click)="format('insertOrderedList')" title="Numbered List">1. List</button>
+                </div>
+
+                <div #editor class="editor form-control" contenteditable="true" [attr.data-placeholder]="placeholder"
+                    (input)="onInput()">
+
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn border" (click)="addColour()">+</button>
+        <div class="con d-flex" *ngFor="let color of colourList; let i = index">
+            <div class="form-floating w-100">
+                <input type="text" class="form-control" id="floatingInputColour" [(ngModel)]="color.name"
+                    placeholder="black">
+                <label for="floatingInputColor">COLOUR</label>
+            </div>
+            <div class=" d-flex justify-content-center align-items-center dash-btn border" (click)="removeColour(i)">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash"
+                    viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8" />
+                </svg>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<p>add-item works!</p>

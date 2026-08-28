@@ -1,0 +1,75 @@
+#image-input {
+    display: none;
+}
+
+.editor-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Toolbar Style */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    background-color: #f9fafb;
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Toolbar Buttons */
+.toolbar button {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #374151;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toolbar button:hover {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+    color: #111827;
+}
+
+.toolbar button:active {
+    background-color: #e5e7eb;
+}
+
+/* Toolbar Separator Line */
+.separator {
+    width: 1px;
+    height: 20px;
+    background-color: #e5e7eb;
+    margin: 0 4px;
+}
+
+/* Content Editable Area */
+#editor {
+    min-height: 300px;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #111827;
+    outline: none;
+    overflow-y: auto;
+}
+
+/* CSS Placeholder functionality */
+#editor:empty::before {
+    content: attr(data-placeholder);
+    color: #9ca3af;
+    pointer-events: none;
+}
+.dash-btn{
+    width: 50px;
+}

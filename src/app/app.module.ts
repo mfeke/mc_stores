@@ -17,6 +17,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { DashboradComponent } from './admin/dashborad/dashborad.component';
 import { ReplacePipe } from './pipes/replace.pipe';
+import { AddItemComponent } from './admin/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ReplacePipe } from './pipes/replace.pipe';
     LoadingComponent,
     CreateAccountComponent,
     DashboradComponent,
-    ReplacePipe
+    ReplacePipe,
+    AddItemComponent
     
   ],
   imports: [

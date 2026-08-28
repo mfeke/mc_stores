@@ -9,6 +9,7 @@ import { ReplacePipe } from '../../pipes/replace.pipe';
 })
 export class DashboradComponent {
   categories: any[] = []
+  selected?: string
   message?: any
   loading: boolean = false
   category = {
@@ -22,10 +23,14 @@ export class DashboradComponent {
   ngOnInit() {
 
     this.categoryService.getMainCategories().subscribe({
-      next:data=>{
+      next: data => {
         this.categories = data
       }
     })
+  }
+
+  isSelected(value: string) {
+    this.selected = value
 
   }
   onInputChange(value: any): void {
@@ -45,11 +50,34 @@ export class DashboradComponent {
       this.errCategory.name = true
     }
   }
+  isCreateSubCategory() {
+
+    this.loading = true
+    this.message = 10
+    setTimeout(() => {
+      console.log("This runs after 2 seconds");
+    }, 5000);
+
+
+    this.categoryService.isCreateSubCategory(this.selected,this.category).subscribe({
+      next: data => {
+        this.message = data.message
+        this.loading = false
+      },
+      error: (err) => {
+        this.message = err.error.message
+
+        this.loading = false
+
+      },
+    })
+
+  }
   isCreateCategory() {
     this.loading = true
     this.message = 20
     setTimeout(() => {
-      console.log("This runs after 2 seconds");
+
     }, 5000);
 
 

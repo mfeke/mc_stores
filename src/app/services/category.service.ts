@@ -11,6 +11,10 @@ export class CategoryService {
 isCreateCategory(body:any):Observable<any>{
   return this.http.post(`${this.apiUrl}/createCategory`, body)
 }
+isCreateSubCategory(id:any,body:any):Observable<any>{
+    return this.http.post(`${this.apiUrl}/createSubCategory/${id}`, body)
+    }
+
   getMainCategories(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/getMainCategory`)
   }
