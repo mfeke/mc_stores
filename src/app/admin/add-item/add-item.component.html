@@ -4,21 +4,28 @@
         <h6 class="text bold mb-0">ADD ITEM</h6>
     </div>
 
-    <p class="span bold mb-0">SAVE</p>
+    <p class="span btn bold mb-0" (click)="upload()" >SAVE</p>
 </div>
 <div class="container">
 
-    <!----
+    <div class="preview-grid d-flex" *ngIf="imagePreviews.length > 0">
+        <div *ngFor="let src of imagePreviews; let i = index" class="preview-card">
+            <img [src]="src" class="bg-url" alt="Selected Image Preview" />
+            <button type="button" class="remove-btn" (click)="removeImage(i)">&times;</button>
+        </div>
+    </div>
+
+    
     <div class="image-upload-wrapper py-3">
-        
+
         <label for="image-input" class="card w-100 p-3 custom-file-upload">
 
             <span>Upload Image</span>
         </label>
-    
-        <input id="image-input" type="file" accept="image/*" />
+
+        <input id="image-input" type="file" accept="image/*" multiple (change)="onFilesSelected($event)" #fileInput />
     </div>
--->
+
     <div class="form-">
 
 
