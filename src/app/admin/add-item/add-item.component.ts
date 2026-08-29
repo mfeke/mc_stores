@@ -14,6 +14,12 @@ export class AddItemComponent {
   colourList = [{
     name: ""
   }]
+  sizeList?:any = [{
+    name:"",
+    unit:""
+
+  }]
+  product:any ={}
   selectedFiles: File[] = [];
   imagePreviews: string[] = [];
   constructor( 
@@ -61,7 +67,11 @@ export class AddItemComponent {
     this.selectedFiles.forEach((file) => {
       formData.append('images', file);
     });
-
+    formData.append('name', this.product.name)
+    formData.append('price', this.product.price)
+    formData.append('description', String(this.editor.nativeElement))
+    formData.append('sizes', JSON.stringify(this.sizeList))
+    formData.append('colours', JSON.stringify(this.colourList))
     this.productService.isCreateProduct(id, formData).subscribe({
       next:data=>{
 
@@ -80,6 +90,20 @@ export class AddItemComponent {
     }
     this.colourList.push(colour)
   }
+  addSize(){
+    let size ={
+      name:'',
+      unit:""
+
+    }
+    this.sizeList.push(size)
+  }
+  removeSize(index:any){
+    if(index!== 0){
+      this.sizeList = this.sizeList.filter((item:any,i:any)=>i !== index)
+    }
+  }
+
   removeColour(index: any) {
     if (index !== 0) {
       this.colourList = this.colourList.filter((item, i) => i !== index);

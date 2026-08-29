@@ -70,11 +70,24 @@
     color: #9ca3af;
     pointer-events: none;
 }
-.dash-btn{
+
+.dash-btn {
     width: 50px;
 }
 
-.bg-url{
-    width:200px;
-    height:200px;
+.bg-url {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+}
+.over{
+
+    overflow-x: auto;
+}
+.upload {
+    height:330px;
+    width:330px;
+
 }
