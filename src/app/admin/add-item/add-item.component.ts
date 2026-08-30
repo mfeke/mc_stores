@@ -22,7 +22,7 @@ export class AddItemComponent {
   }]
 
   selectedImage: any
-  categoryList: any[] = []
+  categoryList: any[] = [{}]
   product: any = {}
   selectedFiles: File[] = [];
   imagePreviews: string[] = [];

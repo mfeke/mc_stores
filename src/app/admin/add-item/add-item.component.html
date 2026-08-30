@@ -131,9 +131,9 @@
     </div>
     <div class="offcanvas-body small">
 
-        <div class="con" *ngIf="selectedCategory.length === 0">
+        <div class="con" >
             <button type="button" *ngFor="let category of categoryList" class="btn border mb-2 me-2"
-                (click)="isSelectedCategory(category) " >
+                (click)="isSelectedCategory(category) "  [ngClass]="{'btn-dark':category.value}">
                 <div class="d-flex align-items-center">
                     <span class="mb-0 me-1 font-category">{{category.name | uppercase}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
