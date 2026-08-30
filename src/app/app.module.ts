@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms'
+
+import { QuillModule } from 'ngx-quill'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,16 +39,23 @@ import { AddItemComponent } from './admin/add-item/add-item.component';
     DashboradComponent,
     ReplacePipe,
     AddItemComponent
-    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    QuillModule.forRoot()
+
 
   ],
-  providers: [],
+  providers: [
+    
+
+  ]
+  ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

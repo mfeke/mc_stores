@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { CategoryService } from '../../services/category.service';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -9,9 +10,8 @@ import { CategoryService } from '../../services/category.service';
   styleUrl: './add-item.component.css'
 })
 export class AddItemComponent {
-  @ViewChild('editor') editor!: ElementRef<HTMLDivElement>;
-  @Input() placeholder: string = 'Start typing your content here...';
-  @Output() contentChange = new EventEmitter<string>();
+  
+  editorControl = new FormControl('');
   colourList = [{
     name: ""
   }]
@@ -41,12 +41,6 @@ export class AddItemComponent {
 
     })
 
-  }
-
-  format(command: string): void {
-    document.execCommand(command, false);
-    this.editor.nativeElement.focus();
-    this.onInput();
   }
   isSelectedImage(i: any) {
 
@@ -108,7 +102,7 @@ export class AddItemComponent {
     });
     formData.append('name', this.product.name)
     formData.append('price', this.product.price)
-    formData.append('description', String(this.editor.nativeElement))
+    formData.append('description', String(this.editorControl))
     formData.append('sizes', JSON.stringify(this.sizeList))
     formData.append('colours', JSON.stringify(this.colourList))
     this.productService.isCreateProduct(id, formData).subscribe({
@@ -149,10 +143,7 @@ export class AddItemComponent {
 
     }
   }
-  onInput(): void {
-    const htmlContent = this.editor.nativeElement.innerHTML;
-    this.contentChange.emit(htmlContent);
-  }
+  
 
 
 }

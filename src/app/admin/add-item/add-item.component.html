@@ -96,34 +96,90 @@
 <!-- body show form data -->
 <div class="container">
     <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingInputTitle" [(ngModel)]="product.name" placeholder="Blacmo">
+        <input type="text" class="form-control input" id="floatingInputTitle" [(ngModel)]="product.name"
+            placeholder="Blacmo">
         <label for="floatingInputTitle">NAME OF PRODUCT<span class="text-danger">*</span></label>
     </div>
 
     <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingInputPrice" [(ngModel)]="product.price"
+        <input type="number" class="form-control input" id="floatingInputPrice" [(ngModel)]="product.price"
             placeholder="3000">
         <label for="floatingInputPrice">PRICE<span class="text-danger">*</span></label>
     </div>
     <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingInputSale" placeholder="1000">
+        <input type="number" class="form-control input " id="floatingInputSale" placeholder="1000">
         <label for="floatingInputSale">SALE PRICE</label>
     </div>
-
-    <div class="border  p-3 d-flex align-items-center form-control" data-bs-toggle="offcanvas"
+    <quill-editor class="rounded mb-3" [formControl]="editorControl" theme="snow"
+        placeholder="Type your content here...">
+    </quill-editor>
+    <div class="border  p-3   mb-3 form-control input" data-bs-toggle="offcanvas"
+        [ngClass]="{'px-2 py-1 ': selectedCategory.length > 0, 'd-flex align-items-center  a': selectedCategory.length === 0}"
         data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
-        <svg *ngIf="selectedCategory.length === 0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <svg *ngIf="selectedCategory.length === 0" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
             <path
                 d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
         </svg>
-        <label class="ms-2" [ngClass]="{'font-category text-secondary' : selectedCategory.length>0}" for="floatingInputSale">ADD CATEGORY</label>
+        <div class="xon">
+            <label class="mb-0 ms-2" [ngClass]="{'font-category text-secondary' : selectedCategory.length>0}"
+                for="floatingInputSale">ADD CATEGORY</label>
 
-    </div>
-    <div class="con" *ngFor="let selected of selectedCategory">
-        {{selected.name}}
 
+        </div>
+        <button type="button" *ngFor="let category of selectedCategory" class="btn border mb-2 me-2">
+            <div class="d-flex align-items-center">
+                <span class="mb-0 me-1 font-category">{{category.name | uppercase}}</span>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </div>
+
+        </button>
     </div>
+
+    <table class="table border over">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <input type="checkbox" name="data">
+                </th>
+                <th scope="col">COLOUR</th>
+                <th scope="col">SIZE</th>
+                <th scope="col">QUANTITY</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    <div class="td">
+                        <input type="checkbox" name="data">
+                    </div>
+                </th>
+                <td>
+                    <div class="td">
+
+                        <input class="form-control form-control-sm" type="text">
+                    </div>
+                </td>
+                <td>
+                    <div class="td">
+
+                        <input class="form-control form-control-sm" type="text">
+                    </div>
+                </td>
+                <td>
+                    <div class="td">
+                        <input class="form-control  form-control-sm" type="number" aria-label=".form-control-lg example">
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 
 </div>
 
@@ -145,8 +201,8 @@
                         <path
                             d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
                     </svg>
-                    <svg *ngIf="category.value" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x"
-                        viewBox="0 0 16 16">
+                    <svg *ngIf="category.value" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                         <path
                             d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
                     </svg>
