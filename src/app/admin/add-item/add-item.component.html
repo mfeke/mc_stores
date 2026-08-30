@@ -1,3 +1,86 @@
+<div class="container border border-bottom">
+    <div class="d-flex justify-content-between py-3">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+        </svg>
+        <h5 class="text">CREATE PRODUCT</h5>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi text-white bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+        </svg>
+    </div>
+</div>
+
+<!-- body create none image-->
+
+<div class="container py-3" *ngIf="selectedFiles.length ===  0">
+
+    <label for="image-input" class="card d-flex align-item-center justify-content-center upload p-3 custom-file-upload">
+
+        <div class="contain  w-100">
+            <div class="d-flex justify-content-center mb-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="text-center" width="1.5em" height="1.5em"
+                    viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="1.5">
+                        <path
+                            d="M22 7.5v8c0 2.828 0 4.242-.879 5.12c-.878.88-2.293.88-5.121.88H8c-2.828 0-4.243 0-5.121-.88C2 19.743 2 18.329 2 15.5V13c0-2.829 0-4.243.879-5.122C3.757 7 5.172 7 8 7h.4c.626 0 .94 0 1.226-.088a2 2 0 0 0 .539-.259c.248-.169.444-.413.835-.903c.391-.489.587-.733.835-.903a2 2 0 0 1 .539-.258A2.3 2.3 0 0 1 13 4.5m3 .5h5m-2.5 2.5v-5M5 10h2" />
+                        <path d="M18.53 14a4 4 0 1 1-8 0a4 4 0 0 1 8 0" />
+                    </g>
+                </svg>
+            </div>
+
+            <p class="bild text-center">ADD PHOTOS OR VIDEOS</p>
+
+        </div>
+    </label>
+
+    <input id="image-input" type="file" accept="image/*" multiple (change)="onFilesSelected($event)" #fileInput />
+</div>
+<div class="container">
+    <div class="preview-grid " *ngIf="imagePreviews.length > 0">
+        <div *ngFor="let src of imagePreviews; let i = index" class="preview-card">
+            <div class="bg-url my-3 bg-dark w-100 rounded" [style.background-image]="'url(' + src + ')'"
+                *ngIf="i === 0">
+                <button type="button" class="remove-btn btn text-danger" (click)="removeImage(i)">&times;</button>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="co" [ngClass]="{'col-3': i !== 0 && i < 4}" *ngFor="let src of imagePreviews; let i = index">
+
+                <div class="bg-small rounded" [style.background-image]="'url(' + src + ')'" *ngIf="i !== 0 && i < 4 ">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="bg-small d-flex justify-content-center align-items-center text-secondary rounded border">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-center" width="1.5em" height="1.5em"
+                        viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5">
+                            <path
+                                d="M22 7.5v8c0 2.828 0 4.242-.879 5.12c-.878.88-2.293.88-5.121.88H8c-2.828 0-4.243 0-5.121-.88C2 19.743 2 18.329 2 15.5V13c0-2.829 0-4.243.879-5.122C3.757 7 5.172 7 8 7h.4c.626 0 .94 0 1.226-.088a2 2 0 0 0 .539-.259c.248-.169.444-.413.835-.903c.391-.489.587-.733.835-.903a2 2 0 0 1 .539-.258A2.3 2.3 0 0 1 13 4.5m3 .5h5m-2.5 2.5v-5M5 10h2" />
+                            <path d="M18.53 14a4 4 0 1 1-8 0a4 4 0 0 1 8 0" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- body show images uploaded -->
+
+
+
+<!----
+
 <div class="container py-3 align-item-center bg-secondary w-100 d-flex justify-content-between">
 
     <div class="d-flex align-item-center">
@@ -130,3 +213,5 @@
     </div>
 
     <p>add-item works!</p>
+
+-->

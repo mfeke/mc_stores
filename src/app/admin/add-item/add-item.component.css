@@ -80,14 +80,25 @@
     background-size: cover;
     background-position: center;
     width: 300px;
-    height: 300px;
+    height: 330px;
 }
-.over{
+
+.over {
 
     overflow-x: auto;
 }
+
 .upload {
-    height:330px;
-    width:330px;
+    height: 330px;
+    width: 330px;
+
+}
+
+.bg-small {
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
 }
