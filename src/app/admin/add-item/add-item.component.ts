@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { ProductService } from '../../services/product.service';
+import { CategoryService } from '../../services/category.service';
 
 
 @Component({
@@ -14,21 +15,58 @@ export class AddItemComponent {
   colourList = [{
     name: ""
   }]
-  sizeList?:any = [{
-    name:"",
-    unit:""
+  sizeList?: any = [{
+    name: "",
+    unit: ""
 
   }]
-  product:any ={}
+
+  selectedImage: any
+  categoryList: any[] = []
+  product: any = {}
   selectedFiles: File[] = [];
   imagePreviews: string[] = [];
-  constructor( 
-    private productService: ProductService
+  selectedCategory: any[] = []
+  constructor(
+    private productService: ProductService,
+    private categoryService: CategoryService
   ) { }
+
+  ngOnInit() {
+
+    this.categoryService.getAllCategories().subscribe({
+      next: data => {
+        this.categoryList = data.categories
+      }
+
+    })
+
+  }
+
   format(command: string): void {
     document.execCommand(command, false);
     this.editor.nativeElement.focus();
     this.onInput();
+  }
+  isSelectedImage(i: any) {
+
+    this.selectedImage = i
+
+
+  }
+  isSelectedCategory(obj: any) {
+
+    
+    
+    this.categoryList = this.categoryList.map(category =>
+      category._id === obj._id && !category.value 
+        ? { ...category, value: true } // Create a new object with the updated field
+       : {...category,value: false }
+               
+  );
+
+
+    this.selectedCategory.push(obj)
   }
   onFilesSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -56,6 +94,7 @@ export class AddItemComponent {
 
   // Remove image from both preview and payload arrays
   removeImage(index: number): void {
+    this.selectedImage = null
     this.imagePreviews.splice(index, 1);
     this.selectedFiles.splice(index, 1);
   }
@@ -73,15 +112,15 @@ export class AddItemComponent {
     formData.append('sizes', JSON.stringify(this.sizeList))
     formData.append('colours', JSON.stringify(this.colourList))
     this.productService.isCreateProduct(id, formData).subscribe({
-      next:data=>{
+      next: data => {
 
       },
-      error:(err) =>{
-        
-        
+      error: (err) => {
+
+
       },
     })
-    
+
   }
 
   addColour() {
@@ -90,17 +129,17 @@ export class AddItemComponent {
     }
     this.colourList.push(colour)
   }
-  addSize(){
-    let size ={
-      name:'',
-      unit:""
+  addSize() {
+    let size = {
+      name: '',
+      unit: ""
 
     }
     this.sizeList.push(size)
   }
-  removeSize(index:any){
-    if(index!== 0){
-      this.sizeList = this.sizeList.filter((item:any,i:any)=>i !== index)
+  removeSize(index: any) {
+    if (index !== 0) {
+      this.sizeList = this.sizeList.filter((item: any, i: any) => i !== index)
     }
   }
 
@@ -115,5 +154,5 @@ export class AddItemComponent {
     this.contentChange.emit(htmlContent);
   }
 
-  
+
 }

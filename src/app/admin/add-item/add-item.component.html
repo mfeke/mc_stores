@@ -43,6 +43,7 @@
 
     <input id="image-input" type="file" accept="image/*" multiple (change)="onFilesSelected($event)" #fileInput />
 </div>
+
 <div class="container">
     <div class="preview-grid " *ngIf="imagePreviews.length > 0">
         <div *ngFor="let src of imagePreviews; let i = index" class="preview-card">
@@ -51,33 +52,116 @@
                 <button type="button" class="remove-btn btn text-danger" (click)="removeImage(i)">&times;</button>
             </div>
         </div>
-        <div class="d-flex">
-            <div class="co" [ngClass]="{'col-3': i !== 0 && i < 4}" *ngFor="let src of imagePreviews; let i = index">
+
+        <div class="d-flex mb-3">
+            <div class="co" (click)="isSelectedImage(i)" [ngClass]="{'col-3': i !== 0 && i < 4}"
+                *ngFor="let src of imagePreviews; let i = index">
 
                 <div class="bg-small rounded" [style.background-image]="'url(' + src + ')'" *ngIf="i !== 0 && i < 4 ">
+                    <div class="bg-b rounded d-flex align-items-center justify-content-center w-100 h-100"
+                        (click)="removeImage(i)" *ngIf="selectedImage === i">
+                        <button type="button" class="btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                                class="bi text-danger bi-trash3" viewBox="0 0 16 16">
+                                <path
+                                    d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="col-3">
                 <div class="bg-small d-flex justify-content-center align-items-center text-secondary rounded border">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="text-center" width="1.5em" height="1.5em"
-                        viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none" />
-                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="1.5">
-                            <path
-                                d="M22 7.5v8c0 2.828 0 4.242-.879 5.12c-.878.88-2.293.88-5.121.88H8c-2.828 0-4.243 0-5.121-.88C2 19.743 2 18.329 2 15.5V13c0-2.829 0-4.243.879-5.122C3.757 7 5.172 7 8 7h.4c.626 0 .94 0 1.226-.088a2 2 0 0 0 .539-.259c.248-.169.444-.413.835-.903c.391-.489.587-.733.835-.903a2 2 0 0 1 .539-.258A2.3 2.3 0 0 1 13 4.5m3 .5h5m-2.5 2.5v-5M5 10h2" />
-                            <path d="M18.53 14a4 4 0 1 1-8 0a4 4 0 0 1 8 0" />
-                        </g>
-                    </svg>
+                    <label for="image-input">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="text-center" width="1.5em" height="1.5em"
+                            viewBox="0 0 24 24">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="1.5">
+                                <path
+                                    d="M22 7.5v8c0 2.828 0 4.242-.879 5.12c-.878.88-2.293.88-5.121.88H8c-2.828 0-4.243 0-5.121-.88C2 19.743 2 18.329 2 15.5V13c0-2.829 0-4.243.879-5.122C3.757 7 5.172 7 8 7h.4c.626 0 .94 0 1.226-.088a2 2 0 0 0 .539-.259c.248-.169.444-.413.835-.903c.391-.489.587-.733.835-.903a2 2 0 0 1 .539-.258A2.3 2.3 0 0 1 13 4.5m3 .5h5m-2.5 2.5v-5M5 10h2" />
+                                <path d="M18.53 14a4 4 0 1 1-8 0a4 4 0 0 1 8 0" />
+                            </g>
+                        </svg>
+                    </label>
+                    <input id="image-input" type="file" accept="image/*" multiple (change)="onFilesSelected($event)"
+                        #fileInput />
                 </div>
             </div>
         </div>
     </div>
 
 </div>
-<!-- body show images uploaded -->
+<!-- body show form data -->
+<div class="container">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInputTitle" [(ngModel)]="product.name" placeholder="Blacmo">
+        <label for="floatingInputTitle">NAME OF PRODUCT<span class="text-danger">*</span></label>
+    </div>
 
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingInputPrice" [(ngModel)]="product.price"
+            placeholder="3000">
+        <label for="floatingInputPrice">PRICE<span class="text-danger">*</span></label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingInputSale" placeholder="1000">
+        <label for="floatingInputSale">SALE PRICE</label>
+    </div>
 
+    <div class="border  p-3 d-flex align-items-center form-control" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+            <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+        </svg>
+        <label class="ms-2" for="floatingInputSale">ADD CATEGORY</label>
+
+    </div>
+
+</div>
+
+<!-- Category model-->
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header border-bottom ">
+        <h6 class="offcanvas-title" id="offcanvasBottomLabel">CATEGORY</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+
+        <div class="con" *ngIf="selectedCategory.length === 0">
+            <button type="button" *ngFor="let category of categoryList" class="btn border mb-2 me-2"
+                (click)="isSelectedCategory(category) " >
+                <div class="d-flex align-items-center">
+                    <span class="mb-0 me-1 font-category">{{category.name | uppercase}}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-plus" viewBox="0 0 16 16">
+                        <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                    </svg>
+                </div>
+
+            </button>
+        </div>
+    
+    </div>
+    <div class="border-top container py-2">
+        <div class="row">
+            <div class="col-6">
+                <button type="button" class="btn border w-100">
+                    CANCEL
+                </button>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary w-100">
+                    SAVE
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!----
 

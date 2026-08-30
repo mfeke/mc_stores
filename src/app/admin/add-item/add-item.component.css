@@ -102,3 +102,11 @@
     background-position: center;
 
 }
+
+
+.bg-b{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.font-category{
+    font-size: 14px;
+}
