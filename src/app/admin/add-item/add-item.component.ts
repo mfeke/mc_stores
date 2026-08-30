@@ -55,19 +55,19 @@ export class AddItemComponent {
 
   }
   isSelectedCategory(obj: any) {
-
-    
-    
     this.categoryList = this.categoryList.map(category =>
-      category._id === obj._id && !category.value 
-        ? { ...category, value: true } // Create a new object with the updated field
-       : {...category,value: false }
-               
-  );
-
-
-    this.selectedCategory.push(obj)
+      category._id === obj._id
+        ? { ...category, value: !category.value } // Toggle the clicked category
+        : category // Leave other categories intact
+    );
   }
+
+  isSaveCategory() {
+
+    this.selectedCategory = this.categoryList.filter(category => category.value === true)
+
+  }
+
   onFilesSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (!input.files || input.files.length === 0) return;
