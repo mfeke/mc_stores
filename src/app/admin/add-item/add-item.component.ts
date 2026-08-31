@@ -17,8 +17,8 @@ export class AddItemComponent {
   }]
   sizeList?: any = [{
     name: "",
-    unit: ""
-
+    unit: "",
+    colour:""
   }]
 
   selectedImage: any
