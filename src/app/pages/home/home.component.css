@@ -5,6 +5,20 @@
 
 }
 
+.first {
+    height: 200px;
+}
+
+.secondary {
+    height: 400px;
+
+
+}
+
+.span {
+    font-size: 14px;
+}
+
 .bg-img {
     background-repeat: no-repeat;
     background-position: center;
@@ -25,7 +39,7 @@
     position: sticky;
     top: 0px;
     /* Distance from top of viewport when stuck */
-    width: 90%;
+
     min-width: 100%;
     min-height: 80vh;
     background-color: #ffffff;
@@ -36,18 +50,71 @@
     height: 80vh;
 }
 
+.name {
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.border0 {
+    border-radius: 0px !important;
+}
+
+.product-title,
+.product-price {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    /* High tracking */
+    color: #000000;
+    line-height: 1.4;
+}
+
+/* Badge Text (NEW ARRIVAL) */
+.badge-text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    /* Extended tracking */
+    color: #333333;
+}
+
+.price {
+    font-weight: 100;
+}
+
 .text {
     font-family: 'Syne Mono', monospace !important;
-    font-size:14px !important;
+    font-size: 14px !important;
     color: #111111;
 }
-.card-one{
+
+.card-one {
     max-width: 200vh;
 
 }
-.w-80{
-    width:80%;
+
+.bg-sec {
+    background-color: rgb(247, 247, 247);
+    background-blend-mode: multiply;
 }
+
+img {
+    mix-blend-mode: multiply;
+}
+
+.over {
+    overflow-x: auto;
+}
+
+.w-80 {
+    width: 80%;
+
+}
+
 .br {
     border-radius: 0px !important;
 }
@@ -136,11 +203,6 @@
     height: 110px !important;
 }
 
-.over {
-    overflow: hidden !important;
-    height: 360px;
-
-}
 
 .line {
     text-decoration: line-through;

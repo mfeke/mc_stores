@@ -1,6 +1,57 @@
-
 <app-navbar></app-navbar>
+<div class="card-stack">
 
+
+    <div class="bg-img card vh-80 first" [style.background-image]="'url(' + imageUrl + ')'">
+
+        <div class="bg-b d-flex align-items-end container text-white py-3 h-100">
+            <div class="d-flex w-100 justify-content-between">
+                <h6 class="bold">DIRTY FROG. X JUMP CITY</h6>
+                <a class="text-white span">$HOP NOW</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="bg-white card">
+        <div class="bg-white container py-4 d-flex justify-content-between ">
+            <h6 class="bold mb-1">N€W ARRIVAL$</h6>
+            <a class="spa mb-1 text-black span">VI€W ALL</a>
+        </div>
+        <div class="d-flex container over">
+            <div class="col-10 text-black" [ngClass]="{'me-2' : products.length !== 0}"
+                *ngFor="let product of products; let i = index">
+                <div class="bg-sec mb-3 p-2 w-100">
+
+                    <img [src]="product.image" alt class="w-100">
+                </div>
+                <p class="col-10 product-title mb-1">{{product.name | uppercase}}<p>
+                <p class="span product-price">{{product.price}} ZAR</p>
+                <div class="d-flex">
+                    <div class="bg-dark p-2"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container py-4">
+            <div class="container px-4">
+                <div class="bg-sec"> 
+                <img src="https://i.postimg.cc/T2tTL9Lh/1787689673276.jpg" alt class="w-100 bg-sec">
+                </div>
+                <div class="d-flex justify-content-center py-3">
+                    <div class="col-6">
+                        <h6 class="bold text-center">ACCESSORIES</h6>
+                        <button type="button" class="btn border-black border0 w-100 border">
+                            SHOP NOW
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!----
 <div class="card-stack">
     <div class="card vh-80 bg-dark bg-img" [style.background-image]="'url(' + imageUrl + ')'">
         <div class="bg-b w-100 h-100 d-flex justify-content-center align-items-center text-white">
@@ -47,6 +98,7 @@
     </div>
     
 </div>
+-->
 
 <!---
 <div class="container pt-2">
@@ -66,6 +118,7 @@
             </div>
         </div>
         <img src="https://i.postimg.cc/wTny9Mrm/1786703245438.jpg" alt="" class="w-100 ">
+        
     </div>
 </div>
 <div class="h-0 mb-2">
