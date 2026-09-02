@@ -1,36 +1,71 @@
-.title {
+.product-title {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.box {
-    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0) !important;
+.over {
+    overflow-x: auto;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+    gap: 1.5rem;
+    padding: 0.5rem 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+
+}
+
+.product-title,
+.product-price,
+.link {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    /* High tracking */
+    color: #000000;
+    line-height: 1.4;
+}
+
+/* Ensure individual links/items do not squeeze or wrap */
+.nav-item,
+.link {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: max-content;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 .bold {
     font-weight: bold;
 }
 
-.w-90 {
-    width: 90% !important;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+
 }
 
-.span-t {
-    font-family: 'Syne Mono', monospace !important;
-
-    color: #111111;
-    font-size: 11px !important;
+.bg-sec {
+    background-color: rgb(247, 247, 247);
+    background-blend-mode: multiply;
 }
-
-.icon {
-    height: 15px;
-    width: 15px;
-}
-
-.text {
-    font-family: 'Syne Mono', monospace !important;
-    font-size: 14px !important;
-    color: #111111;
-}
+img {
+        mix-blend-mode: multiply;
+        }

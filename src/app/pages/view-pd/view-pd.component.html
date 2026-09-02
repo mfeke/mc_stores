@@ -1,8 +1,55 @@
-
-
-
 <app-navbar></app-navbar>
 
+<div class="container menu over py-3 ">
+    <div class=" link " *ngFor="let category of categories; let i = index">
+
+        <p class="bold mb-0 w-100" [class.bold]="0 === i">{{category.name | uppercase}}</p>
+    </div>
+</div>
+<div class="container">
+
+
+    <div class="d-flex  justify-content-between">
+        <div class="d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="16px" height="16px" viewBox="0 0 8 8">
+                <path d="M0 0h8v8H0z" fill="none" />
+                <path fill="currentColor" d="M0 0v3h3V0zm5 0v3h3V0zM0 5v3h3V5zm5 0v3h3V5z" />
+            </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="25px" height="25px"
+                viewBox="0 0 56 56">
+                <path d="M0 0h56v56H0z" fill="none" />
+                <path fill="currentColor"
+                    d="M5.008 17.957h3.89c1.477 0 2.016-.539 2.016-2.016v-3.89c0-1.477-.539-2.016-2.016-2.016h-3.89c-1.5 0-2.04.54-2.04 2.016v3.89c0 1.477.54 2.016 2.04 2.016m13.992 0h3.89c1.477 0 2.016-.539 2.016-2.016v-3.89c0-1.477-.539-2.016-2.015-2.016H19c-1.477 0-2.016.54-2.016 2.016v3.89c0 1.477.54 2.016 2.016 2.016m13.992 0h3.89c1.5 0 2.04-.539 2.04-2.016v-3.89c0-1.477-.54-2.016-2.04-2.016h-3.89c-1.476 0-2.015.54-2.015 2.016v3.89c0 1.477.539 2.016 2.015 2.016m14.016 0h3.89c1.477 0 2.016-.539 2.016-2.016v-3.89c0-1.477-.539-2.016-2.015-2.016h-3.891c-1.5 0-2.04.54-2.04 2.016v3.89c0 1.477.54 2.016 2.04 2.016M5.125 31.973h3.89c1.477 0 2.016-.54 2.016-2.04v-3.89c0-1.477-.539-2.016-2.015-2.016H5.125c-1.5 0-2.04.54-2.04 2.016v3.89c0 1.5.54 2.04 2.04 2.04m13.992 0h3.89c1.477 0 2.016-.54 2.016-2.04v-3.89c0-1.477-.539-2.016-2.015-2.016h-3.89c-1.477 0-2.016.54-2.016 2.016v3.89c0 1.5.539 2.04 2.015 2.04m13.992 0H37c1.5 0 2.04-.54 2.04-2.04v-3.89c0-1.477-.54-2.016-2.04-2.016h-3.89c-1.477 0-2.016.54-2.016 2.016v3.89c0 1.5.539 2.04 2.015 2.04m14.016 0h3.89c1.477 0 2.016-.54 2.016-2.04v-3.89c0-1.477-.539-2.016-2.015-2.016h-3.891c-1.5 0-2.04.54-2.04 2.016v3.89c0 1.5.54 2.04 2.04 2.04m-42 13.992h3.89c1.477 0 2.016-.54 2.016-2.016v-3.89c0-1.5-.539-2.04-2.015-2.04H5.125c-1.5 0-2.04.54-2.04 2.04v3.89c0 1.477.54 2.016 2.04 2.016m13.992 0h3.89c1.477 0 2.016-.54 2.016-2.016v-3.89c0-1.5-.539-2.04-2.015-2.04h-3.89c-1.477 0-2.016.54-2.016 2.04v3.89c0 1.477.539 2.016 2.015 2.016m13.992 0H37c1.5 0 2.04-.54 2.04-2.016v-3.89c0-1.5-.54-2.04-2.04-2.04h-3.89c-1.477 0-2.016.54-2.016 2.04v3.89c0 1.477.539 2.016 2.015 2.016m14.016 0h3.89c1.477 0 2.016-.54 2.016-2.016v-3.89c0-1.5-.539-2.04-2.015-2.04h-3.891c-1.5 0-2.04.54-2.04 2.04v3.89c0 1.477.54 2.016 2.04 2.016" />
+            </svg>
+
+        </div>
+        <p class="product-title mb-0">FILTER & SORT</p>
+    </div>
+</div>
+<div class="grid-container py-3">
+    <div class="text-black" *ngFor="let item of products;">
+
+        <div class="bg-sec mb-3 p-2 w-100">
+            <div class="con" *ngFor="let image of item.images;let i = index">
+                <img [src]="image" *ngIf="i === 0" alt class="w-100">
+            </div>
+        </div>
+        <div class="container">
+            <p class=" product-title mb-1">
+                {{item.name}}
+            <p>
+            <p class="span product-price">{{item.price|currency:' '}} ZAR</p>
+            <div class="d-flex">
+                <div class="con me-2" *ngFor="let color of item.stock | unique :'colour'" >
+                    <div class=" p-2" [style.background]="color.colour| lowercase "></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!----
 <div class="pt-3 container">
     <p class="mb-0 bold text">NEW ARRIVALS</p>
 </div>
@@ -27,7 +74,7 @@
         <div class="col-6"></div>
     </div>
 </div>
-<!----
+
 <div class="d-flex border-top border-bottom">
     <div class="col-6 border-end py-2">
         <a class="btn w-100 p-0" data-bs-toggle="offcanvas" href="#offcanvasExampleq" role="button"

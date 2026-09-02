@@ -22,6 +22,7 @@ import { CreateAccountComponent } from './pages/create-account/create-account.co
 import { DashboradComponent } from './admin/dashborad/dashborad.component';
 import { ReplacePipe } from './pipes/replace.pipe';
 import { AddItemComponent } from './admin/add-item/add-item.component';
+import { UniquePipe } from './unique.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AddItemComponent } from './admin/add-item/add-item.component';
     CreateAccountComponent,
     DashboradComponent,
     ReplacePipe,
-    AddItemComponent
+    AddItemComponent,
+    UniquePipe
 
   ],
   imports: [

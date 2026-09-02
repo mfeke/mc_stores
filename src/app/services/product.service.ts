@@ -7,9 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  apiUrl = ""
+  apiUrl = "https://streetfeverapi.vercel.app/api/product"
   constructor(private http: HttpClient) { }
-  isCreateProduct(id:any,body: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/createProduct/${id}`, body)
+  isCreateProduct(body: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/createProduct/`, body)
+  }
+  isGetAllProduct():Observable<any>{
+    
+    return this.http.get(`${this.apiUrl}/getAllProduct`)
   }
 }

@@ -22,9 +22,9 @@ export class DashboradComponent {
   constructor(private categoryService: CategoryService) { }
   ngOnInit() {
 
-    this.categoryService.getMainCategories().subscribe({
+    this.categoryService.getAllCategories().subscribe({
       next: data => {
-        this.categories = data
+        this.categories = data.categories
       }
     })
   }

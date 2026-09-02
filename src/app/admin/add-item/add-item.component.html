@@ -8,11 +8,7 @@
         </svg>
         <h5 class="text">CREATE PRODUCT</h5>
 
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            class="bi text-white bi-arrow-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-        </svg>
+        <button type="button" class="btn border" (click)="upload()">SAVE</button>
     </div>
 </div>
 
@@ -43,6 +39,8 @@
 
     <input id="image-input" type="file" accept="image/*" multiple (change)="onFilesSelected($event)" #fileInput />
 </div>
+
+{{message}}
 
 <div class="container">
     <div class="preview-grid " *ngIf="imagePreviews.length > 0">
@@ -107,7 +105,7 @@
         <label for="floatingInputPrice">PRICE<span class="text-danger">*</span></label>
     </div>
     <div class="form-floating mb-3">
-        <input type="number" class="form-control input " id="floatingInputSale" placeholder="1000">
+        <input type="number" class="form-control input " id="floatingInputSale" [(ngModel)]=" product.priceSale " placeholder="1000">
         <label for="floatingInputSale">SALE PRICE</label>
     </div>
     <quill-editor class="rounded mb-3" [formControl]="editorControl" theme="snow"
@@ -152,28 +150,30 @@
                 <th scope="col">QUANTITY</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody  *ngFor="let item of sizeList"> 
             <tr>
-                <th scope="row">
+              <th scope="row">
                     <div class="td">
-                        <input type="checkbox" name="data">
+                        <input type="checkbox"   name="data">
                     </div>
                 </th>
                 <td>
                     <div class="td">
 
-                        <input class="form-control form-control-sm" type="text">
+                        <input class="form-control form-control-sm" 
+                        [(ngModel)]="item.colour" type="text">
                     </div>
                 </td>
                 <td>
                     <div class="td">
-
-                        <input class="form-control form-control-sm" type="text">
+                        <input class="form-control form-control-sm"
+                        [(ngModel)]="item.unit" type="text">
                     </div>
                 </td>
                 <td>
                     <div class="td">
-                        <input class="form-control  form-control-sm" type="number"
+                        <input class="form-control  form-control-sm"
+                           type="number"
                             aria-label=".form-control-lg example">
                     </div>
                 </td>
@@ -181,7 +181,8 @@
 
         </tbody>
     </table>
-    <div class="border d-flex  justify-content-center align-items-center p-3  mb-3 form-control input" >
+    <div class="border d-flex  justify-content-center align-items-center p-3  mb-3 form-control input" 
+    (click)="addSize()"  >
         <svg  xmlns="http://www.w3.org/2000/svg" width="18" height="18"
             fill="currentColor" class="bi  bi-plus-circle-fill" viewBox="0 0 16 16">
             <path
@@ -189,7 +190,7 @@
         </svg>
         <div class="xon">
             <label class="mb-0 ms-2"
-                for="floatingInputSale">ADD FIELD</label>
+                for="floatingInpute">ADD FIELD</label>
 
 
         </div>

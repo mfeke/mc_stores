@@ -10,15 +10,14 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './add-item.component.css'
 })
 export class AddItemComponent {
-  
+  message?:any
   editorControl = new FormControl('');
   colourList = [{
-    name: ""
-  }]
-  sizeList?: any = [{
     name: "",
-    unit: "",
-    colour:""
+    unit:""
+  }]
+  sizeList: any = [{
+    
   }]
 
   selectedImage: any
@@ -95,21 +94,26 @@ export class AddItemComponent {
 
   // Upload the files using FormData
   upload(): void {
+    this.message = 34
     let id = "6a90fd50d919c7309c967879"
     const formData = new FormData();
     this.selectedFiles.forEach((file) => {
       formData.append('images', file);
     });
     formData.append('name', this.product.name)
-    formData.append('price', this.product.price)
-    formData.append('description', String(this.editorControl))
+    formData.append('price', String(this.product.price)) 
+    formData.append('priceSale', String(this.product.priceSale))
+    formData.append('description', String(this.editorControl.value))
     formData.append('sizes', JSON.stringify(this.sizeList))
-    formData.append('colours', JSON.stringify(this.colourList))
-    this.productService.isCreateProduct(id, formData).subscribe({
+    formData.append('category', JSON.stringify(this.selectedCategory))
+    this.productService.isCreateProduct(formData).subscribe({
       next: data => {
+        this.message = data.mesage
 
       },
       error: (err) => {
+
+        this.message = err.message
 
 
       },
@@ -117,18 +121,12 @@ export class AddItemComponent {
 
   }
 
-  addColour() {
-    let colour = {
-      name: ""
-    }
-    this.colourList.push(colour)
-  }
+  
   addSize() {
-    let size = {
-      name: '',
-      unit: ""
+    let size:any = {
+  
 
-    }
+    } 
     this.sizeList.push(size)
   }
   removeSize(index: any) {
