@@ -7,7 +7,6 @@ import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { VerifyComponent } from './pages/verify/verify.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
-import { DashboradComponent } from './admin/dashborad/dashborad.component';
 import { AddItemComponent } from './admin/add-item/add-item.component';
 const routes: Routes = [
   
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path:'c/:name', component:ViewPdComponent},
   {path:"pd", component:DetailsPdComponent},
   { path:"basket", component:CartComponent},
-  {path:"admin/manage", component:DashboradComponent},
   {path:'admin/add', component:AddItemComponent},
   {path:"vc/:id", component: VerifyComponent}
 ];

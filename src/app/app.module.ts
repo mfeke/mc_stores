@@ -19,7 +19,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { VerifyComponent } from './pages/verify/verify.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
-import { DashboradComponent } from './admin/dashborad/dashborad.component';
 import { ReplacePipe } from './pipes/replace.pipe';
 import { AddItemComponent } from './admin/add-item/add-item.component';
 import { UniquePipe } from './unique.pipe';
@@ -37,7 +36,6 @@ import { UniquePipe } from './unique.pipe';
     VerifyComponent,
     LoadingComponent,
     CreateAccountComponent,
-    DashboradComponent,
     ReplacePipe,
     AddItemComponent,
     UniquePipe

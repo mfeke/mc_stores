@@ -9,14 +9,17 @@
 <div class="container">
 
 
-    <div class="d-flex  justify-content-between">
+    <div class="d-flex  justify-content-between text-secondary">
         <div class="d-flex align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="16px" height="16px" viewBox="0 0 8 8">
+            <div class="bg-secondary p-2 me-2"[ngClass]="{'bg-black': col === 'col-12'}" (click)="isCol('col-12')"></div>
+            <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="{'text-black': col === 'col-2'|| !col }" (click)="isCol('col-2')"
+             class="me-2" width="16px" height="16px" viewBox="0 0 8 8">
                 <path d="M0 0h8v8H0z" fill="none" />
                 <path fill="currentColor" d="M0 0v3h3V0zm5 0v3h3V0zM0 5v3h3V5zm5 0v3h3V5z" />
             </svg>
 
-            <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="25px" height="25px"
+            <svg xmlns="http://www.w3.org/2000/svg" class="text-secon" [ngClass]="{'text-black': col === 'col-4'}" (click)="isCol('col-4')"
+             width="25px" height="25px"
                 viewBox="0 0 56 56">
                 <path d="M0 0h56v56H0z" fill="none" />
                 <path fill="currentColor"
@@ -27,15 +30,16 @@
         <p class="product-title mb-0">FILTER & SORT</p>
     </div>
 </div>
-<div class="grid-container py-3">
-    <div class="text-black" *ngFor="let item of products;">
+
+<div class="grid-container  py-3" [ngClass]="{'grid-one':col === 'col-12', 'grid-container ': col === 'col-2'|| !col, 'grid-four':col  === 'col-4'}">
+    <div class="text-black mb-3" *ngFor="let item of products;">
 
         <div class="bg-sec mb-3 p-2 w-100">
             <div class="con" *ngFor="let image of item.images;let i = index">
                 <img [src]="image" *ngIf="i === 0" alt class="w-100">
             </div>
         </div>
-        <div class="container">
+        <div class="container" *ngIf="col !== 'col-4'">
             <p class=" product-title mb-1">
                 {{item.name}}
             <p>

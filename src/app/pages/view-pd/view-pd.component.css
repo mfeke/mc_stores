@@ -9,6 +9,13 @@
     overflow-x: auto;
 }
 
+.grid-four {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+
+}
+
 .menu {
     display: flex;
     flex-direction: row;
@@ -66,6 +73,7 @@
     background-color: rgb(247, 247, 247);
     background-blend-mode: multiply;
 }
+
 img {
-        mix-blend-mode: multiply;
-        }
+    mix-blend-mode: multiply;
+}
