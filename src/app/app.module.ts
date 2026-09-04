@@ -22,6 +22,9 @@ import { CreateAccountComponent } from './pages/create-account/create-account.co
 import { ReplacePipe } from './pipes/replace.pipe';
 import { AddItemComponent } from './admin/add-item/add-item.component';
 import { UniquePipe } from './unique.pipe';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { ViewBashComponent } from './admin/view-bash/view-bash.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { UniquePipe } from './unique.pipe';
     CreateAccountComponent,
     ReplacePipe,
     AddItemComponent,
-    UniquePipe
+    UniquePipe,
+    DashboardComponent,
+    ViewBashComponent,
 
   ],
   imports: [

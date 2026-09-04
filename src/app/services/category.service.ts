@@ -25,5 +25,9 @@ isCreateSubCategory(id:any,body:any):Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/getAllCategory`)
   }
 
+  getCategoryByName(name:any):Observable<any>{
+    return this.http.get(`${this.apiUrl}/getCategoryByName/${name}`)
+
+  }
 
 }

@@ -8,6 +8,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { VerifyComponent } from './pages/verify/verify.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { AddItemComponent } from './admin/add-item/add-item.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { ViewBashComponent } from './admin/view-bash/view-bash.component';
 const routes: Routes = [
   
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path:"pd", component:DetailsPdComponent},
   { path:"basket", component:CartComponent},
   {path:'admin/add', component:AddItemComponent},
+  {path:'admin/dashboard', component:DashboardComponent},
+  {path:'dash/:name', component:ViewBashComponent},
   {path:"vc/:id", component: VerifyComponent}
 ];
 

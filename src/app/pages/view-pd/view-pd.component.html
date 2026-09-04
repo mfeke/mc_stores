@@ -1,26 +1,32 @@
 <app-navbar></app-navbar>
 
 <div class="container menu over py-3 ">
-    <div class=" link " *ngFor="let category of categories; let i = index">
+    <div class=" link " *ngFor="let cate of categories; let i = index">
 
-        <p class="bold mb-0 w-100" [class.bold]="0 === i">{{category.name | uppercase}}</p>
+
+        <p class="bold mb-0 w-100" [class.bold]="0 === i">{{cate.name | uppercase}}</p>
+
+
     </div>
+
 </div>
 <div class="container">
 
 
+
+
     <div class="d-flex  justify-content-between text-secondary">
         <div class="d-flex align-items-center">
-            <div class="bg-secondary p-2 me-2"[ngClass]="{'bg-black': col === 'col-12'}" (click)="isCol('col-12')"></div>
-            <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="{'text-black': col === 'col-2'|| !col }" (click)="isCol('col-2')"
-             class="me-2" width="16px" height="16px" viewBox="0 0 8 8">
+            <div class="bg-secondary p-2 me-2" [ngClass]="{'bg-black': col === 'col-12'}" (click)="isCol('col-12')">
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" [ngClass]="{'text-black': col === 'col-2'|| !col }"
+                (click)="isCol('col-2')" class="me-2" width="16px" height="16px" viewBox="0 0 8 8">
                 <path d="M0 0h8v8H0z" fill="none" />
                 <path fill="currentColor" d="M0 0v3h3V0zm5 0v3h3V0zM0 5v3h3V5zm5 0v3h3V5z" />
             </svg>
 
-            <svg xmlns="http://www.w3.org/2000/svg" class="text-secon" [ngClass]="{'text-black': col === 'col-4'}" (click)="isCol('col-4')"
-             width="25px" height="25px"
-                viewBox="0 0 56 56">
+            <svg xmlns="http://www.w3.org/2000/svg" class="text-secon" [ngClass]="{'text-black': col === 'col-4'}"
+                (click)="isCol('col-4')" width="25px" height="25px" viewBox="0 0 56 56">
                 <path d="M0 0h56v56H0z" fill="none" />
                 <path fill="currentColor"
                     d="M5.008 17.957h3.89c1.477 0 2.016-.539 2.016-2.016v-3.89c0-1.477-.539-2.016-2.016-2.016h-3.89c-1.5 0-2.04.54-2.04 2.016v3.89c0 1.477.54 2.016 2.04 2.016m13.992 0h3.89c1.477 0 2.016-.539 2.016-2.016v-3.89c0-1.477-.539-2.016-2.015-2.016H19c-1.477 0-2.016.54-2.016 2.016v3.89c0 1.477.54 2.016 2.016 2.016m13.992 0h3.89c1.5 0 2.04-.539 2.04-2.016v-3.89c0-1.477-.54-2.016-2.04-2.016h-3.89c-1.476 0-2.015.54-2.015 2.016v3.89c0 1.477.539 2.016 2.015 2.016m14.016 0h3.89c1.477 0 2.016-.539 2.016-2.016v-3.89c0-1.477-.539-2.016-2.015-2.016h-3.891c-1.5 0-2.04.54-2.04 2.016v3.89c0 1.477.54 2.016 2.04 2.016M5.125 31.973h3.89c1.477 0 2.016-.54 2.016-2.04v-3.89c0-1.477-.539-2.016-2.015-2.016H5.125c-1.5 0-2.04.54-2.04 2.016v3.89c0 1.5.54 2.04 2.04 2.04m13.992 0h3.89c1.477 0 2.016-.54 2.016-2.04v-3.89c0-1.477-.539-2.016-2.015-2.016h-3.89c-1.477 0-2.016.54-2.016 2.016v3.89c0 1.5.539 2.04 2.015 2.04m13.992 0H37c1.5 0 2.04-.54 2.04-2.04v-3.89c0-1.477-.54-2.016-2.04-2.016h-3.89c-1.477 0-2.016.54-2.016 2.016v3.89c0 1.5.539 2.04 2.015 2.04m14.016 0h3.89c1.477 0 2.016-.54 2.016-2.04v-3.89c0-1.477-.539-2.016-2.015-2.016h-3.891c-1.5 0-2.04.54-2.04 2.016v3.89c0 1.5.54 2.04 2.04 2.04m-42 13.992h3.89c1.477 0 2.016-.54 2.016-2.016v-3.89c0-1.5-.539-2.04-2.015-2.04H5.125c-1.5 0-2.04.54-2.04 2.04v3.89c0 1.477.54 2.016 2.04 2.016m13.992 0h3.89c1.477 0 2.016-.54 2.016-2.016v-3.89c0-1.5-.539-2.04-2.015-2.04h-3.89c-1.477 0-2.016.54-2.016 2.04v3.89c0 1.477.539 2.016 2.015 2.016m13.992 0H37c1.5 0 2.04-.54 2.04-2.016v-3.89c0-1.5-.54-2.04-2.04-2.04h-3.89c-1.477 0-2.016.54-2.016 2.04v3.89c0 1.477.539 2.016 2.015 2.016m14.016 0h3.89c1.477 0 2.016-.54 2.016-2.016v-3.89c0-1.5-.539-2.04-2.015-2.04h-3.891c-1.5 0-2.04.54-2.04 2.04v3.89c0 1.477.54 2.016 2.04 2.016" />
@@ -31,27 +37,34 @@
     </div>
 </div>
 
-<div class="grid-container  py-3" [ngClass]="{'grid-one':col === 'col-12', 'grid-container ': col === 'col-2'|| !col, 'grid-four':col  === 'col-4'}">
-    <div class="text-black mb-3" *ngFor="let item of products;">
+<div class="grid-container  py-3"
+    [ngClass]="{'grid-one':col === 'col-12', 'grid-container ': col === 'col-2'|| !col, 'grid-four':col  === 'col-4'}">
 
-        <div class="bg-sec mb-3 p-2 w-100">
-            <div class="con" *ngFor="let image of item.images;let i = index">
+    @for (product of products; track $index) {
+    @for (proCategory of product.category; track $index) { 
+    <div class="text-black mb-3" *ngIf="category._id === proCategory._id">
+        
+        <div class="bg-sec mb-3 p-2 w-100" >
+            <div class="con" *ngFor="let image of product.images;let i = index">
                 <img [src]="image" *ngIf="i === 0" alt class="w-100">
             </div>
         </div>
         <div class="container" *ngIf="col !== 'col-4'">
             <p class=" product-title mb-1">
-                {{item.name}}
+                {{product.name}}
             <p>
-            <p class="span product-price">{{item.price|currency:' '}} ZAR</p>
+            <p class="span product-price">{{product.price|currency:' '}} ZAR</p>
             <div class="d-flex">
-                <div class="con me-2" *ngFor="let color of item.stock | unique :'colour'" >
+                <div class="con me-2" *ngFor="let color of product.stock | unique :'colour'">
                     <div class=" p-2" [style.background]="color.colour| lowercase "></div>
                 </div>
             </div>
         </div>
 
     </div>
+}
+    
+    }
 </div>
 <!----
 <div class="pt-3 container">

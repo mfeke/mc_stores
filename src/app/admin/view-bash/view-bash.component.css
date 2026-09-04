@@ -1,0 +1,35 @@
+.th {
+
+    min-width: 150px;
+
+
+}
+
+.over {
+    overflow-x: auto;
+}
+
+.contain {
+    height: 40px;
+
+}
+
+.contain-2 {
+    height: 25px;
+}
+
+.edit {
+    background: #B2C4D4;
+    color: #013253;
+}
+
+.active {
+    background: #98FB98;
+    color: green;
+    font-size:14px !important;
+}
+
+.del {
+    color: #DC2626;
+    background: #FF7F7F;
+}
