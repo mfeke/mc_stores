@@ -49,6 +49,10 @@ export class ViewBashComponent {
   }
 
   isUpdate(){
+    this.mess = 12
+
+    
+    
     this.categoryService.updateCategoryById(this.category._id,this.category).subscribe({
       next:data=>{
         this.mess = data.message

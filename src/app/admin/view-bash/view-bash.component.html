@@ -96,7 +96,7 @@
                         </th>
                         <th scope="col" class="td">
                             <div class="contain d-flex align-items-center">
-                                {{item.name| titlecase}}
+                                {{item.name|titlecase}}
                             </div>
                         </th>
                         <td></td>
@@ -188,18 +188,20 @@
                     placeholder="new arrivls">
                 <label for="floatingCateName">CATEGORY NAME</label>
             </div>
-            <select class="form-select py-3 form-select mb-3" [(ngModel)]="category.status" aria-label="Large select exa" #mySelect
-                (change)="onOptionChange(mySelect.value)">
+            <select class="form-select py-3 form-select mb-3"  [(ngModel)]="category.status" aria-label="Large select exa" #myNSelect
+                (change)="onOptionChange(myNSelect.value)">
                 <option value="null">SELECT STATUS</option>
                 <option value="true">ACTIVE </option>
                 <option value="false">INACTIVE</option>
             </select>
+            {{category.status}}
         </div>
+        
 
     </div>
     <div class="d-flex pb-3 container">
 
         <button type="button" class="btn border me-2 w-100">CANCEL</button>
-        <button type="button" class="btn btn-dark w-100" (click)="isUpdate()">SAVE</button>
+        <button type="button" class="btn btn-dark w-100" (click)="isUpdate()" >SAVE</button>
     </div>
 </div>
