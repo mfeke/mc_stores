@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoryService {
-  apiUrl = "https://vigilant-space-dollop-pgr9ppg9pqqh7qg9-2080.app.github.dev/api/category"
+  apiUrl = "https://streetfeverapi.vercel.app/api/category"
   constructor(private http: HttpClient) { }
   isCreateCategory(body: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/createCategory`, body)
@@ -32,6 +32,9 @@ export class CategoryService {
 
   updateCategoryById(id:any,body:any):Observable<any>{
     return this.http.put(`${this.apiUrl}/updateCategoryById/${id}`, body)
+  }
+  deleteCategoryById(id:any):Observable<any>{
+    return this.http.delete(`${this.apiUrl}/deleteCategoryById/${id}`)
   }
 
 }

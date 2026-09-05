@@ -66,4 +66,13 @@ export class ViewBashComponent {
       
     })
   }
+
+  isDelete(value:any){
+    this.mess = 23
+    this.categoryService.deleteCategoryById(value).subscribe({
+      next:data=>{
+        this.mess = data.message
+      }
+    })
+  }
 }
