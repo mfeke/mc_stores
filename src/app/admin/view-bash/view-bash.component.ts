@@ -8,9 +8,8 @@ import { CategoryService } from '../../services/category.service';
 })
 export class ViewBashComponent {
 
-  category = {
-    name: "",
-    status: false
+  category:any  = {
+    
   }
   mess:any
   categories: any[] = []
@@ -42,6 +41,25 @@ export class ViewBashComponent {
         this.mess = data.message
 
       }
+    })
+  }
+  pass(value:any){
+    this.category = value
+
+  }
+
+  isUpdate(){
+    this.categoryService.updateCategoryById(this.category._id,this.category).subscribe({
+      next:data=>{
+        this.mess = data.message
+      },
+      error:(err) =>{
+
+        this.mess = err.error.message;
+        
+        
+      },
+      
     })
   }
 }

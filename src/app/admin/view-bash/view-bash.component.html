@@ -106,7 +106,8 @@
 
                                     ACTIVE
                                 </button>
-                                <button type="button" *ngIf="!item.status"class="btn del border py-1 border-danger span">INACTIVE</button>
+                                <button type="button" *ngIf="!item.status"
+                                    class="btn del border py-1 border-danger span">INACTIVE</button>
                             </div>
                         </td>
                         <td>
@@ -116,7 +117,8 @@
                         </td>
                         <td>
                             <div class="contain d-flex align-items-center d">
-                                <button type="button" class="btn me-2 edit">
+                                <button type="button" class="btn me-2 edit" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottomEdit"
+                                        aria-controls="offcanvasBottom" (click)="pass(item)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path
@@ -152,22 +154,52 @@
     <div class="offcanvas-body small">
         <div class="form-gr">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" [(ngModel)]="category.name" id="floatingInputCateName"
+                <input type="text" [(ngModel)]="category.name" class="form-control" [(ngModel)]="category.name" id="floatingInputCateName"
                     placeholder="new arrivls">
                 <label for="floatingCateName">CATEGORY NAME</label>
             </div>
-            <select class="form-select py-3 form-select mb-3" aria-label="Large select exa" #mySelect (change)="onOptionChange(mySelect.value)" >
+            <select class="form-select py-3 form-select mb-3" aria-label="Large select exa" #mySelect
+                (change)="onOptionChange(mySelect.value)">
                 <option selected value="false">SELECT STATUS</option>
                 <option value="true">ACTIVE </option>
                 <option value="false">INACTIVE</option>
             </select>
 
         </div>
-        
+
     </div>
     <div class="d-flex pb-3 container">
 
         <button type="button" class="btn border me-2 w-100">CANCEL</button>
         <button type="button" class="btn btn-dark w-100" (click)="isCreateCategory()">SAVE</button>
+    </div>
+</div>
+
+<!-- edit -->
+<div class="offcanvas cate offcanvas-bottom" tabindex="-1" id="offcanvasBottomEdit" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+        <div class="form-gr">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" [(ngModel)]="category.name" id="floatingInputCateName"
+                    placeholder="new arrivls">
+                <label for="floatingCateName">CATEGORY NAME</label>
+            </div>
+            <select class="form-select py-3 form-select mb-3" [(ngModel)]="category.status" aria-label="Large select exa" #mySelect
+                (change)="onOptionChange(mySelect.value)">
+                <option value="null">SELECT STATUS</option>
+                <option value="true">ACTIVE </option>
+                <option value="false">INACTIVE</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="d-flex pb-3 container">
+
+        <button type="button" class="btn border me-2 w-100">CANCEL</button>
+        <button type="button" class="btn btn-dark w-100" (click)="isUpdate()">SAVE</button>
     </div>
 </div>
