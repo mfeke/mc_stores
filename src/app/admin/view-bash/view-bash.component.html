@@ -15,6 +15,8 @@
                 <label for="floatingSearch">SEARCH</label>
             </div>
         </div>
+
+        {{mess}}
         <div class="over">
 
 
@@ -104,6 +106,7 @@
 
                                     ACTIVE
                                 </button>
+                                <button type="button" *ngIf="!item.status"class="btn del border py-1 border-danger span">INACTIVE</button>
                             </div>
                         </td>
                         <td>
@@ -153,17 +156,18 @@
                     placeholder="new arrivls">
                 <label for="floatingCateName">CATEGORY NAME</label>
             </div>
-            <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-                <option selected>SELECT STATUS</option>
+            <select class="form-select py-3 form-select mb-3" aria-label="Large select exa" #mySelect (change)="onOptionChange(mySelect.value)" >
+                <option selected value="false">SELECT STATUS</option>
                 <option value="true">ACTIVE </option>
-                <option value="2">INACTIVE</option>
+                <option value="false">INACTIVE</option>
             </select>
 
         </div>
+        
     </div>
     <div class="d-flex pb-3 container">
 
-        <button type="button" class="btn w-100">CANCEL</button>
-        <button type="button" class="btn btn-dark w-100">SAVE</button>
+        <button type="button" class="btn border me-2 w-100">CANCEL</button>
+        <button type="button" class="btn btn-dark w-100" (click)="isCreateCategory()">SAVE</button>
     </div>
 </div>

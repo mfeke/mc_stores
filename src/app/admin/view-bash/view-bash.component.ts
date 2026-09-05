@@ -7,23 +7,40 @@ import { CategoryService } from '../../services/category.service';
   styleUrl: './view-bash.component.css'
 })
 export class ViewBashComponent {
-category = {
-  name:"",
-  status:false
-}
-  categories:any[]= []
-  constructor(
-    private categoryService:CategoryService
-  ){}
 
-  ngOnInit(){
-  this.isGetAllCategories()
+  category = {
+    name: "",
+    status: false
+  }
+  mess:any
+  categories: any[] = []
+  constructor(
+    private categoryService: CategoryService
+  ) { }
+
+  ngOnInit() {
+    this.isGetAllCategories()
   }
 
-  isGetAllCategories(){
+  isGetAllCategories() {
     this.categoryService.getAllCategories().subscribe({
-      next:data=>{
+      next: data => {
         this.categories = data
+      }
+    })
+  }
+  onOptionChange(value: any) {
+    this.category.status = value;
+    
+  }
+
+  isCreateCategory(){
+    this.category.name = this.category.name.toLowerCase()
+    this.categoryService.isCreateCategory(this.category).subscribe({
+      next:data=>{
+
+        this.mess = data.message
+
       }
     })
   }
