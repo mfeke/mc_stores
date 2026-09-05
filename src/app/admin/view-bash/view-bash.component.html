@@ -117,8 +117,9 @@
                         </td>
                         <td>
                             <div class="contain d-flex align-items-center d">
-                                <button type="button" class="btn me-2 edit" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottomEdit"
-                                        aria-controls="offcanvasBottom" (click)="pass(item)">
+                                <button type="button" class="btn me-2 edit" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasBottomEdit" aria-controls="offcanvasBottom"
+                                    (click)="pass(item)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path
@@ -127,7 +128,8 @@
                                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                     </svg>
                                 </button>
-                                <button type="button" class="btn del" (click)="isDelete(item._id)">
+                                <button type="button" (click)="pass(item)" class="btn del" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModalToggle">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-trash3" viewBox="0 0 16 16">
                                         <path
@@ -146,6 +148,38 @@
     </div>
 </div>
 
+
+<!-- delete category-->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered container">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="d-flex justify-content-center align-items-center">
+
+                    <div class="btn btn-del mb-3 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor"
+                            class="bi bi-trash3" viewBox="0 0 16 16">
+                            <path
+                                d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                        </svg>
+
+                    </div>
+                </div>
+                <h5 class="text-center">Delete Confirmation</h5>
+                <p class="text-secondary span text-center">Are you sure, do you want to delete ?</p>
+
+                <button type="button" (click)="isDelete(category)" class="btn btn-delete w-100 text-white " data-bs-dismiss="modal">Yes,
+                    Delete</button>
+                <button type="button" class="btn border text-secondary w-100 mt-2"
+                    data-bs-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--Add category -->
 <div class="offcanvas cate offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
@@ -154,8 +188,8 @@
     <div class="offcanvas-body small">
         <div class="form-gr">
             <div class="form-floating mb-3">
-                <input type="text" [(ngModel)]="category.name" class="form-control" [(ngModel)]="category.name" id="floatingInputCateName"
-                    placeholder="new arrivls">
+                <input type="text" [(ngModel)]="category.name" class="form-control" [(ngModel)]="category.name"
+                    id="floatingInputCateName" placeholder="new arrivls">
                 <label for="floatingCateName">CATEGORY NAME</label>
             </div>
             <select class="form-select py-3 form-select mb-3" aria-label="Large select exa" #mySelect
@@ -176,32 +210,31 @@
 </div>
 
 <!-- edit -->
-<div class="offcanvas cate offcanvas-bottom" tabindex="-1" id="offcanvasBottomEdit" aria-labelledby="offcanvasBottomLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
+<div class="offcanvas cate offcanvas-bottom" tabindex="-1" id="offcanvasBottomEdit"
+    aria-labelledby="offcanvasBottomLabel">
+
     <div class="offcanvas-body small">
+        
         <div class="form-gr">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" [(ngModel)]="category.name" id="floatingInputCateName"
                     placeholder="new arrivls">
                 <label for="floatingCateName">CATEGORY NAME</label>
             </div>
-            <select class="form-select py-3 form-select mb-3"  [(ngModel)]="category.status" aria-label="Large select exa" #myNSelect
-                (change)="onOptionChange(myNSelect.value)">
+            <select class="form-select py-3 form-select mb-3" [(ngModel)]="category.status"
+                aria-label="Large select exa" #myNSelect (change)="onOptionChange(myNSelect.value)">
                 <option value="null">SELECT STATUS</option>
                 <option value="true">ACTIVE </option>
                 <option value="false">INACTIVE</option>
             </select>
-            {{category.status}}
+            
         </div>
-        
+
 
     </div>
     <div class="d-flex pb-3 container">
 
         <button type="button" class="btn border me-2 w-100">CANCEL</button>
-        <button type="button" class="btn btn-dark w-100" (click)="isUpdate()" >SAVE</button>
+        <button type="button" class="btn btn-dark w-100" (click)="isUpdate()">SAVE</button>
     </div>
 </div>

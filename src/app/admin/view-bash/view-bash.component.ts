@@ -50,29 +50,27 @@ export class ViewBashComponent {
 
   isUpdate(){
     this.mess = 12
+    //this.categoryService.updateCategoryById(this.category._id,this.category).subscribe({
+     // next:data=>{
+       // this.mess = data.message
+     // },
+    //  error:(err) =>{
 
-    
-    
-    this.categoryService.updateCategoryById(this.category._id,this.category).subscribe({
-      next:data=>{
-        this.mess = data.message
-      },
-      error:(err) =>{
-
-        this.mess = err.error.message;
+     //   this.mess = err.error.message;
         
         
-      },
+    //  },
       
-    })
+    //})
   }
 
   isDelete(value:any){
-    this.mess = 23
-    this.categoryService.deleteCategoryById(value).subscribe({
-      next:data=>{
-        this.mess = data.message
-      }
-    })
+
+    this.categories = this.categories.filter(item => item._id !== value._id)
+   this.categoryService.deleteCategoryById(value._id).subscribe({
+     next:data=>{
+       this.mess = data.message
+     }
+   })
   }
 }

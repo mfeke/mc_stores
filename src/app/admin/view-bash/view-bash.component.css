@@ -4,9 +4,16 @@
 
 
 }
+.btn-del{
 
+    background-color: rgb(136, 8, 8, 0.1);
+    color:red;
+}
 .over {
     overflow-x: auto;
+}
+.btn-delete{
+    background-color: red;
 }
 
 .contain {
