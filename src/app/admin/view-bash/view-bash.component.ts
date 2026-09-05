@@ -7,7 +7,10 @@ import { CategoryService } from '../../services/category.service';
   styleUrl: './view-bash.component.css'
 })
 export class ViewBashComponent {
-
+category = {
+  name:"",
+  status:false
+}
   categories:any[]= []
   constructor(
     private categoryService:CategoryService
@@ -20,11 +23,7 @@ export class ViewBashComponent {
   isGetAllCategories(){
     this.categoryService.getAllCategories().subscribe({
       next:data=>{
-        this.categories = data.categories
-
-
-
-
+        this.categories = data
       }
     })
   }
