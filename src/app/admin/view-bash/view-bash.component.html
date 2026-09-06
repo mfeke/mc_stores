@@ -1,9 +1,17 @@
 <div class="container d-flex justify-content-between py-3">
     <h3 class="bold">CATEGORIES</h3>
-    <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
-        aria-controls="offcanvasBottom">
-        +
-    </button>
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary" data-bs-toggle="dropdown" aria-expanded="false">
+            +
+        </button>
+        <ul class="dropdown-menu">
+            <li data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" role="button"><a class="dropdown-item"
+                    role="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom">CREATE CATEGORY</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottomSub">CREATE
+                    SUBCATEORY</a></li>
+            <li><a class="dropdown-item" href="#">CREATE PRODUCT</a></li>
+        </ul>
+    </div>
 </div>
 <div class="container">
 
@@ -85,7 +93,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for (item of categories; track $index) {
+                    @for (item of categories; track category._id ; let i = $index) {
 
 
                     <tr>
@@ -102,8 +110,7 @@
                         <td></td>
                         <td>
                             <div class="contain d-flex align-items-center">
-                                <button type="button" *ngIf="item.status" class="btn py-1  active">
-
+                                <button type="button" *ngIf="item.status" class="btn py-1 active">
                                     ACTIVE
                                 </button>
                                 <button type="button" *ngIf="!item.status"
@@ -119,7 +126,7 @@
                             <div class="contain d-flex align-items-center d">
                                 <button type="button" class="btn me-2 edit" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasBottomEdit" aria-controls="offcanvasBottom"
-                                    (click)="pass(item)">
+                                    (click)="passEdit(i)">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path
@@ -148,7 +155,90 @@
     </div>
 </div>
 
+<!--add sub category-->
+<div class="offcanvas subcate offcanvas-bottom" tabindex="-1" id="offcanvasBottomSub"
+    aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header border-bottom ">
+        <h6 class="offcanvas-title" id="offcanvasBottomLabel">SUB CATEGORY</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small">
+        <div class="form-gr">
+            <div class="form-floating mb-3">
+                <input type="text" [(ngModel)]="category.name" class="form-control" [(ngModel)]="category.name"
+                    id="floatingInputCateName" placeholder="new arrivls">
+                <label for="floatingCateName">CATEGORY NAME</label>
 
+            </div>
+            <div class="border form-select mb-3 py-3 rounded p-2 d-flex" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                <label *ngIf="!selectedCategory">SELECT PARENT CATEGORY</label>
+                <label *ngIf="selectedCategory">{{selectedCategory.name}}</label>
+            </div>
+            <select class="form-select py-3 form-select mb-3" aria-label="Large select exa" #mySelect
+                (change)="onOptionChange(mySelect.value)">
+                <option selected value="false">SELECT STATUS</option>
+                <option value="true">ACTIVE </option>
+                <option value="false">INACTIVE</option>
+            </select>
+
+        </div>
+    </div>
+    <div class="d-flex" >
+
+        <div class="col-6">
+            <button type="button" data-bs-dismiss="offcanvas" class="btn me-2 border w-100">
+                CANCEL
+            </button>
+        </div>
+        <div class="col-6">
+            <button type="button" (click)="createSubCate()" data-bs-dismiss="offcanvas" class="btn btn-primary w-100" >
+                SAVE
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-body">
+                <button type="button" data-bs-dismiss="modal" *ngFor="let category of categories"
+                    class="btn border mb-2 me-2" (click)="isSelectedCategory(category) "
+                    [ngClass]="{'btn-dark':category.value}">
+                    <div class="d-flex align-items-center">
+                        <span class="mb-0 me-1 font-category">{{category.name | uppercase}}</span>
+                        <svg *ngIf="!category.value" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                        </svg>
+                        <svg *ngIf="category.value" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+
+                </button>
+            </div>
+
+        </div>
+        <div class="d-flex justify-content-center us">
+            <div class="bg-white  d-flex justify-content-center align-items-center mt-3 rounded-circle"
+                bdata-bs-dismiss="modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi m-2 bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- delete category-->
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
     tabindex="-1">
@@ -169,7 +259,8 @@
                 <h5 class="text-center">Delete Confirmation</h5>
                 <p class="text-secondary span text-center">Are you sure, do you want to delete ?</p>
 
-                <button type="button" (click)="isDelete(category)" class="btn btn-delete w-100 text-white " data-bs-dismiss="modal">Yes,
+                <button type="button" (click)="isDelete(category)" class="btn btn-delete w-100 text-white "
+                    data-bs-dismiss="modal">Yes,
                     Delete</button>
                 <button type="button" class="btn border text-secondary w-100 mt-2"
                     data-bs-dismiss="modal">Cancel</button>
@@ -181,8 +272,8 @@
 
 <!--Add category -->
 <div class="offcanvas cate offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+    <div class="offcanvas-header border-bottom ">
+        <h6 class="offcanvas-title" id="offcanvasBottomLabel">CATEGORY</h6>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body small">
@@ -205,36 +296,42 @@
     <div class="d-flex pb-3 container">
 
         <button type="button" class="btn border me-2 w-100">CANCEL</button>
-        <button type="button" class="btn btn-dark w-100" (click)="isCreateCategory()">SAVE</button>
+        <button type="button" class="btn btn-primary  w-100" data-bs-dismiss="offcanvas"
+            (click)="isCreateCategory()">SAVE</button>
     </div>
 </div>
 
 <!-- edit -->
+
 <div class="offcanvas cate offcanvas-bottom" tabindex="-1" id="offcanvasBottomEdit"
     aria-labelledby="offcanvasBottomLabel">
-
-    <div class="offcanvas-body small">
-        
-        <div class="form-gr">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" [(ngModel)]="category.name" id="floatingInputCateName"
-                    placeholder="new arrivls">
-                <label for="floatingCateName">CATEGORY NAME</label>
-            </div>
-            <select class="form-select py-3 form-select mb-3" [(ngModel)]="category.status"
-                aria-label="Large select exa" #myNSelect (change)="onOptionChange(myNSelect.value)">
-                <option value="null">SELECT STATUS</option>
-                <option value="true">ACTIVE </option>
-                <option value="false">INACTIVE</option>
-            </select>
-            
+    <div class="c" *ngIf="selectedCategory">
+        <div class="pt-3 mb-0 container">
+            <h5 class="text">CATEGORY EDIT</h5>
         </div>
+        <div class="offcanvas-body small">
 
+            <div class="form-gr">
+                <div class="form-floating mb-3">
+                    <input type="text" #mySelectName [(ngModel)]="selectedCategory.name " class="form-control"
+                        id="floatingInputCateNewName" placeholder="new arrivls">
+                    <label for="floatingNewCateName">CATEGORY NAME</label>
+                </div>
+                <select class="form-select py-3 form-select mb-3" aria-label="Large select exa"
+                    [(ngModel)]="selectedCategory.status" #myNSelect>
+                    <option value="null">SELECT STATUS</option>
+                    <option value="true">ACTIVE </option>
+                    <option value="false">INACTIVE</option>
+                </select>
 
-    </div>
-    <div class="d-flex pb-3 container">
+            </div>
 
-        <button type="button" class="btn border me-2 w-100">CANCEL</button>
-        <button type="button" class="btn btn-dark w-100" (click)="isUpdate()">SAVE</button>
+        </div>
+        <div class="d-flex pb-3 container">
+
+            <button type="button" class="btn border me-2 w-100">CANCEL</button>
+            <button type="button" class="btn btn-dark w-100" (click)="isUpdate(myNSelect.value, mySelectName.value)"
+                data-bs-dismiss="offcanvas">SAVE</button>
+        </div>
     </div>
 </div>

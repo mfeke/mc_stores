@@ -4,6 +4,13 @@
 
 
 }
+.icon-container{
+    width: 50px;
+    height: 50px;
+}
+.subcate{
+    height: 350px;
+}
 .btn-del{
 
     background-color: rgb(136, 8, 8, 0.1);
@@ -14,6 +21,11 @@
 }
 .btn-delete{
     background-color: red;
+}
+.bg-b{
+    background:rgba(255, 255, 255, 0) !important;
+    backdrop-filter: blur(10px);
+
 }
 
 .contain {
@@ -45,7 +57,7 @@
 }
 
 .cate {
-    height: 280px;
+    height: 300px;
 }
 
 

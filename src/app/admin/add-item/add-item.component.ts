@@ -35,7 +35,7 @@ export class AddItemComponent {
 
     this.categoryService.getAllCategories().subscribe({
       next: data => {
-        this.categoryList = data.categories
+        this.categoryList = data
       }
 
     })
