@@ -222,11 +222,11 @@
             <div class="modal-body bg-white rounded">
                 <h6>ADD VARIANT </h6>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" #option id="floatingInputOpt" placeholder="colour ">
+                    <input type="text" [(ngModel)]="variantData.option"  class="form-control" #option id="floatingInputOpt" placeholder="colour ">
                     <label for="floatingInputOpt">OPTION</label>
                 </div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" #value id="floatingVale" placeholder="value">
+                    <input type="text" [(ngModel)]="variantData.value" class="form-control" #value id="floatingVale" placeholder="value">
                     <label for="floatingVale">VALUE</label>
                 </div>
                 <button type="button" class="btn w-100 mt-3 btn-primary" (click)="isSubmit(option.value, value.value)">SUBMIT</button>

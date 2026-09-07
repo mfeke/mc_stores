@@ -20,7 +20,7 @@ export class AddItemComponent {
   sizeList: any = [{
 
   }]
- variantList:any[]= []
+  variantList: any[] = []
   selectedImage: any
   categoryList: any[] = [{}]
   product: any = {}
@@ -124,9 +124,25 @@ export class AddItemComponent {
 
 
   isSubmit(option: any, value: any) {
-    this.variantList = value.split(",").map((item :any)=> {
-      return { [option]:item.trim() }; // .trim() removes any accidental spaces
-    });
+    this.variantData = {}
+    if (this.variantList.length === 0) {
+      this.variantList = value.split(",").map((item: any) => {
+        return { [option]: item.trim() }; // .trim() removes any accidental spaces
+      });
+    }
+    
+
+      let newData =  value.split(',').map((item:any)=>{
+        return { [option]: item.trim() }
+      })
+
+      this.variantList = this.variantList.flatMap(s =>{
+        newData.map((c:any) => ({ ...s, ...c }))
+
+      })
+
+  
+    
 
   }
 
