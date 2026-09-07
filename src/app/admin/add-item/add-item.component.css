@@ -14,13 +14,12 @@ th{
     
     font-size:15px;
 }
-.td{
-    height:50px;
-    display: flex;
-    align-items: center;
-
+.th{
+    min-width: 150px;
 }
-
+.span-f{
+    font-size: 13px;
+}
 .bg-url {
     background-repeat: no-repeat;
     background-size: cover;

@@ -121,7 +121,33 @@
     </div>
 </div>
 <div class="bg-light mt-3 container py-3 s">
-    <h6>PRODUCT VARIANTS</h6>
+
+    <div class="d-flex align-items-center mb-3 justify-content-between">
+        <h6>PRODUCT VARIANTS</h6>
+        <span class="bg-info btn span-f text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ ADD
+            VARIANT </span>
+    </div>
+    <div class="over">
+        <table class="table  table-striped-columns ">
+            <thead class="table-dark">
+                <tr>
+                    <th class="th" scope="col">VARIANT</th>
+                    <th class="th" scope="col">PRICE</th>
+                    <th class="th" scope="col">QUANTIT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td>Mark</td>
+                    <td><input class="form-control" type="text" placeholder="0.00"></td>
+                    <td>
+                        <input class="form-control" type="text" placeholder="0">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <div class="bg-light container py-3 mt-3">
     <h6>PRICING</h6>
@@ -182,4 +208,30 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<!--variant modal-->
+<div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                ...
+            </div>
+
+            <div class="bg-dark p-3">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                </svg>
+            </div>
+
+        </div>
+    </div>
+
+
 </div>
