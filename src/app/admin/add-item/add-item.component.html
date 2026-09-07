@@ -87,7 +87,7 @@
         placeholder="ENTER THE PRODUCT DETAILS...">
     </quill-editor>
     <div class="form-floating mb-3">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+        <textarea class="form-control"[(ngModel)]="product.material"  placeholder="Leave a comment here" id="floatingTextarea"></textarea>
         <label for="floatingTextarea">MATERIAL</label>
     </div>
     <div class="border  p-3   mb-3 form-control input" data-bs-toggle="offcanvas"
@@ -127,7 +127,7 @@
         <span class="bg-info btn span-f text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ ADD
             VARIANT </span>
     </div>
-    <div class="over">
+    <div class="over" *ngIf="variantList.length !== 0">
         <table class="table  table-striped-columns ">
             <thead class="table-dark">
                 <tr>

@@ -93,10 +93,10 @@ export class AddItemComponent {
     this.selectedFiles.splice(index, 1);
   }
 
-  // Upload the files using FormData
+  
   upload(): void {
     this.message = 34
-    let id = "6a90fd50d919c7309c967879"
+    
     const formData = new FormData();
     this.selectedFiles.forEach((file) => {
       formData.append('images', file);
@@ -104,8 +104,9 @@ export class AddItemComponent {
     formData.append('name', this.product.name)
     formData.append('price', String(this.product.price))
     formData.append('priceSale', String(this.product.priceSale))
+    formData.append('material', this.product.material)
     formData.append('description', String(this.editorControl.value))
-    formData.append('sizes', JSON.stringify(this.sizeList))
+    formData.append('variant', JSON.stringify(this.variantList))
     formData.append('category', JSON.stringify(this.selectedCategory))
     this.productService.isCreateProduct(formData).subscribe({
       next: data => {
@@ -115,7 +116,6 @@ export class AddItemComponent {
       error: (err) => {
 
         this.message = err.message
-
 
       },
     })
