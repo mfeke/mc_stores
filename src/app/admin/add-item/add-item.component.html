@@ -137,14 +137,16 @@
                 </tr>
             </thead>
             <tbody>
+                @for (item of variantList; track $index) {
                 <tr>
 
-                    <td>Mark</td>
+                    <td>{{item.colour}}</td>
                     <td><input class="form-control" type="text" placeholder="0.00"></td>
                     <td>
                         <input class="form-control" type="text" placeholder="0">
                     </td>
                 </tr>
+            }
             </tbody>
         </table>
     </div>
@@ -215,21 +217,31 @@
 <div class="modal fade " id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
+        <div class="modal-content bg-none">
 
-            <div class="modal-body">
-                ...
+            <div class="modal-body bg-white rounded">
+                <h6>ADD VARIANT </h6>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" #option id="floatingInputOpt" placeholder="colour ">
+                    <label for="floatingInputOpt">OPTION</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" #value id="floatingVale" placeholder="value">
+                    <label for="floatingVale">VALUE</label>
+                </div>
+                <button type="button" class="btn w-100 mt-3 btn-primary" (click)="isSubmit(option.value, value.value)">SUBMIT</button>
             </div>
+            <div class="d-flex justify-content-center">
 
-            <div class="bg-dark p-3">
+                <div class="text bg-white rounded-circle mt-3" data-bs-dismiss="modal">
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi m-2 bi-x" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </div>
             </div>
-
         </div>
     </div>
 

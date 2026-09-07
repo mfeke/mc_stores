@@ -20,6 +20,11 @@ th{
 .span-f{
     font-size: 13px;
 }
+.bg-none{
+        background-color: rgba(0, 0, 0, 0.0);
+        border: none ;
+
+}
 .bg-url {
     background-repeat: no-repeat;
     background-size: cover;

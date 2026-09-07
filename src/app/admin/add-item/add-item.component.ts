@@ -10,16 +10,17 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './add-item.component.css'
 })
 export class AddItemComponent {
-  message?:any
+  message?: any
   editorControl = new FormControl('');
   colourList = [{
     name: "",
-    unit:""
+    unit: ""
   }]
+  variantData: any = {}
   sizeList: any = [{
-    
-  }]
 
+  }]
+ variantList:any[]= []
   selectedImage: any
   categoryList: any[] = [{}]
   product: any = {}
@@ -101,7 +102,7 @@ export class AddItemComponent {
       formData.append('images', file);
     });
     formData.append('name', this.product.name)
-    formData.append('price', String(this.product.price)) 
+    formData.append('price', String(this.product.price))
     formData.append('priceSale', String(this.product.priceSale))
     formData.append('description', String(this.editorControl.value))
     formData.append('sizes', JSON.stringify(this.sizeList))
@@ -121,27 +122,13 @@ export class AddItemComponent {
 
   }
 
-  
-  addSize() {
-    let size:any = {
-  
 
-    } 
-    this.sizeList.push(size)
-  }
-  removeSize(index: any) {
-    if (index !== 0) {
-      this.sizeList = this.sizeList.filter((item: any, i: any) => i !== index)
-    }
-  }
+  isSubmit(option: any, value: any) {
+    this.variantList = value.split(",").map((item :any)=> {
+      return { [option]:item.trim() }; // .trim() removes any accidental spaces
+    });
 
-  removeColour(index: any) {
-    if (index !== 0) {
-      this.colourList = this.colourList.filter((item, i) => i !== index);
-
-    }
   }
-  
 
 
 }
