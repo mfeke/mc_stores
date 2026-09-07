@@ -124,27 +124,40 @@ export class AddItemComponent {
 
 
   isSubmit(option: any, value: any) {
-    this.variantData = {}
+    // this.variantData = {}
+    //if (this.variantList.length === 0) {
+    //  this.variantList = value.split(",").map((item: any) => {
+    //    return { [option]: item.trim() }; // .trim() removes any accidental spaces
+    // });
+    //}
+
+    const newData = value.split(',').map((item: any) => ({
+      [option]: item.trim()
+    }));
+
     if (this.variantList.length === 0) {
-      this.variantList = value.split(",").map((item: any) => {
-        return { [option]: item.trim() }; // .trim() removes any accidental spaces
-      });
+      this.variantList = newData;
+    } else {
+      // Explicitly return the mapped array inside flatMap
+      this.variantList = this.variantList.flatMap(s =>
+        newData.map((c: any) => ({ ...s, ...c }))
+      );
     }
-    
-
-      let newData =  value.split(',').map((item:any)=>{
-        return { [option]: item.trim() }
-      })
-
-      this.variantList = this.variantList.flatMap(s =>{
-        newData.map((c:any) => ({ ...s, ...c }))
-
-      })
-
-  
-    
-
   }
+
+  // let newData = value.split(',').map((item: any) => {
+  //  return { [option]: item.trim() }
+  //})
+
+  // this.variantList = this.variantList.flatMap(s => {
+  //   newData.map((c: any) => ({ ...s, ...c }))
+
+  //})
+
+
 
 
 }
+  
+
+
