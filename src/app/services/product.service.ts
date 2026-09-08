@@ -10,7 +10,7 @@ export class ProductService {
   apiUrl = "https://streetfeverapi.vercel.app/api/product"
   constructor(private http: HttpClient) { }
   isCreateProduct(body: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/createProduct/`, body)
+    return this.http.post(`${this.apiUrl}/createProduct`, body)
   }
   isGetAllProduct():Observable<any>{
     

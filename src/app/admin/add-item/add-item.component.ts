@@ -99,8 +99,8 @@ export class AddItemComponent {
     
     const formData = new FormData();
     this.selectedFiles.forEach((file) => {
-      formData.append('images', file);
-    });
+     formData.append('images', file);
+   });
     formData.append('name', this.product.name)
     formData.append('price', String(this.product.price))
     formData.append('priceSale', String(this.product.priceSale))
@@ -110,12 +110,12 @@ export class AddItemComponent {
     formData.append('category', JSON.stringify(this.selectedCategory))
     this.productService.isCreateProduct(formData).subscribe({
       next: data => {
-        this.message = data.mesage
+        //this.message = data.mesage
 
       },
       error: (err) => {
 
-        this.message = err.message
+        this.message = err.error?.message
 
       },
     })

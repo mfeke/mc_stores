@@ -85,7 +85,7 @@ export class ViewBashComponent {
       },
       error: (err) => {
 
-        this.mess = err.error.message;
+        this.mess = err.error?.message || err.message
 
 
       },
@@ -98,6 +98,7 @@ export class ViewBashComponent {
   createSubCate(){
 
     this.mess = 22
+    this.category.name = this.category.name.toLowerCase()
     this.categoryService.isCreateSubCategory(this.selectedCategory?._id, this.category).subscribe({
       next:data=>{
         this.mess = data.message

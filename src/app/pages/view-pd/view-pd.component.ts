@@ -31,11 +31,6 @@ export class ViewPdComponent {
         this.category = data
       }
     })
-    this.productService.isGetAllProduct().subscribe({
-      next: data => {
-        this.products = data
-      }
-    })
   }
   isCol(value: any) {
 
