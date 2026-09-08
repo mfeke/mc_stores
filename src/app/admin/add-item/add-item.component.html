@@ -1,3 +1,8 @@
+<div class="d-flex">
+    <button type="button" class="btn btn-dark" (click)="upload()">SAVE</button>
+</div>
+
+{{message}}
 <div class="container py-3 bg-light">
     <h6 class="mb-3">PRODUCT INFORMATION</h6>
     <div class="contain">
@@ -149,10 +154,10 @@
 
                     </td>
                     <td>
-                        <input class="form-control" type="text" placeholder="0.00">
+                        <input class="form-control" [(ngModel)]="variant.price" type="text" placeholder="0.00">
                     </td>
                     <td>
-                        <input class="form-control" type="text" placeholder="0">
+                        <input class="form-control" [(ngModel)]="variant.qty" type="text" placeholder="0">
                     </td>
                 </tr>
                 }

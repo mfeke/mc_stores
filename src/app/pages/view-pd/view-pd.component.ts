@@ -24,6 +24,7 @@ export class ViewPdComponent {
 
   ngOnInit() {
     this.url = this.route.snapshot.paramMap.get('name')
+    this.url = this.url.replaceAll('-', ' ')
     this.isGetCatebyName()
     this.categoryService.getCategoryByName(this.url).subscribe({
       next: data => {
