@@ -16,4 +16,7 @@ export class ProductService {
     
     return this.http.get(`${this.apiUrl}/getAllProduct`)
   }
+  isGetProductByCateName(name:any):Observable<any>{
+    return this.http.get(`${this.apiUrl}/getProductsByCategoryName/${name}`)
+  }
 }

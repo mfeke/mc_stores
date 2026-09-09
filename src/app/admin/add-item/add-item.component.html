@@ -88,6 +88,10 @@
             placeholder="Blacmo">
         <label for="floatingInputTitle">NAME OF PRODUCT<span class="text-danger">*</span></label>
     </div>
+    <div class="form-floating mb-3">
+          <input type="text" class="form-control" [(ngModel)]="product.colour" id="floatingInputCol" placeholder="name@example.com">
+            <label for="floatingInputCol">Colour</label>
+            </div>
     <quill-editor class="rounded bg-white mb-3" [formControl]="editorControl" theme="snow"
         placeholder="ENTER THE PRODUCT DETAILS...">
     </quill-editor>

@@ -14,7 +14,7 @@ export class ViewPdComponent {
   category?: any
   col: any
 
-  url?: any
+  url?: any = ''
   constructor(
     private categoryService: CategoryService,
     private productService: ProductService,
@@ -25,10 +25,18 @@ export class ViewPdComponent {
   ngOnInit() {
     this.url = this.route.snapshot.paramMap.get('name')
     this.url = this.url.replaceAll('-', ' ')
-    this.isGetCatebyName()
+    this.productService.isGetProductByCateName (this.url).subscribe({
+
+    })
+
     this.categoryService.getCategoryByName(this.url).subscribe({
       next: data => {
         this.category = data
+      }
+    })
+    this.productService.isGetProductByCateName(this.url).subscribe({
+      next:data=>{
+        this.products = data
       }
     })
   }

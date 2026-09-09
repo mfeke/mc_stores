@@ -105,12 +105,13 @@ export class AddItemComponent {
     formData.append('price', String(this.product.price))
     formData.append('priceSale', String(this.product.priceSale))
     formData.append('material', this.product.material)
+    formData.append('colour', this.product.colour)
     formData.append('description', String(this.editorControl.value))
     formData.append('variant', JSON.stringify(this.variantList))
     formData.append('category', JSON.stringify(this.selectedCategory))
     this.productService.isCreateProduct(formData).subscribe({
       next: data => {
-        //this.message = data.mesage
+        this.message = data.mesage
 
       },
       error: (err) => {

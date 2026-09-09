@@ -1,12 +1,6 @@
 <app-navbar></app-navbar>
 
-
-
 <div class="container">
-
-
-
-
     <div class="d-flex  justify-content-between text-secondary">
         <div class="d-flex align-items-center">
             <div class="bg-secondary p-2 me-2" [ngClass]="{'bg-black': col === 'col-12'}" (click)="isCol('col-12')">
@@ -32,9 +26,8 @@
 <div class="grid-container  py-3"
     [ngClass]="{'grid-one':col === 'col-12', 'grid-container ': col === 'col-2'|| !col, 'grid-four':col  === 'col-4'}">
 
-    @for (product of products; track $index) {
-    @for (proCategory of product.category; track $index) {
-    <div class="text-black mb-3" *ngIf="category._id === proCategory._id">
+    @for (product of products|unique:'name'; track $index) {
+    <div class="text-black mb-3">
 
         <div class="bg-sec mb-3 p-2 w-100">
             <div class="con" *ngFor="let image of product.images;let i = index">
@@ -47,14 +40,13 @@
             <p>
             <p class="span product-price">{{product.price|currency:' '}} ZAR</p>
             <div class="d-flex">
-                <div class="con me-2" *ngFor="let color of product.variant | unique :'Colour'">
-                    <div class=" p-2 border" [style.background]="color.Colour| lowercase "></div>
+                <div class="con me-2" *ngFor="let color of products| filterName: product.name">
+                    <div class=" p-2 border" [style.background]="color.colour| lowercase "></div>
                 </div>
             </div>
         </div>
 
     </div>
-    }
 
     }
 </div>
