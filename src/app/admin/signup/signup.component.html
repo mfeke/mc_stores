@@ -1,7 +1,7 @@
 <div class="vh-100 d-flex fixed-top pb-5 align-items-center justify-content-center">
-<div class="fixed-top">
-    <img src="https://i.postimg.cc/NMyBhmTD/Black-and-White-Minimalist-Square-Creative-Studio-Logo-2.jpg" alt class="logo">
-</div>
+    <div class="fixed-top py-3 container d-flex">
+        {{mess}}
+    </div>
     <div class="container  w-100">
         <div class="card">
 
@@ -10,21 +10,38 @@
                 <p class="text-secondary span mb-4 text-center ">MANAGE YOUR BUSINESS WITH EASE</p>
                 <div class="contain  w-100">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInputName" placeholder="name example">
-                        <label for="floatingInputName">Full Name</label>
+                        <input type="text" [(ngModel)]="user.fullName" class="form-control"
+                            [class]="{'form-control': !user.fullName || user.fullName, 'is-invalid': errMess.fullName , 'bor-danger': errMess.fullName}"
+                            id="floatingInputLast" placeholder="Mask">
+                        <label class="text" [class.text-danger]="errMess.fullName" for="floatingInputLast">FULL
+                            NAME*</label>
                     </div>
+
+                    <p class="span text-danger" *ngIf="errMess.fullName">Enter your full name</p>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <input type="email" [(ngModel)]="user.email" class="form-control"
+                            [class]="{'form-control': !user.email || user.email, 'is-invalid':errMess.email, 'bor-danger': errMess.email}"
+                            id="floatingInput" placeholder="name@example.com">
+                        <label class="text" [class.text-danger]="errMess.email" for="floatingInput">EMAIL
+                            ADDRESS*</label>
                     </div>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                    <p class="span text-danger" *ngIf="errMess.email">This looks wrong. Check your email address.</p>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" [(ngModel)]="user.password"
+                            [class]="{'form-control': !errMess.pass || errMess.pass, 'is-invalid': errMess.pass , 'bor-danger': errMess.pass}"
+                            class="form-control" id="floatingPassword" placeholder="Password">
+                        <label class="text" [class.text-danger]="errMess.pass"
+                            for="floatingPassword mx-0 text px-0">PASSWORD*</label>
                     </div>
+
+                    <p class="span text-danger" *ngIf="errMess.pass">Enter your password</p>
+
                     <div class="py-3">
-                        <button type="button" class="btn w-100 py-2 btn-dark">SIGN UP</button>
+                        <button type="button" class="btn w-100 py-2 btn-dark" (click)="submit()">SIGN UP</button>
                     </div>
-                    <p class="text-secondary span text-center">Already have an account? <span class="bold"> <b>Log In</b></span></p>
+                    <p class="text-secondary span text-center">Already have an account? <span class="bold"> <b>Log
+                                In</b></span></p>
                 </div>
             </div>
         </div>

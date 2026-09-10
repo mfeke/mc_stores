@@ -11,6 +11,7 @@ import { AddItemComponent } from './admin/add-item/add-item.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ViewBashComponent } from './admin/view-bash/view-bash.component';
 import { SignupComponent } from './admin/signup/signup.component';
+import { SigninComponent } from './admin/signin/signin.component';
 const routes: Routes = [
   
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:"vc/:id", component: VerifyComponent},
 
 
-  {path:'store/admin/signup', component:SignupComponent}
+  {path:'store/admin/signup', component:SignupComponent},
+  {path:'store/admin/signin', component:SigninComponent}
 ];
 
 @NgModule({
