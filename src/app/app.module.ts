@@ -25,6 +25,7 @@ import { UniquePipe } from './unique.pipe';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ViewBashComponent } from './admin/view-bash/view-bash.component';
 import { FilterNamePipe } from './filter-name.pipe';
+import { SignupComponent } from './admin/signup/signup.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { FilterNamePipe } from './filter-name.pipe';
     DashboardComponent,
     ViewBashComponent,
     FilterNamePipe,
+    SignupComponent,
 
   ],
   imports: [

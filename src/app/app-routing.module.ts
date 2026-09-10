@@ -10,6 +10,7 @@ import { CreateAccountComponent } from './pages/create-account/create-account.co
 import { AddItemComponent } from './admin/add-item/add-item.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ViewBashComponent } from './admin/view-bash/view-bash.component';
+import { SignupComponent } from './admin/signup/signup.component';
 const routes: Routes = [
   
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -22,7 +23,10 @@ const routes: Routes = [
   {path:'admin/add', component:AddItemComponent},
   {path:'admin/dashboard', component:DashboardComponent},
   {path:'dash/:name', component:ViewBashComponent},
-  {path:"vc/:id", component: VerifyComponent}
+  {path:"vc/:id", component: VerifyComponent},
+
+
+  {path:'store/admin/signup', component:SignupComponent}
 ];
 
 @NgModule({
