@@ -1,12 +1,14 @@
 <div class="vh-100 d-flex fixed-top pb-5 align-items-center justify-content-center">
     <div class="fixed-top py-3 container d-flex">
-    
+    {{mess.fullName}}
+
+        
     </div>
     <div class="container  w-100">
         <div class="card">
 
             <div class="card-body py-4">
-                <h3 class="text-center">CREATE A NEW ACCOUNT</h3>
+                <h3 class="text-center">Welcome Back!!</h3>
                 <p class="text-secondary span mb-4 text-center ">MANAGE YOUR BUSINESS WITH EASE</p>
                 <div class="contain  w-100">
 
@@ -33,8 +35,8 @@
                     <div class="py-3">
                         <button type="button" class="btn w-100 py-2 btn-dark" (click)="submit()">SIGN UP</button>
                     </div>
-                    <p class="text-secondary span text-center">Already have an account? <span class="bold"> <b>Log
-                                In</b></span></p>
+                    <p class="text-secondary span text-center">Don't have an account? <span class="bold" routerLink="/store/admin/signup" > <b>Create
+                                Acount</b></span></p>
                 </div>
             </div>
         </div>

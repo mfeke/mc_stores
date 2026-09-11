@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './signin.component.css'
 })
 export class SigninComponent {
-
+mess!:any
   email!: any
   user = {
     email: "",
@@ -47,7 +47,9 @@ export class SigninComponent {
     this.authServices.isLogin(this.user).subscribe({
       next: data => {
         if (data) {
-          this.tokenService.saveToken(data.accessToken)
+
+          this.mess = data
+          //this.tokenService.saveToken(data.accessToken)
           this.router.navigate([`vc/${data.id}`])
         }
       },
