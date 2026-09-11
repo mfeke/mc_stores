@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { TokenService } from '../../services/token.service';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-signin',
@@ -11,13 +12,14 @@ import { Router } from '@angular/router';
 export class SigninComponent {
 mess!:any
   email!: any
-  user = {
+  user:any = {
     email: "",
     password: ""
   }
   loading: boolean = false
 
   errShow: boolean = false
+  succShow:boolean = false
   errEmail: boolean = false
   errPass: boolean = false
   constructor(
@@ -42,23 +44,24 @@ mess!:any
       return
 
     }
+    this.mess = 44
 
-    this.loading = true
+    
     this.authServices.isLogin(this.user).subscribe({
       next: data => {
         if (data) {
+          this.succShow =true
 
-          this.mess = data
-          //this.tokenService.saveToken(data.accessToken)
-          this.router.navigate([`vc/${data.id}`])
+          this.mess = data.fullName
+          this.tokenService.saveToken(data.accessToken)
+          this.router.navigate([`store/admin/dashboard`])
         }
       },
-      error: (err) => {
-        if (err.error.accessToken === null) {
-          this.loading = false
-          this.errShow = true
+      error: (err:HttpErrorResponse) => {
+        this.errShow = true
+        this.mess = err.error?.message
 
-        }
+        
       },
     })
   }

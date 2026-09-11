@@ -1,8 +1,23 @@
 <div class="vh-100 d-flex fixed-top pb-5 align-items-center justify-content-center">
     <div class="fixed-top py-3 container d-flex">
-    {{mess.fullName}}
+        <div class="fixed-top p-3 ">
+            <div class="toast align-items-center" [ngClass]="{'show border-danger text-danger ':errShow && mess }" role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        {{mess}}
+                    </div>
+                    <button type="button" class="btn text-danger me-2 m-auto text-danger" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 16 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-        
     </div>
     <div class="container  w-100">
         <div class="card">
@@ -12,30 +27,29 @@
                 <p class="text-secondary span mb-4 text-center ">MANAGE YOUR BUSINESS WITH EASE</p>
                 <div class="contain  w-100">
 
-                    
+
                     <div class="form-floating mb-3">
                         <input type="email" [(ngModel)]="user.email" class="form-control"
-                            [class]="{'form-control': !user.email || user.email, 'is-invalid':errEmail, 'bor-danger': errEmail}"
+                            [class]="{'form-control': !user.email || user.email, 'is-invalid':errEmail|| errShow, 'bor-danger': errEmail}"
                             id="floatingInput" placeholder="name@example.com">
                         <label class="text" [class.text-danger]="errEmail" for="floatingInput">EMAIL
                             ADDRESS*</label>
                     </div>
-                    <p class="span text-danger" *ngIf="errEmail">This looks wrong. Check your email address.</p>
+                
 
                     <div class="form-floating mb-3">
                         <input type="password" [(ngModel)]="user.password"
-                            [class]="{'form-control': !errPass || errPass, 'is-invalid': errPass , 'bor-danger': errPass}"
+                            [class]="{'form-control': !errPass || errPass, 'is-invalid': errPass || errShow , 'bor-danger': errPass}"
                             class="form-control" id="floatingPassword" placeholder="Password">
                         <label class="text" [class.text-danger]="errPass"
                             for="floatingPassword mx-0 text px-0">PASSWORD*</label>
                     </div>
 
-                    <p class="span text-danger" *ngIf="errPass">Enter your password</p>
-
                     <div class="py-3">
                         <button type="button" class="btn w-100 py-2 btn-dark" (click)="submit()">SIGN UP</button>
                     </div>
-                    <p class="text-secondary span text-center">Don't have an account? <span class="bold" routerLink="/store/admin/signup" > <b>Create
+                    <p class="text-secondary span text-center">Don't have an account? <span class="bold"
+                            routerLink="/store/admin/signup"> <b>Create
                                 Acount</b></span></p>
                 </div>
             </div>
