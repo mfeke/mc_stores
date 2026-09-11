@@ -22,12 +22,12 @@ const routes: Routes = [
   {path:"pd", component:DetailsPdComponent},
   { path:"basket", component:CartComponent},
   {path:'admin/add', component:AddItemComponent},
-  {path:'admin/dashboard', component:DashboardComponent},
   {path:'dash/:name', component:ViewBashComponent},
   {path:"vc/:id", component: VerifyComponent},
 
 
   {path:'store/admin/signup', component:SignupComponent},
+  {path:'store/admin/dashboard', component: DashboardComponent},
   {path:'store/admin/signin', component:SigninComponent}
 ];
 

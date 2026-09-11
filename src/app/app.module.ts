@@ -27,6 +27,7 @@ import { ViewBashComponent } from './admin/view-bash/view-bash.component';
 import { FilterNamePipe } from './filter-name.pipe';
 import { SignupComponent } from './admin/signup/signup.component';
 import { SigninComponent } from './admin/signin/signin.component';
+import { MenubarComponent } from './admin/menubar/menubar.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { SigninComponent } from './admin/signin/signin.component';
     FilterNamePipe,
     SignupComponent,
     SigninComponent,
+    MenubarComponent,
 
   ],
   imports: [

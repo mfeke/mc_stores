@@ -18,7 +18,7 @@ const httpOptions = {
 export class AuthService {
 
 
-  private jwtb_url = ""
+  private jwtb_url = "https://streetfeverapi.vercel.app/"
 
   constructor(
     private http: HttpClient,

@@ -1,27 +1,72 @@
+<app-menubar></app-menubar>
+
 <div class="container py-3">
-    <img src="https://i.postimg.cc/GpFfTCcV/Black-and-White-Corporate-MB-Initial-Logo-(1).jpg" alt class="logo rounded">
-</div>
+    <h2 class="mb-3">{{greeting}}, Thulane</h2>
+    <div class="d-flex mb-3">
 
-<div class="container">
-    <div class="row">
+        <div class="btn-group me-3 border" data-bs-toggle="dropdown" aria-expanded="false">
+            <button type="button" class="btn  span">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                    class="bi me-2 bi-download" viewBox="0 0 16 16">
+                    <path
+                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                    <path
+                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                </svg>
+                <span>Export</span>
+            </button>
+            <button type="button" class="btn br border-start " aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-caret-down" viewBox="0 0 16 16">
+                    <path
+                        d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659" />
+                </svg>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+        <button class="btn btn-primary" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi me-2 bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+            </svg>
+            <span class="span me-2">Add Product</span>
+        </button>
 
-        <div class="col-6 c">
-            <div class="bg-dark rounded cone text-white w-100 p-3">
+    </div>
 
-                <div class="h-50">
-                    <p class="sap">CATEGORY</p>
+    <div class="border card" role="alert">
+        <div class="d-flex container pt-3">
+
+            <div class="col-6">
+                <h2 class="text-success num">0</h2>
+                <p class="text-secondary">Total Orders</p>
+            </div>
+            <div class="d-flex justify-content-end col-6 mb-3 z">
+                <div class="h-0">
+                    <div class="bg-s-main icon-re rounded icon-data"></div>
                 </div>
-                <div class="h-50 d-flex justify-content-between align-items-end">
-                    <h1 class="bold mb-0">2</h1>
-                    <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" fill="currentColor"
-                        class="bi mb-1 bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                <div class="icon-data d-flex justify-content-center align-items-center text-white  bg-s  rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box"
+                        viewBox="0 0 16 16">
                         <path
-                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                            d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
                     </svg>
                 </div>
-
             </div>
+
         </div>
-        <div class="col-6"></div>
+        <hr>
+        <div class="container pb-3">
+            <p class="span text-secondary sapn mb-0">0 orders today</p>
+        </div>
     </div>
 </div>
