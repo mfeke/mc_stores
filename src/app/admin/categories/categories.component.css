@@ -1,0 +1,82 @@
+.span {
+    font-size: 14px;
+}
+
+.over {
+    overflow-x: auto;
+}
+
+.th {
+
+    min-width: 150px;
+
+
+}
+
+.icon-container {
+    width: 50px;
+    height: 50px;
+}
+
+.subcate {
+    height: 350px;
+}
+
+.btn-del {
+
+    background-color: rgb(136, 8, 8, 0.1);
+    color: red;
+}
+
+.over {
+    overflow-x: auto;
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+.bg-b {
+    background: rgba(255, 255, 255, 0) !important;
+    backdrop-filter: blur(10px);
+
+}
+
+.contain {
+    height: 40px;
+
+}
+
+.contain-2 {
+    height: 25px;
+}
+
+.edit {
+    background: #B2C4D4;
+    color: #013253;
+}
+
+.active {
+    background: #98FB98;
+    color: green;
+    font-size: 14px !important;
+}
+
+.span {
+    font-size: 14px !important;
+}
+
+.del {
+    color: #DC2626;
+    background: #FF7F7F;
+}
+
+.cate {
+    height: 300px;
+}
+
+
+
+option {
+    font-size: 16px !important;
+}

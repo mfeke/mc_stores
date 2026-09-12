@@ -12,6 +12,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ViewBashComponent } from './admin/view-bash/view-bash.component';
 import { SignupComponent } from './admin/signup/signup.component';
 import { SigninComponent } from './admin/signin/signin.component';
+import { CategoriesComponent } from './admin/categories/categories.component';
 const routes: Routes = [
   
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -28,7 +29,8 @@ const routes: Routes = [
 
   {path:'store/admin/signup', component:SignupComponent},
   {path:'store/admin/dashboard', component: DashboardComponent},
-  {path:'store/admin/signin', component:SigninComponent}
+  {path:'store/admin/signin', component:SigninComponent},
+  {path:'store/admin/categories', component:CategoriesComponent}
 ];
 
 @NgModule({

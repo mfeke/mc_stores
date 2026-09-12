@@ -28,6 +28,7 @@ import { FilterNamePipe } from './filter-name.pipe';
 import { SignupComponent } from './admin/signup/signup.component';
 import { SigninComponent } from './admin/signin/signin.component';
 import { MenubarComponent } from './admin/menubar/menubar.component';
+import { CategoriesComponent } from './admin/categories/categories.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { MenubarComponent } from './admin/menubar/menubar.component';
     SignupComponent,
     SigninComponent,
     MenubarComponent,
+    CategoriesComponent,
 
   ],
   imports: [
